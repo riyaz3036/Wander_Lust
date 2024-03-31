@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://localhost:8000';
+export const BASE_URL = 'wander-lust-api.vercel.app';
