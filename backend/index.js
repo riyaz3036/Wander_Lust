@@ -46,6 +46,10 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
+app.use('/',(req,res)=>{
+    res.json("Hello this is WandeLust");
+})
+
 //any req to /tours is sent to tour Route
 app.use('/tours',tourRoute);
 
