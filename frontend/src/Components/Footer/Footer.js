@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import './Footer.css'
 import{Row, Col,Container,ListGroup, ListGroupItem,Button} from 'reactstrap'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 import {AuthContext} from "./../../context/AuthContext";
 
@@ -26,6 +26,7 @@ const quick__links = [
 const Footer = ()=>{
 
 
+const navigate = useNavigate();
 const {user, dispatch} = useContext(AuthContext);
 
 //Logout
