@@ -1,0 +1,124 @@
+[
+    {
+      "title": "Munnar",
+      "description": "Munnar, nestled amidst the Western Ghats, enchants with its sprawling tea plantations and misty mountains, inviting travelers to immerse themselves in its natural splendor.",
+      "photo": "/dest-images/dest-img01.jpg",
+      "tour_id":  "65f6ffd7edc7446361569c9f"
+    },
+    {
+        "title": "Alleppey",
+        "description": "Alleppey is a picturesque town famed for its captivating backwaters, where houseboats drift along serene canals, offering a tranquil escape amidst Kerala's lush landscapes.",
+        "photo": "/dest-images/dest-img02.jpg",
+        "tour_id":  "65f6ffd7edc7446361569c9f"
+    },
+    {
+        "title": "Kovalam",
+        "description": "Kovalam is a coastal paradise in Kerala, renowned for its pristine beaches, azure waters, and vibrant seaside culture, offering a perfect blend of relaxation and adventure.",
+        "photo": "/dest-images/dest-img03.jpg",
+        "tour_id":  "65f6ffd7edc7446361569c9f"
+    },
+    {
+        "title": "Shimla",
+        "description": "Shimla, the Queen of Hill Stations, beckons with its colonial charm, snow-capped peaks, and scenic vistas, creating a timeless allure for visitors seeking mountain retreats.",
+        "photo": "/dest-images/dest-img04.jpg",
+        "tour_id":  "65f700b5edc7446361569ca9"
+    },
+    {
+        "title": "Manali",
+        "description": "Manali, nestled in the Himalayas, entices with its breathtaking landscapes, adventure sports, and vibrant culture, making it a haven for nature lovers and thrill-seekers alike.",
+        "photo": "/dest-images/dest-img05.jpg",
+        "tour_id":  "65f700b5edc7446361569ca9"
+    },
+    {
+        "title": "Dalhousie",
+        "description": "Dalhousie, a picturesque hill station in Himachal Pradesh, captivates with its colonial architecture, lush greenery, and panoramic views of the surrounding Himalayan ranges.",
+        "photo": "/dest-images/dest-img06.jpg",
+        "tour_id":  "65f70088edc7446361569ca1"
+    },
+    {
+        "title": "Amritsar",
+        "description": "Amritsar, a city steeped in history and spirituality, is renowned for the Golden Temple, a symbol of Sikhism's rich heritage, and its vibrant culture, bustling markets, and mouthwatering cuisine.",
+        "photo": "/dest-images/dest-img07.jpg",
+        "tour_id":  "65f70088edc7446361569ca1"
+    },
+    {
+        "title": "Jaipur",
+        "description": "Jaipur, the Pink City, dazzles with its majestic palaces, vibrant bazaars, and rich cultural heritage, offering a captivating blend of history and modernity.",
+        "photo": "/dest-images/dest-img08.jpg",
+        "tour_id":  "65f70093edc7446361569ca3"
+
+    },
+    {
+        "title": "Jaisalmer",
+        "description": "Jaisalmer, the Golden City, mesmerizes with its magnificent sandstone architecture, expansive desert vistas, and vibrant cultural tapestry, evoking a sense of timeless beauty and adventure.",
+        "photo": "/dest-images/dest-img09.jpg",
+        "tour_id":  "65f70093edc7446361569ca3"
+    },
+    {
+        "title": "Udaipur",
+        "description": "Udaipur, the City of Lakes, enchants with its regal palaces, tranquil lakes, and romantic ambiance, offering a glimpse into the opulent heritage of Rajasthan.",
+        "photo": "/dest-images/dest-img10.jpg",
+        "tour_id":  "65f70093edc7446361569ca3"
+    },
+    {
+        "title": "North Goa",
+        "description": "North Goa, renowned for its lively beaches, vibrant nightlife, and eclectic fusion of cultures, beckons travelers with its laid-back charm and energetic atmosphere.",
+        "photo": "/dest-images/dest-img11.jpg",
+        "tour_id":  "65f7009eedc7446361569ca5"
+    },
+    {
+        "title": "South Goa",
+        "description": "South Goa, characterized by its pristine beaches, serene atmosphere, and abundant natural beauty, offers a tranquil escape from the hustle and bustle, perfect for relaxation and rejuvenation.",
+        "photo": "/dest-images/dest-img12.jpg",
+        "tour_id":  "65f7009eedc7446361569ca5"
+    },
+    {
+        "title": "Gulmarg",
+        "description": "Gulmarg, nestled in the Himalayas, is a winter wonderland renowned for its powdery slopes, offering thrilling skiing adventures amidst breathtaking alpine scenery.",
+        "photo": "/dest-images/dest-img13.jpg",
+        "tour_id":  "65f700a9edc7446361569ca7"
+    },
+    {
+        "title": "Srinagar",
+        "description": "Srinagar, the Venice of the East, captivates with its serene Dal Lake, Mughal gardens, and houseboats, exuding timeless charm amidst the Himalayan backdrop.",
+        "photo": "/dest-images/dest-img14.jpg",
+        "tour_id":  "65f700a9edc7446361569ca7"
+    },
+    {
+        "title": "Delhi",
+        "description": "Delhi, the vibrant capital of India, pulsates with a rich tapestry of history, culture, and modernity, offering a dynamic blend of tradition and cosmopolitanism.",
+        "photo": "/dest-images/dest-img15.jpg",
+        "tour_id":  "65f700b5edc7446361569ca9"
+    },
+    {
+        "title": "Kullu",
+        "description": "Kullu, nestled in the lap of the Himalayas, bewitches with its verdant valleys, gushing rivers, and vibrant culture, offering a scenic retreat for nature lovers and adventure enthusiasts.",
+        "photo": "/dest-images/dest-img16.jpg",
+        "tour_id":  "65f700b5edc7446361569ca9"
+    },
+    {
+        "title": "Port Blair",
+        "description": "Port Blair, the capital of the Andaman and Nicobar Islands, boasts pristine beaches, historic landmarks, and vibrant marine life, creating an enchanting tropical getaway in the heart of the Bay of Bengal.",
+        "photo": "/dest-images/dest-img17.jpg",
+        "tour_id":  "65f700beedc7446361569cab"
+    },
+    {
+        "title": "Neil Island",
+        "description": "Neil Island, a serene gem in the Andaman archipelago, enchants with its white sandy beaches, crystal-clear waters, and tranquil ambiance, offering a perfect retreat for those seeking serenity amidst nature's splendor.",
+        "photo": "/dest-images/dest-img18.jpg",
+        "tour_id":  "65f700beedc7446361569cab"
+    },
+    {
+        "title": "Havelock",
+        "description": "Havelock Island, a paradise in the Andaman Sea, captivates with its pristine beaches, diverse marine life, and lush tropical forests, offering an idyllic escape for nature lovers and adventurers alike.",
+        "photo": "/dest-images/dest-img19.jpg",
+        "tour_id":  "65f700beedc7446361569cab"
+    },
+    {
+        "title": "Hyderabad",
+        "description": "Hyderabad, the City of Pearls, harmonizes its rich heritage with modernity, boasting historic monuments, flavorful cuisine, and a vibrant tech scene, encapsulating the essence of dynamic India.",
+        "photo": "/dest-images/dest-img20.jpg",
+        "tour_id":  "65f700e1edc7446361569cad"
+    }
+]
+

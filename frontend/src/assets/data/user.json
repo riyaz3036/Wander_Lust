@@ -1,0 +1,195 @@
+[
+    {
+      "username": "JohnDoe",
+      "email": "johndoe@example.com",
+      "password": "P@ssw0rd",
+      "phone": "1234567890",
+      "bookings": [],
+      "balance" : 100000
+      
+    },
+    {
+      "username": "AliceSmith",
+      "email": "alice.smith@example.com",
+      "password": "Secret123",
+      "phone": "9876543210",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "BobJohnson",
+      "email": "bob.johnson@example.com",
+      "password": "BobPass123",
+      "phone": "5551234567",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "EmilyBrown",
+      "email": "emily.brown@example.com",
+      "password": "Brownie987",
+      "phone": "1239876543",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "MichaelWilson",
+      "email": "michael.wilson@example.com",
+      "password": "WilsonPass",
+      "phone": "4567890123",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "SophiaLee",
+      "email": "sophia.lee@example.com",
+      "password": "LeeSophia",
+      "phone": "7890123456",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "DavidMartinez",
+      "email": "david.martinez@example.com",
+      "password": "DavidM123",
+      "phone": "3216549870",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "EmmaTaylor",
+      "email": "emma.taylor@example.com",
+      "password": "TaylorEmma",
+      "phone": "6543210987",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "JamesThomas",
+      "email": "james.thomas@example.com",
+      "password": "JamesT456",
+      "phone": "0123456789",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "OliviaAnderson",
+      "email": "olivia.anderson@example.com",
+      "password": "AndersonOlivia",
+      "phone": "5432109876",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "WilliamHarris",
+      "email": "william.harris@example.com",
+      "password": "HarrisW123",
+      "phone": "9870123456",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "IsabellaWhite",
+      "email": "isabella.white@example.com",
+      "password": "WhiteBella",
+      "phone": "5678901234",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "DanielGarcia",
+      "email": "daniel.garcia@example.com",
+      "password": "GarciaD456",
+      "phone": "8901234567",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "SophiaJohnson",
+      "email": "sophia.johnson@example.com",
+      "password": "JohnsonSophia",
+      "phone": "2345678901",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "AlexanderJones",
+      "email": "alexander.jones@example.com",
+      "password": "JonesAlex",
+      "phone": "6789012345",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "MiaGonzalez",
+      "email": "mia.gonzalez@example.com",
+      "password": "MiaG456",
+      "phone": "9012345678",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "WilliamMiller",
+      "email": "william.miller@example.com",
+      "password": "MillerW789",
+      "phone": "3456789012",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "CharlotteDavis",
+      "email": "charlotte.davis@example.com",
+      "password": "DavisC123",
+      "phone": "7890123456",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "BenjaminRodriguez",
+      "email": "benjamin.rodriguez@example.com",
+      "password": "RodriguezBen",
+      "phone": "1234567890",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "SofiaMartinez",
+      "email": "sofia.martinez@example.com",
+      "password": "MartinezSofia",
+      "phone": "4567890123",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "JamesLee",
+      "email": "james.lee@example.com",
+      "password": "LeeJames",
+      "phone": "7890123456",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "HarperHernandez",
+      "email": "harper.hernandez@example.com",
+      "password": "HarperH123",
+      "phone": "0123456789",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "AmeliaKing",
+      "email": "amelia.king@example.com",
+      "password": "KingA123",
+      "phone": "1234567890",
+      "bookings": [],
+      "balance" : 100000
+    },
+    {
+      "username": "MichaelBrown",
+      "email": "michael.brown@example.com",
+      "password": "BrownM789",
+      "phone": "4567890123",
+      "bookings": [],
+      "balance" : 100000
+    }
+  ]

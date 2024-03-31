@@ -1,0 +1,42 @@
+.dest__img img{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+.card{
+    border:none !important;
+    box-shadow: rgba(0,0,0,0.2) 0px 18px 50px -10px;
+}
+.dest__img{
+    position: relative;
+}
+
+.dest__img span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: max-content;
+    height: max-content;
+    z-index: 10;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px 0 0 0;
+}
+
+
+.dest__title{
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.dest__title a{
+    text-decoration: none;
+    color: var(--heading-color);
+    transition: 0.3s;
+}
+
+.dest__title a:hover{
+    color: var(--secondary-color);
+}
+
