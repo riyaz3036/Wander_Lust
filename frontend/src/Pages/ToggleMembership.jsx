@@ -3,7 +3,7 @@ import '../styles/toggle.css';
 import { BASE_URL } from '../utils/config.js';
 import { AuthContext } from "./../context/AuthContext";
 import useFetch from '../hooks/useFetch.js';
-import { useLocation } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 function ToggleMembership() {
     const { user } = useContext(AuthContext);
@@ -13,7 +13,7 @@ function ToggleMembership() {
         window.scrollTo(0, 0);
     }, []);
 
-    
+    const navigate = useNavigate();
 
     const [selectedOption, setSelectedOption] = useState('');
     const [balance, setBalance] = useState('');
@@ -37,7 +37,7 @@ function ToggleMembership() {
             }
 
             alert('Balance updated successfully!');
-            location.reload();
+            navigate('/');
 
         } catch (error) {
             console.error('Error:', error);
@@ -64,7 +64,7 @@ function ToggleMembership() {
             }
 
             alert('Membership updated successfully!');
-            location.reload();
+            navigate('/');
 
         } catch (error) {
             console.error('Error:', error);
