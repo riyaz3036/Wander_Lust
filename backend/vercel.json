@@ -4,13 +4,6 @@
     {"src": "*.js","use": "@vercel/node" }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/", "dest": "/index.js" },
-    { "src": "/tours", "dest": "/tours" },
-    { "src": "/users", "dest": "/index.js" },
-    { "src": "/auth", "dest": "/index.js" },
-    { "src": "/destination", "dest": "/index.js" },
-    { "src": "/activity", "dest": "/index.js" },
-    { "src": "/booking", "dest": "/index.js" }
+    { "src": "/(.*)", "dest": "/" }
   ]
 }
