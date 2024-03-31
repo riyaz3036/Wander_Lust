@@ -48,7 +48,7 @@ app.use(cors(corsOptions));
 app.use(cookieParser());
 
 app.use("/",(req,res)=>{
-    res.json("Hello this is WandeLust");
+    res.json("Hello this is WanderLust");
 })
 
 app.use("/bitch",(req,res)=>{
