@@ -14,10 +14,8 @@ const Navigate = useNavigate()
 
 
 //importing user data
-let {user} = useContext(AuthContext);
-if(user){
-    user = useFetch(`${BASE_URL}/users/${user._id}`).data;
-}
+const { user } = useContext(AuthContext);
+const { data: userData } = useFetch(user ? `${BASE_URL}/users/${user._id}` : null);
 
 
 
@@ -79,8 +77,8 @@ const calcDisc= ()=>{
     let dis_ = 0;
     
     if(!(!user || user===undefined || user===null)){
-        if(user.membership==="premium") dis_=calcTot();
-        else if(user.membership==="gold") dis_= 0.1 * calcTot();
+        if(userData.membership==="premium") dis_=calcTot();
+        else if(userData.membership==="gold") dis_= 0.1 * calcTot();
     }
 
     return dis_;
@@ -158,7 +156,7 @@ const handleSubmit = async (e) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ "balance": user.balance - formData.price })
+            body: JSON.stringify({ "balance": userData.balance - formData.price })
         });
 
        //update vacancies in tours
@@ -241,7 +239,7 @@ addAct.forEach(this_act => {
 });
 
   //balance check
-  if( !(!user || user===undefined || user===null) && calcTot()-calcDisc() > user.balance) {
+  if( !(!user || user===undefined || user===null) && calcTot()-calcDisc() > userData.balance) {
     chk__=-1;
   } 
 
