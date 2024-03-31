@@ -51,9 +51,6 @@ app.use("/",(req,res)=>{
     res.json("Hello this is WanderLust");
 })
 
-app.use("/bitch",(req,res)=>{
-    res.json("Hello this is bitch");
-})
 
 //any req to /tours is sent to tour Route
 app.use("/tours",tourRoute);
