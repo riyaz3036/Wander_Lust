@@ -6,7 +6,7 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/", "dest": "/index.js" },
-    { "src": "/tours", "dest": "/index.js" },
+    { "src": "/tours", "dest": "/tours" },
     { "src": "/users", "dest": "/index.js" },
     { "src": "/auth", "dest": "/index.js" },
     { "src": "/destination", "dest": "/index.js" },
