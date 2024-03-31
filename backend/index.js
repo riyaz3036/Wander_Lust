@@ -17,8 +17,9 @@ const app= express();
 const port = process.env.PORT || 8000;
 
 const corsOptions={
-    origin: true,
-    credentials: true,
+    origin: ["https://wander-lust-frontend.vercel.app/"],
+    methods: ["POST", "GET" ,"PUT", "DELETE"],
+    credentials: true
 }
 
 //Database connection
