@@ -52,7 +52,7 @@ app.use("/",(req,res)=>{
 })
 
 //any req to /tours is sent to tour Route
-app.use('/tours',tourRoute);
+app.use("/tours",tourRoute);
 
 //any request to /users
 app.use('/users', userRoute);
