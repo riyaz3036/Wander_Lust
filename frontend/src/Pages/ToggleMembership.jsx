@@ -3,11 +3,12 @@ import '../styles/toggle.css'
 import {BASE_URL} from '../utils/config.js';
 import {AuthContext} from "./../context/AuthContext";
 import useFetch from '../hooks/useFetch.js';
-import {useLocation} from 'react-router-dom';
+import {useLocation,useHistory} from 'react-router-dom';
+
 
 function ToggleMembership() {
 
-
+const history = useHistory();
 
 //to scroll to top
 const { pathname } = useLocation();
@@ -47,7 +48,7 @@ const handleSubmit = async ()=>{
         }
         
         alert('Balance updated successfully!');
-        location.reload();
+        history.go(0);
         
     } catch (error) {
         console.error('Error:', error);
@@ -75,7 +76,7 @@ const handleSubmit = async ()=>{
             }
             
             alert('Membership updated successfully!');
-            location.reload();
+            history.go(0);
             
             
         } catch (error) {
