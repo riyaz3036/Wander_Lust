@@ -8,6 +8,9 @@ import {useLocation} from 'react-router-dom';
 
 const MyBookings = () =>{
 
+//Getting the user data
+const { user } = useContext(AuthContext);
+const { data: userData } = useFetch(user ? `${BASE_URL}/users/${user._id}` : null);
 
 //to scroll to top
 const { pathname } = useLocation();
@@ -16,11 +19,7 @@ useEffect(() => {
 window.scrollTo(0, 0);
 }, [pathname]);
     
-    //Getting the user data
-    let {user} = useContext(AuthContext);
-    if(user){
-        user = useFetch(`${BASE_URL}/users/${user._id}`).data;
-    }
+
     
    
     
@@ -39,25 +38,25 @@ window.scrollTo(0, 0);
         <div className="details">
 
         <div className="details-item">
-        <p><span>Name: </span> {user.username}</p>
-        <p><span>Email: </span> {user.email}</p>
-        <p><span>Phone: </span> {user.phone}</p>
-        <p><span>Available Balance: </span> {user.balance}</p>
-        <p><span>Membership: </span>{user.membership}</p>
+        <p><span>Name: </span> {userData.username}</p>
+        <p><span>Email: </span> {userData.email}</p>
+        <p><span>Phone: </span> {userData.phone}</p>
+        <p><span>Available Balance: </span> {userData.balance}</p>
+        <p><span>Membership: </span>{userData.membership}</p>
         </div>
 
         </div>
 
 
         {
-        user.bookings?
+        userData.bookings?
         
         <>
         <h5 className="book__title">My Bookings:</h5>
 
         <div className="my__orders-content">
         {
-        user.bookings?.map((booking, index) => (
+        userData.bookings?.map((booking, index) => (
         <div key={index} className="booking-item">
 
             <div className="booking__img">
