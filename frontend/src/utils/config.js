@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://wander-lust-api.vercel.app';
+export const BASE_URL = 'https://wanderlust-api-oeb7.onrender.com/';
