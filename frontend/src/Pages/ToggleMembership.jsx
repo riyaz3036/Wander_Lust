@@ -148,7 +148,7 @@ const handleSubmit = async ()=>{
  <div className="toggle__sub">
      <h5>Update Balance</h5>
      <div>
-<form onSubmit={handleSubmit}>
+<form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
    
 <div>
 <label>Balance:</label>
