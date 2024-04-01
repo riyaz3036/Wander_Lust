@@ -3,7 +3,6 @@ const dotenv= require('dotenv');
 const mongoose= require('mongoose');
 const cors= require('cors');
 const cookieParser = require('cookie-parser');
-
 const tourRoute = require('./routes/tours.js');
 const userRoute = require('./routes/users.js');
 const authRoute = require('./routes/auth.js');
