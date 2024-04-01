@@ -49,7 +49,7 @@ const handleSubmit = async ()=>{
         
     } catch (error) {
         console.error('Error:', error);
-        alert('Failed to update membership. Please try again later.');
+        alert('Failed to update Balance. Please try again later.');
     }
 }
       //to change membership
