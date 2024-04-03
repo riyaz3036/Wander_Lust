@@ -1,4 +1,4 @@
-import React, {useEffect, useRef,useContext} from 'react'
+import React, {useEffect, useRef,useContext,useState} from 'react'
 import {Container, Row, Button} from 'reactstrap';
 import { NavLink, Link,useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
@@ -13,6 +13,15 @@ const Header = ()=>{
   
     const navigate = useNavigate();
     const {user, dispatch} = useContext(AuthContext);
+
+    //dropdown
+  const [dropdown, setDropdown] = useState(false);
+
+  // Function to toggle dropdown
+  const toggleDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
 
     //Logout
      const logout =()=>{
@@ -30,7 +39,7 @@ const Header = ()=>{
         },
         {
             path:'/my-bookings',
-            display: 'My Bookings'
+            display: 'Bookings'
         },
         {
             path:'/toggle-Membership',
@@ -90,6 +99,7 @@ return (
             {/* menu end */}
 
             {/* login register start */}
+            <div className="navigation2">
             <div className="nav__right d-flex align-items-center gap-4">
                 <div className="nav__btns d-flex align-items-center gap-4">
                 
@@ -109,18 +119,50 @@ return (
                 }
 
                 
-
                 </div>
-
-                <span className="mobile__menu">
-                 <i class="ri-menu-line"></i>
-                </span>
                 
             </div>
+            </div>
+
+            <div className='mobile__menu'>
+            <i className="ri-menu-line" onClick={toggleDropdown}></i>
+
+            <div className={dropdown?'dropdown__menu': 'dropdown__menu_close' }>
+            {
+                nav_links.map((item,index)=>(
+                    <li className="dropdown__link">
+                    <Button className="btn secondary__btn">
+                    <Link onClick={toggleDropdown} to={item.path}><span className="dropdown__text" >{item.display}</span></Link>
+                    </Button>
+                    </li>
+                ))
+                
+            }
+            {
+                    user?<li className="dropdown__link">
+                    <Button className="btn btn-dark" onClick={() => { logout(); toggleDropdown(); }}>Logout</Button>
+                    </li>:<>
+                    <li className="dropdown__link">
+                    <Button className=" btn secondary__btn">
+                    <Link to='/login'><span className="dropdown__text" onClick={toggleDropdown} >Login</span></Link>
+                    </Button>
+                    </li>
+                    <li className="dropdown__link">
+                     <Button className=" btn primary__btn">
+                    <Link to='/register' onClick={toggleDropdown}>Register</Link>
+                    </Button>
+                    </li>
+                    </>
+                }
+            </div>
+
+            </div>
+
             {/* login register end */}
 
-
         </div>
+
+        
     </Row>    
     </Container>
 
