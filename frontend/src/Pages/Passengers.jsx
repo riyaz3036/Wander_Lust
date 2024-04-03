@@ -37,7 +37,7 @@ return (
                     <h2>
                         {tourData.title}
                     </h2>
-                    <div className="d-flex align-items-center gap-5">
+                    <div >
                         <span className="d-flex align-items-center gap-1">
                             <i class="ri-map-pin-fill"></i> {tourData.location}
                         </span>
@@ -45,7 +45,7 @@ return (
                         <i class="ri-wallet-3-fill"></i> ₹{tourData.price}
                         </span>
                         <span className="d-flex align-items-center gap-1">
-                            <i class="ri-group-line"></i>{tourData.vacancy}/ {tourData.capacity}
+                        <i class="ri-user-fill"></i>{tourData.vacancy}/ {tourData.capacity}
                         </span>
 
                 </div>
