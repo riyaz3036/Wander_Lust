@@ -20,8 +20,7 @@ This shouldopen your browser to view the website
 
 -----------------Manual (How to use)----------------------------------
 
-NOTE: this is a single user website So..your name is Riyaz Ahmed
-      You have some balance money in your account initially.
+NOTE: Once you login to your account you have some balance money (80000) in your account initially. Happy booking!!
 
 
 
@@ -35,15 +34,11 @@ NOTE: this is a single user website So..your name is Riyaz Ahmed
 8. The discount is applied according to you membership (premium user: 100%, gold user 10% , normal user 0)
 9. Once you have entered all the feilds click on book now to book your tour
 10. Once you have booked your tour you can view your booking details by clicking on my Bookings in the headers section
-11. For testing purpose you can change your membership and balance by clicking on name 'Riyaz Ahmed' in the header section
+11. For testing purpose you can change your membership and balance by clicking on your name in the header section
 
-NOTE: Kindly ignore the login and register which I will be completing in future (which are not part of the give task anyway)
 
 
 -------------------------------------------------------------------------------------
-
-P.S.
-I have worked really hard on the project (creating it in just 3 days). Hoping to have an interview soon.....
 
 THANK YOU!!!!!!
 
