@@ -1,5 +1,5 @@
 .pass{
-height: 700px;
+height: 35rem;
 margin-top: 0;
 overflow: scroll;
 }
@@ -22,3 +22,10 @@ overflow: scroll;
     font-weight: 500;
     margin-right: 0.5rem;
 }
+
+.tour__info{
+    border:1px solid rgb(229,231,235);
+}
+
+
+
