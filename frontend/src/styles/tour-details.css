@@ -38,33 +38,33 @@
 margin-bottom: 10px;
 }
 
-.pass{
-    
+.get_pass{
     margin-top: 3rem;
+    margin-bottom: 5rem;
 }
 
-.pass h5{
+.get_pass h5{
     font-size:2rem ;
     margin-top: 2rem;
 }
 
-.pass button{
+.get_pass button{
     border: none;
     margin-top: 1rem;
     
     background-color: var(--secondary-color);
 }
 
-.pass button:hover{
+.get_pass button:hover{
     background-color: var(--secondary-color);
 }
 
-.pass a{
+.get_pass a{
     text-decoration: none;
     color:black;
 }
 
-.pass a:hover{
+.get_pass a:hover{
     color:black;
 }
 
