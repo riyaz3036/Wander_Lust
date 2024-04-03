@@ -77,7 +77,7 @@ return (
                     <h2>
                         {title}
                     </h2>
-                    <div className="d-flex align-items-center gap-5">
+                    <div className="tour__details">
                         <span className="d-flex align-items-center gap-1">
                             <i class="ri-map-pin-fill"></i> {location}
                         </span>
@@ -85,10 +85,10 @@ return (
                         <i class="ri-wallet-3-fill"></i> ₹{price}
                         </span>
                         <span className="d-flex align-items-center gap-1">
-                            <i class="ri-group-line"></i> Vacencies: {vacancy}/{capacity}
+                        <i class="ri-user-fill"></i> Vacencies: {vacancy}/{capacity}
                         </span>
                         <span className="d-flex align-items-center gap-1">
-                             {duration}
+                        <i class="ri-time-fill"></i> {duration}
                         </span>
 
                     </div>
