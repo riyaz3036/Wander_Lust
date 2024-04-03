@@ -15,7 +15,7 @@ import useFetch from '../hooks/useFetch.js';
 const Home = ()=>{
 
 
-     const {data : tourData} = useFetch(`${BASE_URL}/tours`);  //This is all the tour data
+     const {data : tourData,loading,error} = useFetch(`${BASE_URL}/tours`);  //This is all the tour data
      const {data : destinationData} = useFetch(`${BASE_URL}/destination`); //This is all the destination data
 
 
@@ -83,6 +83,9 @@ return (
     
 
      <section>
+    {
+
+    }
     <Container> 
     <Row>
     <Col lg="12" className="mb-5">
@@ -99,17 +102,23 @@ return (
     </section> 
 
 
-    {/* Destination section starts here*/}
+    {/* Destination section ends here*/}
 
 
     {/*Packages section starts here*/}
     <section>
+        
     <Container> 
     <Row>
     <Col lg="12" className="mb-5">
         <Subtitle subtitle={"Explore Packages"}/>
         <h2 className="Packages__title">Our featured Packages</h2>
-    
+        {
+        loading && <h4>Loading....</h4>
+        }
+        {
+        error && <h4>{error}</h4>
+        }
     </Col>
 
     <PackageList tourData={tourData}/>
