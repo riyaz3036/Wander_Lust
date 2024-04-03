@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useEffect}from 'react'
 import {Container,Row,Col,Button} from 'reactstrap'
 import '../styles/thank-you.css'
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
 
 const Thankyou = ()=>{
+        //get from top
+        const { pathname } = useLocation();
+
+        useEffect(() => {
+          window.scrollTo(0, 0);
+        }, [pathname]);
+      
 return (
     <section>
         <Container>
