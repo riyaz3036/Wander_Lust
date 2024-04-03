@@ -132,8 +132,8 @@ return (
             
 
 
-                <div className="pass">
-                    <h5>Passenges in this tour</h5>
+                <div className="get_pass">
+                    <h5>Passengers in this tour</h5>
                 <Button><Link to={`/passengers/${id}`}>Get Passengers List</Link></Button>
                 </div>
                 </Col>
