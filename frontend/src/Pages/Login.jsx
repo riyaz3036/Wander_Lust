@@ -1,7 +1,7 @@
-import React, {useState,useContext}from 'react'
+import React, {useState,useContext,useEffect}from 'react'
 import '../styles/login.css'
 import {Container, Row, Col,Form, FormGroup, Button} from 'reactstrap'
-import {Link,useNavigate} from 'react-router-dom'
+import {Link,useNavigate,useLocation} from 'react-router-dom'
 import {BASE_URL} from '../utils/config.js';
 import {AuthContext} from "./../context/AuthContext";
 
@@ -9,7 +9,13 @@ import {AuthContext} from "./../context/AuthContext";
 const Login = ()=>{
 
     const {dispatch} = useContext(AuthContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+//to scroll to top
+const { pathname } = useLocation();
+useEffect(() => {
+window.scrollTo(0, 0);
+}, [pathname]);
 
     //to Store the login details
     const [credentials, setCredentials] = useState({
