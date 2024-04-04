@@ -77,7 +77,7 @@ const calcDisc= ()=>{
     let dis_ = 0;
     
     if(!(!user || user===undefined || user===null)){
-        if(userData.membership==="premium") dis_=calcTot();
+        if(userData.membership==="premium") dis_=calcTot() * 0.5;
         else if(userData.membership==="gold") dis_= 0.1 * calcTot();
     }
 
