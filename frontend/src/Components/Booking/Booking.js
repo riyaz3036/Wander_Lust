@@ -264,7 +264,7 @@ addAct.forEach(this_act => {
 
             <div className="booking__form">
                 <h5>Information:</h5>
-                <Form className="booking__info-form" onSubmit={handleSubmit}>
+                <Form className="booking__info-form" >
 
                 <FormGroup className="d-flex align-items-center gap-3">
                     <input type="date" placeholder="" id="bookFor" required onChange={handleChange } />
