@@ -1,28 +1,14 @@
-Hello I am Riyaz Ahmed!! Welcome to the project wanderLust
-Wanderlust is a dynamic website for booking your tour
+# JobFinder
 
+<p align="center"><img src="ReadmeAssets/logo.png" width="150" height="150"></p>
 
--------------STEPS TO GET THE WEBSITE RUNNING--------------
+### Wanderlust is a one stop place to make your trip more than just a journey
 
-1. open the terminal and enter cd backend to navigate to backend.
-2. In the terminal enter 'npm i' to install all the required dependencies
-3. Once the dependencies are installed, enter 'npm run start-dev' to get your backend up and running (you will see a message 'connected to mongodb')
-4. Now open a new terminal and now enter cd frontend to navigate to the frontend.
-5. In the terminal enter 'npm i' to install all the required dependencies (this may take some time....Kindly wait)
-6. Once the dependencies are installed, enter 'npm start' to get your frontend up and running
-    
-This shouldopen your browser to view the website
+- Select and book your trip from a range of Packages
+- We offer additional activities at each destination to make your trip more memorable
+- Create an account to book yor trip and view them anytime!
 
-
-----------------------------------------------------------------------
-
-
-
------------------Manual (How to use)----------------------------------
-
-NOTE: Once you login to your account you have some balance money (80000) in your account initially. Happy booking!!
-
-
+### Features
 
 1. You can view all tha available destinations and packages in the home page
 2. By clicking on book now on the tour package you can view all the details of the tour
@@ -31,15 +17,67 @@ NOTE: Once you login to your account you have some balance money (80000) in your
 5. You can also view the passenger list of the passage by clicking get passenger list
 6. Each tour package has a vacancy, you cannot book if it is less that the guest size you are booking for
 7. It also applies for the activities
-8. The discount is applied according to you membership (premium user: 100%, gold user 10% , normal user 0)
-9. Once you have entered all the feilds click on book now to book your tour
-10. Once you have booked your tour you can view your booking details by clicking on my Bookings in the headers section
+8. The discount is applied according to you membership (premium user: 50%, gold user 10% , normal user 0%)
+9. Once you have booked your tour you can view your booking details by clicking on Bookings in the headers section
 11. For testing purpose you can change your membership and balance by clicking on your name in the header section
 
+## A sneak peek into what we have here!
+
+Visit our website at: https://wander-lust-frontend.vercel.app/
+
+### Home Page
+
+<img src="ReadmeAssets/Screenshot (1144).png" width="480" height="270">
 
 
--------------------------------------------------------------------------------------
+## Technology Stack
 
-THANK YOU!!!!!!
+- **Coding Languages**: <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
+
+- **Tools & Frameworks**: <img alt="ReactJS" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss"/><img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/> <img alt="Express.js" src="https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=for-the-badge"/> <img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB-%234ea94b.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img alt="Mongoose" src ="https://img.shields.io/badge/Mongoose-%234ea94b.svg?&style=for-the-badge&logo=Mongoose&logoColor=white"/>
+
+- **Project Management Tools**: <img alt="GitHub" src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/> <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
+
+<hr>
+
+## Environment Setup for local use-
+
+- Drop a :star: on the GitHub repository.
+  <br/>
+
+- Download and install a code/ text editor. - Recommended- - [Download VS Code](https://code.visualstudio.com/download) 
+  <br/>
+
+- Download [Node Js and npm(Node package manager)](https://nodejs.org/en/) (when you install Node, npm also gets installed by default)
+  <br/>
 
 
+- Download and extract the github repositor
+<br/>
+
+- Open the project (wander_Lust-main) using VS Code
+  <br/>
+
+- Open a new terminal and enter `cd frontend` to navigate to the front end of the project
+<br/>
+
+- Run this command to install all dependencies for the frontend of this project.
+
+```
+npm install
+```
+
+<br/>
+
+- Now run this command to start the project.
+
+```
+npm start
+```
+<br/>
+
+- Now you are all set to use this project.
+
+## Developer
+
+- Riyaz Ahmed
