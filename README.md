@@ -1,6 +1,6 @@
 # JobFinder
 
-<p align="center"><img src="ReadmeAssets/logo.png" width="150" height="150"></p>
+<p align="center"><img src="readmeassets/logo.png" width="150" height="150"></p>
 
 ### Wanderlust is a one stop place to make your trip more than just a journey
 
@@ -27,7 +27,8 @@ Visit our website at: https://wander-lust-frontend.vercel.app/
 
 ### Home Page
 
-<img src="readmeassets/home.png" width="480" height="270">
+<img src="readmeassets/home.png"  >
+
 
 
 ## Technology Stack
