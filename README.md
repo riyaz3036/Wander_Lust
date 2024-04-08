@@ -10,16 +10,16 @@
 
 ### Features
 
-1. You can view all tha available destinations and packages in the home page
-2. By clicking on book now on the tour package you can view all the details of the tour
-3. A tour has a fixed Iternary of destinations.
-4. Additional to the normal Iternary you can add addition activities at that destination 
-5. You can also view the passenger list of the passage by clicking get passenger list
-6. Each tour package has a vacancy, you cannot book if it is less that the guest size you are booking for
-7. It also applies for the activities
-8. The discount is applied according to you membership (premium user: 50%, gold user 10% , normal user 0%)
-9. Once you have booked your tour you can view your booking details by clicking on Bookings in the headers section
-11. For testing purpose you can change your membership and balance by clicking on your name in the header section
+- You can view all tha available destinations and packages in the home page
+- By clicking on book now on the tour package you can view all the details of the tour
+- A tour has a fixed Iternary of destinations.
+- Additional to the normal Iternary you can add addition activities at that destination 
+- You can also view the passenger list of the passage by clicking get passenger list
+- Each tour package has a vacancy, you cannot book if it is less that the guest size you are booking for
+- It also applies for the activities
+- The discount is applied according to you membership (premium user: 50%, gold user 10% , normal user 0%)
+- Once you have booked your tour you can view your booking details by clicking on Bookings in the headers section
+- For testing purpose you can change your membership and balance by clicking on your name in the header section
 
 ## A sneak peek into what we have here!
 
