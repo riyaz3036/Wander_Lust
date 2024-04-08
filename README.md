@@ -1,6 +1,6 @@
-# JobFinder
+# wanderLust
 
-<p align="center"><img src="readmeassets/logo.png" width="150" height="150"></p>
+<p align="center"><img src="readmeassets/logo.png" ></p>
 
 ### Wanderlust is a one stop place to make your trip more than just a journey
 
