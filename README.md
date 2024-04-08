@@ -80,4 +80,4 @@ npm start
 
 ## Developer
 
-- Riyaz Ahmed
+- Md Riyaz Ahmed
