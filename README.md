@@ -27,7 +27,7 @@ Visit our website at: https://wander-lust-frontend.vercel.app/
 
 ### Home Page
 
-<img src="ReadmeAssets/Screenshot (1144).png" width="480" height="270">
+<img src="readmeassets/home.png" width="480" height="270">
 
 
 ## Technology Stack
