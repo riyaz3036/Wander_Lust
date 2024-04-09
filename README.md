@@ -1,5 +1,3 @@
-# wanderLust
-
 <p align="center"><img src="readmeassets/logo.png" ></p>
 
 ### Wanderlust is a one stop place to make your trip more than just a journey
@@ -23,7 +21,7 @@
 
 ## A sneak peek into what we have here!
 
-Visit our website at: https://wander-lust-frontend.vercel.app/
+Visit my website at: https://wander-lust-frontend.vercel.app/
 
 ### Home Page
 
