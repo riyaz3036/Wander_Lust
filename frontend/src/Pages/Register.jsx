@@ -52,10 +52,10 @@ const handleSubmit = async e =>{
             })
             const result = await res.json();
 
-            if(!res.ok) alert(result.message)
+            // if(!res.ok) alert(result.message)
 
-            else{
-                // alert("Successfully Registered!!! Please login")
+            if(res.ok){
+                alert("Successfully Registered!!! Please login")
             }
 
             dispatch({type:'REGISTER_SUCCESS'})
