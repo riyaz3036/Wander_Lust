@@ -55,7 +55,7 @@ const handleSubmit = async e =>{
             if(!res.ok) alert(result.message)
 
             else{
-                alert("Successfully Registered!!! Please login")
+                // alert("Successfully Registered!!! Please login")
             }
 
             dispatch({type:'REGISTER_SUCCESS'})
