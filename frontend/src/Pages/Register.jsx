@@ -62,7 +62,7 @@ const handleSubmit = async e =>{
             navigate('/login')
 
         }catch(err){
-          alert(err.message);
+          // alert(err.message);
         }
 }
 
