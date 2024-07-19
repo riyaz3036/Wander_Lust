@@ -79,7 +79,8 @@ const ManageBooking = () => {
                         <div className="booking__data">
                         <p><span>Booked Tour:</span>{booking.tour_id.title}</p>
                         <p><span>Guest Size:</span> {booking.guestSize}</p>
-                        <p><span>Booking Date:</span> {formatDate(booking.bookFor)}</p>
+                        <p><span>Tour Date</span> {formatDate(booking.tour_id.start_date)}</p>
+                        <p><span>Booking Name:</span> {booking.bookFor}</p>
                         <p><span>Price:</span>₹{booking.price}</p>
                         <p><span>Activities:</span></p>
                         {booking.signed_activities.length === 0 ? (
