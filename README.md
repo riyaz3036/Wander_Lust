@@ -21,7 +21,7 @@
 
 ## A sneak peek into what we have here!
 
-Visit my website at: https://wander-lust-frontend.vercel.app/
+Visit my website at: https://wander-lust-drab.vercel.app/
 
 ### Home Page
 
