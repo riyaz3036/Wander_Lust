@@ -1,0 +1,91 @@
+[
+  {
+    "title": "Enchanting Kerala",
+    "location": "Kerala,India",
+    "price": 7500,
+    "duration": "5 Days-4 Nights",
+    "capacity": 20,
+    "vacancy": 10,
+    "description": "this is the descriptionExperience the vibrant tapestry of Kerala, where lush green landscapes meet tranquil backwaters and golden beaches. Immerse yourself in the rich cultural heritage as you explore ancient temples, serene hill stations, and bustling spice markets. Indulge in traditional Ayurvedic treatments, savor mouthwatering local cuisine, and embark on a mesmerizing houseboat cruise through the picturesque backwaters. With its breathtaking scenery, warm hospitality, and unforgettable experiences, a Kerala trip promises to be an enchanting journey of discovery and relaxation",
+    "destinations": [],
+    "photo": "/tour-images/tour-img01.jpg"
+  },
+  {
+    "title": "Northbound Escapade",
+    "location": "North India",
+    "price": 6800,
+    "duration": "4 Days-3 Nights",
+    "capacity": 15,
+    "vacancy":  7,
+    "description": "Experience the best of both worlds with our Dalhousie and Amritsar trip package. Explore the tranquil hills and colonial charm of Dalhousie, featuring panoramic views and serene landscapes. Then, immerse yourself in the vibrant culture and spiritual fervor of Amritsar, home to the iconic Golden Temple and poignant historical landmarks. Indulge in delicious Punjabi cuisine, shop for local treasures, and create lasting memories in these captivating destinations",
+    "destinations": [],
+    "photo": "/tour-images/tour-img02.jpg"
+  },
+  {
+    "title": "Royal Rajasthan",
+    "location": "Rajasthan,India",
+    "price": 8000,
+    "duration": "6 Days-5 Nights",
+    "capacity": 25,
+    "vacancy":   12 ,
+    "description": "Discover the regal allure of Rajasthan with our 'Royal Rajasthan' package, featuring the iconic cities of Jaipur, Jaisalmer, and Udaipur. Experience the grandeur of Jaipur's magnificent palaces and forts, immerse yourself in the golden sands and majestic forts of Jaisalmer, and be enchanted by the romantic charm of Udaipur's shimmering lakes and palaces. Indulge in authentic Rajasthani cuisine, witness mesmerizing cultural performances, and explore the rich heritage and vibrant colors of this royal land. From bustling bazaars to serene desert landscapes, this journey offers a tapestry of experiences that will leave you spellbound.",
+    "destinations": [],
+    "photo": "/tour-images/tour-img03.jpg"
+  },
+  {
+    "title": "Goa Odyssey",
+    "location": "Goa,India",
+    "price": 15500,
+    "duration": "7 Days-6 Nights",
+    "capacity": 22,
+    "vacancy":   5 ,
+    "description": "Embark on a captivating journey to the tropical paradise of Goa with our 'Goa Escapade' package. Immerse yourself in the vibrant energy of this coastal haven, where golden sands meet azure waters and palm-fringed beaches beckon. Indulge in sun-kissed days lounging on pristine shores, embark on thrilling water sports adventures, and explore the vibrant markets and historic landmarks that dot the coastline. From lively beach parties to tranquil sunset cruises, experience the perfect blend of relaxation and excitement. With its laid-back atmosphere, rich cultural heritage, and breathtaking natural beauty, Goa promises an unforgettable escape for every traveler.",
+    "destinations": [],
+    "photo": "/tour-images/tour-img04.jpg"
+  },
+  {
+    "title": "Kashmir Majesty",
+    "location": "Kashmir,India",
+    "price": 20000,
+    "duration": "8 Days-7 Nights",
+    "capacity": 12,
+    "vacancy":   6 ,
+    "description": "Experience the enchanting beauty of the Kashmir Valley with our 'Kashmir Majesty' package. Journey through a land of breathtaking landscapes, where snow-capped mountains, serene lakes, and verdant valleys create a picturesque paradise. Explore the iconic attractions of Srinagar, from the serene Dal Lake to the majestic Mughal gardens, and immerse yourself in the rich cultural tapestry of the region. Venture into the enchanting valleys of Gulmarg and Pahalgam, where lush meadows, alpine forests, and meandering rivers await exploration. Indulge in authentic Kashmiri cuisine, witness vibrant local crafts, and embark on unforgettable shikara rides amidst the misty waters. With its timeless beauty and warm hospitality, Kashmir promises a journey of discovery and wonder at every turn.",
+    "destinations": [],
+    "photo": "/tour-images/tour-img05.jpg"
+  },
+  {
+    "title": "Himalayan Hues",
+    "location": "North India",
+    "price": 15500,
+    "duration": "6 Days-5 Nights",
+    "capacity": 18,
+    "vacancy":   7 ,
+    "description": "Embark on an unforgettable Himalayan adventure with our 'Himalayan Hues' package, spanning from the bustling streets of Delhi to the serene heights of Shimla, Kullu, and Manali. Explore the vibrant markets and historic landmarks of Delhi before venturing into the picturesque valleys of Himachal Pradesh. Experience the tranquil beauty of Shimla's hill stations, the adventurous spirit of Kullu's river rafting, and the breathtaking landscapes of Manali's snow-capped mountains. Indulge in local cuisine, witness traditional cultural performances, and immerse yourself in the natural wonders of the Himalayas.",
+    "destinations": [],
+    "photo": "/tour-images/tour-img06.jpg"
+  },
+  {
+    "title": "Tropical Bliss",
+    "location": "Andaman & Nicobar Islands",
+    "price": 12800,
+    "duration": "5 Days-4 Nights",
+    "capacity": 21,
+    "vacancy":   5 ,
+    "description": "Escape to the idyllic shores of the Andaman Islands with our 'Tropical Paradise' package. Immerse yourself in the pristine beauty of these turquoise waters, where palm-fringed beaches and vibrant coral reefs await exploration. Dive into a world of underwater wonders as you snorkel among colorful marine life, relax on secluded beaches, and trek through lush rainforests teeming with exotic flora and fauna. Discover the rich history and culture of the islands as you visit historic landmarks and learn about the indigenous tribes that call this paradise home",
+    "destinations": [],
+    "photo": "/tour-images/tour-img07.jpg"
+  },
+  {
+    "title": "Charms of Hyderabad",
+    "location": "Hyderabad,India",
+    "price": 12000,
+    "duration": "5 Days-4 Nights",
+    "capacity": 15,
+    "vacancy":   10,
+    "description": "Embark on a captivating journey through the heart of India's Deccan Plateau with our 'Hyderabad Heritage' package. Immerse yourself in the rich tapestry of history, culture, and innovation that defines this dynamic city. Explore the iconic landmarks of Hyderabad, from the majestic Charminar to the opulent Chowmahalla Palace, and delve into the city's vibrant bazaars and bustling streets. Indulge in the tantalizing flavors of Hyderabadi cuisine, from aromatic biryanis to delectable kebabs, and witness the city's cultural diversity come alive through traditional dance and music performances",
+    "destinations": [],
+    "photo": "/tour-images/tour-img08.jpg"
+  }
+  
+]

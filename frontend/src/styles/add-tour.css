@@ -1,0 +1,159 @@
+.add_tour_container{
+    height: 100%;
+}
+
+.add_tour_main{
+    margin-top: 70px;
+    padding: 30px;
+}
+
+
+/* Buttons Section Styles */
+.add_tour_bttns button{
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    padding: 5px 14px;
+}
+
+.add_tour_all_bttn_active,.add_tour_add_bttn_active{
+    box-shadow: gray 0px 4px 10px -3px;
+}
+
+
+/* Add Events Section STEP 1*/
+.add_tour_add{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.3) 0px 2px 5px 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add_tour_add_title{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+}
+
+.add_tour_add_step{
+   color: #BDBDBD;
+   font-size: 12px;
+   margin: 0;
+}
+
+.add_tour_add_main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add_tour_add_section{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add_tour_add_section label{
+    display: flex;
+    width: 150px;
+    font-weight: 500;
+    font-size: 16px;
+}
+.add_tour_add_section label p{
+    margin: 0;
+}
+
+.add_tour_add_section input{
+    font-size: 14px;
+    border: 1px solid #CDCDCD;
+    border-radius: 5px;
+    height: 40px;
+    padding: 5px;
+    width: 300px;
+    background-color: #F7F7F7;
+}
+
+.add_tour_add_section input:focus{
+    outline: none;
+}
+
+.add_tour_add_section_bttn button{
+    background-color: #4880FF;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+
+
+/* Success Message */
+.add_tour_add_success_tick{
+    background-color: #59d603;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.add_tour_error{
+    font-size: 18px;
+    font-weight: 500;
+    color: #606060;
+}
+
+
+/* Tour Card styles */
+.add_tour_card{
+    max-width: 300px;
+    box-shadow: rgba(0,0,0,0.1) 0px 0px 10px 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add_tour_card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add_tour_card_img{
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.add_tour_card_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.add_tour_desc{
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+@media (max-width:768px){
+    .add_tour_main{
+        padding: 20px;
+    }
+    .add_tour_card{
+        max-width: 250px;
+        box-shadow: rgba(0,0,0,0.1) 0px 0px 10px 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .add_tour_card_img{
+        width: 250px;
+        height: 100px;
+        overflow: hidden;
+    }
+    .add_tour_add_section input{
+        width: 200px;
+    }
+    .add_tour_add_section label{
+        width: 80px;
+    }
+}

@@ -1,0 +1,39 @@
+footer{
+    padding-top: 50px;
+    padding-left: 30px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -10px 15px -10px;
+}
+
+
+.logo img{
+    margin-left: -30px;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+.logo p{
+
+    width: 100%;
+    color: var(--text-color);
+}
+
+.footer__link-title{
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.footer_quick-links li a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.copyright{
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-top: 3rem;
+}
+
+.copy{
+    text-align: center;
+}

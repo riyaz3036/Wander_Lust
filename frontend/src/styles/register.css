@@ -1,0 +1,54 @@
+.register__form{
+    padding: 50px 100px;
+    background: var(--secondary-color);
+    border-radius: 8px;
+}
+
+
+.register__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.register__form h2{
+    color: aliceblue;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.register__form input,.register__form select{
+    width:100%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    color: var(--heading-color);
+}
+
+.register__form input:focus,.register__form select:focus{
+    outline: none;
+}
+
+.auth__btn{
+    width: 100%;
+    background: var(--heading-color) !important ;
+    color: #fff !important;
+}
+
+.register__form p{
+    font-size: 0.9rem;
+    color: #fff;
+    margin-top: 1.5rem;
+    text-align: center;
+
+}
+
+.register__form p a{
+    color: var(--heading-color);
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: 500;
+}

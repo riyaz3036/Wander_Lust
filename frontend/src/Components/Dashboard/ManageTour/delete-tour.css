@@ -1,0 +1,51 @@
+.delete_tour_main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.delete_tour_box{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.delete_tour_ques{
+    font-size: 18px;
+    margin: 30px 0px;
+}
+
+.delete_tour_bttns{
+    padding: 5px 0px;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.delete_tour_yes{
+    background-color: #F93C65;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+}
+
+.delete_tour_no{
+    background-color: #000000;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+}

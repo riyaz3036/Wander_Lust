@@ -1,0 +1,294 @@
+.home_description_title{
+    margin-top: 50px;
+    max-width: 60%;
+    font-size: 40px;
+}
+
+
+/* Pricing section styles */
+.pricing_plans_section{
+    padding: 50px 20px;
+}
+
+.pricing_plans_title,.pricing_plans_subtitle{
+   color: #fff;
+}
+
+.pricing_plans_title span{
+    color: var(--primary-color);
+}
+
+.pricing_plans_title{
+    font-size: 36px;
+    max-width: 90%;
+}
+
+.pricing_plans_subtitle{
+    max-width: 50%;
+    font-size: 16px;
+}
+
+.pricing_plans_main{
+    gap: 30px;
+    padding: 50px 20px;
+}
+
+.pricing_plan_card{
+   border-radius: 20px;
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 300px;
+   transition: transform 0.3s, box-shadow 0.3s;
+   cursor: pointer;
+}
+
+.pricing_plan_card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ }
+
+.pricing_plan_card_top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0px;
+}
+
+.pricing_plan_card_bottom{
+    padding: 20px 0px;
+}
+
+.pricing_plan_card_bottom_element{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.pricing_plan_card_bottom_element i{
+    font-size: 24px;
+}
+
+.pricing_plan_card_bottom_element p{
+    color: #AEAEAE;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+.pricing_plan_card_bttn{
+    background-color: #000000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 30px;
+    border-radius: 10px;
+}
+
+
+
+/* Pricing plan description section styles */
+.pricing_plan_desc{
+    padding: 50px 20px;
+    gap: 30px;
+}
+
+.pricing_plan_desc_card{
+    padding: 30px;
+    border-radius: 30px;
+    background-color: #F6F6F6;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.pricing_plan_desc_card_title{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.pricing_plan_desc_card_element{
+    display: flex;
+    gap: 30px;
+}
+
+.pricing_plan_desc_card_element i{
+    font-size: 20px;
+}
+
+.pricing_plan_desc_card_element p{
+    font-size: 18px;
+    margin:0;
+}
+
+
+/* Newsletter Section styles */
+.pricing_newsletter_section{
+    background-color: #F6F6F6;
+    padding: 100px 20px;
+    gap: 40px;
+}
+
+.pricing_newsletter_section_top{
+    transform: translateX(-200px);
+}
+
+.pricing_newsletter_section_title{
+     font-size: 50px;
+}
+
+.pricing_newsletter_section_subtitle{
+     font-size: 36px;
+}
+
+.pricing_newsletter_section_bottom{
+    transform: translateX(200px);
+}
+
+.pricing_newsletter_section_bottom_logo{
+    margin-left: 20px;
+    padding: 0px 5px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #F8F8F8;
+}
+
+.pricing_newsletter_section_bottom_logo i{
+    color: #6C777C;
+    font-size: 20px;
+}
+
+.pricing_newsletter_section_bottom input{
+      height: 60px;
+      padding: 0px 20px;
+      font: 18px;
+      min-width: 500px;
+}
+
+.pricing_newsletter_section_bottom input:focus{
+    outline: none;
+}
+
+.pricing_newsletter_bttn{
+    height: 100%;
+    background-color: #000000;
+    color: #fff;
+    font-size: 26px;
+    height: 60px;
+    padding: 0px 30px; 
+    border-radius: 0px 14px 14px 0px;
+}
+
+
+
+/* Screen size <= 768px (Mobile Phones)*/
+@media (max-width: 768px) {
+    .home_description_title{
+        max-width: 90%;
+        font-size: 28px;
+    }
+
+    .pricing_plans_title{
+        font-size: 28px;
+        max-width: 90%;
+    }
+    
+    .pricing_plans_subtitle{
+        max-width: 90%;
+        font-size: 12px;
+    }
+
+    .pricing_plan_card{
+        padding: 20px;
+        width: 280px;
+     }
+
+    .pricing_plan_desc_card_element i{
+        font-size: 18px;
+    }
+    
+    .pricing_plan_desc_card_element p{
+        font-size: 16px;
+    }
+
+    .pricing_plan_desc_card_title{
+        font-size: 24px;
+    }
+    
+    .pricing_newsletter_section_top{
+        transform: translateX(0px);
+    }
+    
+    .pricing_newsletter_section_title{
+         font-size: 32px;
+    }
+    
+    .pricing_newsletter_section_subtitle{
+         font-size: 24px;
+    }
+    
+    .pricing_newsletter_section_bottom{
+        transform: translateX(0px);
+    }
+    
+    .pricing_newsletter_section_bottom_logo i{
+        font-size: 14px;
+    }
+
+    .pricing_newsletter_section_bottom_logo{
+        margin-left: 10px;
+        padding: 0px 5px;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .pricing_newsletter_section_bottom input{
+          height: 40px;
+          padding: 0px 10px;
+          font: 14px;
+          min-width: 80px;
+    }
+    
+    .pricing_newsletter_bttn{
+        height: 100%;
+        font-size: 26px;
+        height: 40px;
+        padding: 0px 10px; 
+        border-radius: 0px 14px 14px 0px;
+    }
+    
+}
+
+
+/* Screen size > 768px and <=1200px (tablets/small-laptops)*/
+@media (min-width: 769px) and (max-width: 1200px) { 
+    .home_description_title{
+        max-width: 70%;
+        font-size: 30px;
+    }
+    
+    .pricing_newsletter_section_top{
+        transform: translateX(-100px);
+    }
+    
+    .pricing_newsletter_section_title{
+         font-size: 40px;
+    }
+    
+    .pricing_newsletter_section_subtitle{
+         font-size: 32px;
+    }
+    
+    .pricing_newsletter_section_bottom{
+        transform: translateX(100px)
+    }
+    
+    .pricing_newsletter_section_bottom input{
+          font: 16px;
+          min-width: 300px;
+    }     
+    
+}

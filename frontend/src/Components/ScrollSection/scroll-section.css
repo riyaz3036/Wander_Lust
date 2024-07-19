@@ -1,0 +1,52 @@
+/* University logos scroll section */
+.home_uni_logos{
+    margin-bottom: 100px;
+    overflow: hidden;
+    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: 100% 100%;
+}
+.home_uni_logo_slider{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 60px;
+    animation: 20s slide infinite linear;
+}
+
+.home_uni_logos img{
+    height: 60px;
+    margin: 0px 10px;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Screen size <= 768px (Mobile Phones)*/
+@media (max-width: 768px) {
+    .home_uni_logo_slider{
+        padding: 0px 10px;
+    }
+
+    .home_uni_logos img{
+        height: 16px;
+    }
+}
+
+/* Screen size > 768px and <=1200px (tablets/small-laptops)*/
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .home_uni_logo_slider{
+        padding: 0px 40px;
+    }
+
+    .home_uni_logos img{
+        height: 30px;
+    }
+}
