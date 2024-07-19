@@ -89,9 +89,9 @@ const allBookingsByUser = async (req, res) => {
 const allBookings = async (req, res) => {
   try {
     const bookings = await Booking.find()
-      .populate('user_id', 'name email') 
-      .populate('signed_activities', 'title price') 
-      .populate('tour_id', 'title location price'); 
+      .populate('user_id') 
+      .populate('signed_activities') 
+      .populate('tour_id'); 
 
     res.status(200).json(bookings);
   } catch (error) {

@@ -17,6 +17,8 @@ const ManageBooking = () => {
   const [error, setError] = useState('');
   const [del, setDelete] = useState(0);
 
+  console.log(bookings);
+
   useEffect(() => {
     const fetchBookings = async () => {
       try {
