@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from 'react';
 import '../styles/toggle.css';
 import { BASE_URL } from '../utils/config.js';
 import { AuthContext } from "./../context/AuthContext";
-import useFetch from '../hooks/useFetch.js';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header from '../Components/Header/Header.js';
 import Footer from '../Components/Footer/Footer.js';
@@ -15,21 +14,23 @@ function ToggleMembership() {
   const [balance, setBalance] = useState('');
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}/users/${user._id}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+    if (user) { // Check if user is not null before making the API call
+      const fetchUser = async () => {
+        try {
+          const response = await fetch(`${BASE_URL}/users/${user._id}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          setUserData(data);
+        } catch (error) {
+          console.error('Error fetching user data:', error);
         }
-        const data = await response.json();
-        setUserData(data);
-      } catch (error) {
-        
-      }
-    };
+      };
 
-    fetchUser();
-  }, [user._id]);
+      fetchUser();
+    }
+  }, [user]);
 
   // Scroll to top when the pathname changes
   useEffect(() => {

@@ -18,40 +18,42 @@ const MyBookings = () => {
   const [del, setDelete] = useState(0);
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}/users/${user._id}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+    if (user) {
+      const fetchUser = async () => {
+        try {
+          const response = await fetch(`${BASE_URL}/users/${user._id}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          setUserData(data);
+        } catch (error) {
+          console.error('Error fetching user data:', error);
         }
-        const data = await response.json();
-        setUserData(data);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
+      };
 
-    const fetchBookings = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}/bookings/user/${user._id}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+      const fetchBookings = async () => {
+        try {
+          const response = await fetch(`${BASE_URL}/bookings/user/${user._id}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          setBookings(data);
+          if (data.length === 0) {
+            setError('No bookings available');
+          }
+        } catch (error) {
+          setError('Error loading bookings');
+        } finally {
+          setLoading(false);
         }
-        const data = await response.json();
-        setBookings(data);
-        if (data.length === 0) {
-          setError('No bookings available');
-        }
-      } catch (error) {
-        setError('Error loading bookings');
-      } finally {
-        setLoading(false);
-      }
-    };
+      };
 
-    fetchUser();
-    fetchBookings();
-  }, [user._id]);
+      fetchUser();
+      fetchBookings();
+    }
+  }, [user]);
 
   // Scroll to top on route change
   const { pathname } = useLocation();
@@ -69,8 +71,6 @@ const MyBookings = () => {
       return 'Invalid Date';
     }
   };
-
-
 
   return (
     <>

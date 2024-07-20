@@ -14,21 +14,23 @@ const Booking = ({ tour, addAct }) => {
     const [userData, setUserData] = useState({});
 
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const response = await fetch(`${BASE_URL}/users/${user._id}`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+        if (user) {
+            const fetchUser = async () => {
+                try {
+                    const response = await fetch(`${BASE_URL}/users/${user._id}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    setUserData(data);
+                } catch (error) {
+                    console.error('Error fetching user data:', error);
                 }
-                const data = await response.json();
-                setUserData(data);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-            }
-        };
-        
-        fetchUser();
-    }, [user._id]);
+            };
+            
+            fetchUser();
+        }
+    }, [user]);
 
     // Data to send to API to book the trip
     const [formData, setFormData] = useState({
@@ -57,7 +59,7 @@ const Booking = ({ tour, addAct }) => {
         return dis_;
     };
 
-    // Check if any activity with vacancy < guest size is selected and balance>=price
+    // Check if any activity with vacancy < guest size is selected and balance >= price
     const check = () => {
         let chk__ = 1;
         if (tour.vacancy < formData.guestSize) chk__ = 0;

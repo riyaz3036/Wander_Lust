@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/pricing.css';
 import Assurance from '../Components/Assurance/Assurance.js';
 import Header from '../Components/Header/Header.js';
-import Footer from '../Components/Footer/Footer.js'
-
+import Footer from '../Components/Footer/Footer.js';
+import { AuthContext } from '../context/AuthContext';
 
 const Pricing = () => {
     const navigate = useNavigate();
+    const { user } = useContext(AuthContext);
+
+    const handleNavigate = (plan) => {
+        if (user) {
+            navigate(`/payment/${plan}`);
+        } else {
+            alert('Please log in to choose a plan.');
+        }
+    };
+
     return (
         <div>
             <Header />
@@ -27,22 +37,22 @@ const Pricing = () => {
                 <div className="flex flex-wrap justify-center items-center pricing_plans_main">
                     
                     {/* General Plan */}
-                    <div onClick={()=>navigate('/payment/General')} className="p-7 pricing_plan_card" style={{backgroundColor: '#fff'}}>
+                    <div onClick={() => handleNavigate('General')} className="p-7 pricing_plan_card" style={{ backgroundColor: '#fff' }}>
                         <div className="pricing_plan_card_top" style={{ borderBottom: '1px solid #D5D5D5' }}>
-                            <p className="font-semibold text-3xl" style={{color: '#4D4D4D'}}>General</p>
-                            <p className="text-xs" style={{color: '#AEAEAE'}}>₹ <span className="text-lg font-medium" style={{color: '#4D4D4D'}}>0</span> /year</p>
+                            <p className="font-semibold text-3xl" style={{ color: '#4D4D4D' }}>General</p>
+                            <p className="text-xs" style={{ color: '#AEAEAE' }}>₹ <span className="text-lg font-medium" style={{ color: '#4D4D4D' }}>0</span> /year</p>
                         </div>
                         <div className="pricing_plan_card_bottom">
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#4D4D4D'}}></i>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#4D4D4D' }}></i>
                                 <p>Access to free travel guides</p>
                             </div>
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#4D4D4D'}}></i>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#4D4D4D' }}></i>
                                 <p>Join travel community events</p>
                             </div>
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#4D4D4D'}}></i>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#4D4D4D' }}></i>
                                 <p>Basic support</p>
                             </div>
                         </div>
@@ -50,22 +60,22 @@ const Pricing = () => {
                     </div>
 
                     {/* Gold Plan */}
-                    <div onClick={()=>navigate('/payment/Gold')} className="pricing_plan_card" style={{backgroundColor: '#1E1E1E'}}>
+                    <div onClick={() => handleNavigate('Gold')} className="pricing_plan_card" style={{ backgroundColor: '#1E1E1E' }}>
                         <div className="pricing_plan_card_top" style={{ borderBottom: '1px solid #3F3F3F' }}>
-                            <p className="font-semibold text-3xl" style={{color: '#fff'}}>Gold</p>
-                            <p className="text-xs" style={{color: '#AEAEAE'}}>₹ <span className="text-lg font-medium" style={{color: '#fff'}}>499</span> /year</p>
+                            <p className="font-semibold text-3xl" style={{ color: '#fff' }}>Gold</p>
+                            <p className="text-xs" style={{ color: '#AEAEAE' }}>₹ <span className="text-lg font-medium" style={{ color: '#fff' }}>499</span> /year</p>
                         </div>
                         <div className="pricing_plan_card_bottom">
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#fff'}}></i>
-                                <p>All features in <span style={{color: '#fff'}}>General</span></p>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#fff' }}></i>
+                                <p>All features in <span style={{ color: '#fff' }}>General</span></p>
                             </div>
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#fff'}}></i>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#fff' }}></i>
                                 <p>10% discount on all bookings</p>
                             </div>
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#fff'}}></i>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#fff' }}></i>
                                 <p>Priority support</p>
                             </div>
                         </div>
@@ -73,22 +83,22 @@ const Pricing = () => {
                     </div>
 
                     {/* Premium Plan */}
-                    <div onClick={()=>navigate('/payment/Premium')} className="pricing_plan_card" style={{backgroundColor: '#fff'}}>
+                    <div onClick={() => handleNavigate('Premium')} className="pricing_plan_card" style={{ backgroundColor: '#fff' }}>
                         <div className="pricing_plan_card_top" style={{ borderBottom: '1px solid #D5D5D5' }}>
-                            <p className="font-semibold text-3xl" style={{color: '#4D4D4D'}}>Premium</p>
-                            <p className="text-xs" style={{color: '#AEAEAE'}}>₹ <span className="text-lg font-medium" style={{color: '#4D4D4D'}}>999</span> /year</p>
+                            <p className="font-semibold text-3xl" style={{ color: '#4D4D4D' }}>Premium</p>
+                            <p className="text-xs" style={{ color: '#AEAEAE' }}>₹ <span className="text-lg font-medium" style={{ color: '#4D4D4D' }}>999</span> /year</p>
                         </div>
                         <div className="pricing_plan_card_bottom">
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#4D4D4D'}}></i>
-                                <p>All features in <span style={{color: '#4D4D4D'}}>Gold</span></p>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#4D4D4D' }}></i>
+                                <p>All features in <span style={{ color: '#4D4D4D' }}>Gold</span></p>
                             </div>
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#4D4D4D'}}></i>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#4D4D4D' }}></i>
                                 <p>50% discount on all bookings</p>
                             </div>
                             <div className="pricing_plan_card_bottom_element">
-                                <i className="ri-checkbox-circle-fill" style={{color: '#4D4D4D'}}></i>
+                                <i className="ri-checkbox-circle-fill" style={{ color: '#4D4D4D' }}></i>
                                 <p>Dedicated travel consultant</p>
                             </div>
                         </div>
@@ -96,8 +106,6 @@ const Pricing = () => {
                     </div>
                 </div>
             </div>
-
-        
 
             {/* Plan description section */}
             <div className="flex flex-wrap justify-center pricing_plan_desc">
@@ -150,11 +158,8 @@ const Pricing = () => {
                 </div>
             </div>
 
-
             {/* Assurance Section */}
             <Assurance /> 
-
-
 
             {/* Newsletter Section */}
             <div className="flex flex-col items-center pricing_newsletter_section">
@@ -164,10 +169,10 @@ const Pricing = () => {
                 </div>
                 <div className="flex items-center justify-center pricing_newsletter_section_bottom">
                     <div className="flex items-center bg-white pricing_newsletter_section_bottom_main">
-                        <div className="pricing_newsletter_section_bottom_logo"><i class="ri-mail-line"></i></div>
+                        <div className="pricing_newsletter_section_bottom_logo"><i className="ri-mail-line"></i></div>
                         <input type="text" placeholder="yourmail123@gmail.com" />
                     </div>
-                    <button className="pricing_newsletter_bttn"><i class="ri-arrow-right-line"></i></button>
+                    <button className="pricing_newsletter_bttn"><i className="ri-arrow-right-line"></i></button>
                 </div>
             </div>
             <Footer />
