@@ -1,0 +1,145 @@
+.profile_title_img{
+    width: 100%;
+    height: 400px;
+}
+
+.profile_title_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile_details{
+    padding: 0px 40px;
+}
+
+.profile_img {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.profile_img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Hide the button by default */
+.upload-btn {
+    position: absolute;
+    bottom: 10px; 
+    right: 60px; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.profile_img:hover .upload-btn {
+    opacity: 1; 
+}
+
+.upload-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.profile_phone_email{
+    color: var(--text-color);
+}
+
+.profile_phone_email i{
+    margin: 0;
+    font-size: 20px;
+}
+
+.profile_phone_email p{
+    font-size: 16px;
+}
+
+.profile_membership i,.profile_balance i{
+    margin: 0;
+    font-size: 26px;
+    color: var(--text-color);
+}
+
+.profile_membership p,.profile_balance p{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.profile_topup_left{
+    max-width: 500px;
+}
+
+.top-up-title{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.top-up-title span{
+    color: var(--primary-color);
+}
+
+.top-up-description{
+   margin: 0 0 40px 0;
+   font-size: 24px;
+   font-weight: 500;
+}
+
+
+.top_up_input label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.top_up_input input{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #EDF4FA;
+    padding: 5px;
+}
+
+.top_up_input input:focus{
+    outline: none;
+}
+
+.topup_bttn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.topup_img{
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.topup_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

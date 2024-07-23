@@ -33,11 +33,13 @@ const updateUser = async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
+    console.log(req.body);
+
     // Handle the profile picture update
     if (req.file) {
-      user.profile_picture = req.file.path;  // Update profile picture
+      user.image = req.file.path; 
     }
-    console.log(req.body);
+    
     // Update user information
     if (req.body.role) {
       user.role = req.body.role;
@@ -49,7 +51,7 @@ const updateUser = async (req, res) => {
       user.email = req.body.email;
     }
     if (req.body.password) {
-      user.password = req.body.password;  // You should hash the password in a real application
+      user.password = req.body.password;  
     }
     if (req.body.phone) {
       user.phone = req.body.phone;
