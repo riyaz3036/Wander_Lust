@@ -1,0 +1,25 @@
+/* Assurance Section Styles */
+.assurance_main{
+    background-color: #fff;
+}
+
+.assurance_partition{
+    height: 100px;
+}
+
+.assurance_section{
+    max-width: 250px;
+}
+
+
+
+/* adjusting assurance section */
+@media (max-width: 1150px){
+    .assurance_main{
+        flex-direction: column;
+    }
+    .assurance_partition{
+        height: 70px;
+    }
+}
+

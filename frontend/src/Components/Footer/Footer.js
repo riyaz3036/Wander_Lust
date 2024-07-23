@@ -18,7 +18,6 @@ const Footer = () => {
 
   const quick__links = [
     {path: '/home',display: 'Home'},
-    {path: '/my-bookings',display: 'My Bookings'},
     {path: '/pricing', display: 'Pricing'}
   ];
 

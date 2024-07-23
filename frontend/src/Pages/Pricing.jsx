@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext,useEffect } from 'react';
+import { useNavigate,useLocation } from 'react-router-dom';
 import '../styles/pricing.css';
 import Assurance from '../Components/Assurance/Assurance.js';
 import Header from '../Components/Header/Header.js';
@@ -8,6 +8,7 @@ import { AuthContext } from '../context/AuthContext';
 
 const Pricing = () => {
     const navigate = useNavigate();
+    const { pathname } = useLocation();
     const { user } = useContext(AuthContext);
 
     const handleNavigate = (plan) => {
@@ -17,6 +18,10 @@ const Pricing = () => {
             alert('Please log in to choose a plan.');
         }
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     return (
         <div>

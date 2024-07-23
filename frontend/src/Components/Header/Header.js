@@ -30,10 +30,6 @@ const Header = () => {
       display: 'Home'
     },
     {
-      path: '/my-bookings',
-      display: 'Bookings'
-    },
-    {
       path: '/pricing',
       display: 'Pricing'
     }

@@ -5,7 +5,6 @@ import Login from './../Pages/Login';
 import Register from './../Pages/Register';
 import TourDetails from './../Pages/TourDetails';
 import Thankyou from '../Pages/Thankyou';
-import MyBookings from '../Pages/MyBookings';
 import Pricing from './../Pages/Pricing';
 import AddTour from '../Pages/AddTour';
 import AddDestination from '../Pages/AddDestination';
@@ -26,7 +25,6 @@ const Routers = () => {
             <Route path='/register' element={<Register />} />
             <Route path='/tours/:id' element={<TourDetails />} />
             <Route path='/thank-you' element={<Thankyou />} />
-            <Route path='/my-bookings' element={<MyBookings />} />
             <Route path='/pricing' element={<Pricing />} />
             <Route path='/add-tour' element={<AddTour />} />
             <Route path='/add-destination' element={<AddDestination />} />

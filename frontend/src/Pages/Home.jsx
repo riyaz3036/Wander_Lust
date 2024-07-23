@@ -242,35 +242,49 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Features video section */}
-            <div className="py-12 features_video">
-                <div className="flex justify-center mb-3 features_video_title">
-                    <p className="font-semibold text-4xl"><span>World-class</span> Travel <span>Experience</span></p>
-                </div>
-                <div className="mb-3 flex justify-center features_video_subtitle">
-                    <p className="text-normal text-xl text-center">Join us and embark on a journey of a lifetime. Our commitment to excellence ensures that your travel experience is nothing short of extraordinary.</p>
-                </div>
-                <div className="flex justify-center mb-3 gap-14 features_video_main">
-                    <div className="relative features_section">
-                        <div className="features_img"><video src={features_vid} ref={featuresVidRef} /></div>
-                        <div className="flex justify-between p-5 absolute bottom-0 features_content">
-                            <div className="features_details">
-                                <p className="text-base font-medium text-white features_name">Amazing Features</p>
-                            </div>
-                            <div className="features_play_button" onClick={() => handlePlayPause(featuresVidRef.current)}>
-                                {isPlaying && currentVideo === featuresVidRef.current ? (
-                                    <i className="ri-pause-line"></i>
-                                ) : (
-                                    <div className=""><i className="ri-play-line"></i></div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             {/* Assurance section */}
             <Assurance />
+
+            {/* Features Video Section */}
+            <div className="home_features">
+                <div className="flex justify-center home_features_video">
+                    <div className="flex relative justify-center items-center home_features_video_main" onClick={() => handlePlayPause(featuresVidRef.current)}>
+
+                        <video src={features_vid} ref={featuresVidRef}/>
+
+                        {isPlaying && currentVideo === featuresVidRef.current ? (
+                                <></>
+                        ) : (
+                                <>
+                                    <div className="flex justify-center items-center cursor-pointer home_features_play_button pr-1">
+                                        <i class="ri-play-line"></i>
+                                    </div>
+                                    <p className="text-white absolute text-center font-medium">See how we helped Groover to grow 11x faster</p>
+                                </>
+                        )}
+
+                    </div>
+                </div>
+
+                <div className="flex flex-wrap px-5 justify-center gap-10 py-12 home_customer_reviews">
+                    <div className="flex flex-col items-center home_customer_review_section">
+                        <p className="text-center font-lg mb-4 home_customer_review">"WanderLust made our family vacation amazing! The detailed itineraries and personalized recommendations made our trip truly memorable."</p>
+                        <p className="text-center font-base font-medium home_reviewer">Aarav Patel</p>
+                    </div>
+
+                    <div className="flex flex-col items-center home_customer_review_section">
+                        <p className="text-center font-lg mb-4 home_customer_review">"Thanks to WanderLust, our honeymoon was perfect. The suggestions for off-the-beaten-path locations and activities were just what we wanted!"</p>
+                        <p className="text-center font-base font-medium home_reviewer">Ishita Sharma</p>
+                    </div>
+
+                    <div className="flex flex-col items-center home_customer_review_section">
+                        <p className="text-center font-lg mb-4 home_customer_review">"WanderLust turned our weekend getaway into an cheerful and unforgettable experience. The local insights and tips helped us explore like a local!"</p>
+                        <p className="text-center font-base font-medium home_reviewer">Rohan Gupta</p>
+                    </div>
+                </div>
+
+
+            </div>
 
             <Footer />
         </>

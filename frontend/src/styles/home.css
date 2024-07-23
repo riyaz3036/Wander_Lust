@@ -58,7 +58,7 @@ object-fit: cover;
 
 /* Customer video reviews section */
 .home_video_reviews{
-    background-color: #fff;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .home_video_reviews_title p{
@@ -132,20 +132,6 @@ object-fit: cover;
     color: #fff;
 }
 
-/* Assurance Section Styles */
-.assurance_main{
-    background-color: #fff;
-}
-
-.assurance_partition{
-    height: 100px;
-}
-
-.assurance_section{
-    max-width: 250px;
-}
-
-
 /* Features Video Section  */
 .home_features{
     background-color: #fff;
@@ -155,7 +141,6 @@ object-fit: cover;
     width: 70%;
     height: 500px;
 }
-
 
 .home_features_video_main video{
     position: absolute;
@@ -301,18 +286,4 @@ object-fit: cover;
         font-size: 14px;
     }
 }
-
-
-
-
-/* adjusting assurance section */
-@media (max-width: 1150px){
-    .assurance_main{
-        flex-direction: column;
-    }
-    .assurance_partition{
-        height: 70px;
-    }
-}
-
 

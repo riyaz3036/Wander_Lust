@@ -4,8 +4,6 @@ import { Container, Row, Col } from 'reactstrap';
 import { BASE_URL } from '../utils/config.js';
 import { AuthContext } from './../context/AuthContext';
 import { useLocation } from 'react-router-dom';
-import Header from '../Components/Header/Header.js';
-import Footer from '../Components/Footer/Footer.js';
 import { format } from 'date-fns';
 import UniSidebar from "../Components/Dashboard/DashboardSidebar/DashboardSidebar.jsx";
 import UniDashboardHeader from "../Components/Dashboard/DashboardHeader/DashboardHeader.jsx";
