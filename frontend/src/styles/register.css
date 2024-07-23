@@ -1,54 +1,187 @@
-.register__form{
-    padding: 50px 100px;
-    background: var(--secondary-color);
-    border-radius: 8px;
+.register_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
+/* Left Side Styling */
+.register_left {
+    padding: 20px;
+}
 
-.register__container{
+.register_photos{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-
+    gap: 10px;
 }
 
-.register__form h2{
-    color: aliceblue;
-    text-align: center;
-    margin-bottom: 1rem;
+.register_photos_column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.register__form input,.register__form select{
-    width:100%;
-    padding: 0.5rem 1rem;
+.register_photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 5px;
-    border: none;
-    font-size: 1rem;
-    color: var(--heading-color);
 }
 
-.register__form input:focus,.register__form select:focus{
+/* Right Side Styling */
+.register_right {
+    padding: 20px;
+}
+
+.register_form_title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.register_form_container{
+    display: flex;
+    gap: 16px;
+}
+
+.register_form_element {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.register_form_element_2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register_form_element label, .register_form_element_2 label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.register_form_element input {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #EDF4FA;
+    padding: 5px;
+}
+
+.register_form_element_2 select, .register_form_element_2 input{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #EDF4FA;
+    padding: 5px;
+}
+
+.register_form_element input:focus,.register_form_element_2 select:focus,.register_form_element_2 input:focus{
     outline: none;
 }
 
-.auth__btn{
-    width: 100%;
-    background: var(--heading-color) !important ;
-    color: #fff !important;
-}
-
-.register__form p{
-    font-size: 0.9rem;
-    color: #fff;
-    margin-top: 1.5rem;
-    text-align: center;
-
-}
-
-.register__form p a{
-    color: var(--heading-color);
-    text-decoration: none;
-    margin-left: 5px;
+.register_priorities_title {
+    font-size: 16px;
     font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.register_priorities_element label {
+    font-size: 16px;
+}
+
+.register_priorities_element input{
+    height: 26px;
+    width: 26px;
+    -webkit-appearance: none; 
+    appearance: none;
+    background-color: #EDF4FA;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.register_privacy_main input {
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none; 
+    appearance: none;
+    background-color: #EDF4FA;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.register_priorities_element input:checked,.register_privacy_main input:checked {
+    background-color: #000000; 
+    border-color: #000000;
+}
+
+.register_priorities_element input:checked::after {
+    content: '✔';
+    color: white;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+}
+
+.register_privacy_main input:checked::after {
+    content: '✔';
+    color: white;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+}
+
+.register_form_bttn button{
+    background-color: #f16d5b;
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) { 
+    .register_main {
+        grid-template-columns: 1fr; 
+    }
+    .register_left {
+        padding: 20px;
+    }  
+
+    .register_right {
+        padding: 20px;
+    }
+    
+    .register_form_title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    
+    .register_form_element {
+        width: 100%;
+    }
+
+    .register_form_container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .register_form_element label, .register_form_element_2 label {
+        font-size: 14px;
+    }
+
+}
+
+/* Screen size > 768px and <= 1200px (tablets/small-laptops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .register_main {
+        grid-template-columns: 1fr; 
+    }
 }

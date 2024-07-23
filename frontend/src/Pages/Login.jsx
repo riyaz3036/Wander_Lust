@@ -6,6 +6,15 @@ import { BASE_URL } from '../utils/config.js';
 import { AuthContext } from './../context/AuthContext';
 import Header from '../Components/Header/Header.js';
 import Footer from '../Components/Footer/Footer.js';
+import reg_img1 from '../assets/images/reg_img1.jpg'
+import reg_img2 from '../assets/images/reg_img2.jpg'
+import reg_img3 from '../assets/images/reg_img3.jpg'
+import reg_img4 from '../assets/images/reg_img4.jpg'
+import reg_img5 from '../assets/images/reg_img5.jpg'
+import reg_img6 from '../assets/images/reg_img6.jpg'
+import reg_img7 from '../assets/images/reg_img7.jpg'
+import reg_img8 from '../assets/images/reg_img8.jpg'
+import reg_img9 from '../assets/images/reg_img9.jpg'
 
 const Login = () => {
   const { dispatch } = useContext(AuthContext);
@@ -64,50 +73,73 @@ const Login = () => {
   };
 
   return (
-    <section>
-      <Header />
-      <Container>
-        <Row>
-          <Col lg="8" className="m-auto">
-            <div className="login__container">
-              <div className="login__form">
-                <h2 className="text-center">Login</h2>
-                <Form onSubmit={handleSubmit}>
-                  <FormGroup>
-                    <input
-                      type="text"
-                      placeholder="Email"
-                      required
-                      id="email"
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
-                  <FormGroup>
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      required
-                      id="password"
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
-                  <Button
-                    className="btn secondary__btn auth__btn"
-                    type="submit"
-                  >
-                    Login
-                  </Button>
-                </Form>
-                <p>
-                  Don't have an account? <Link to="/register">Register</Link>
-                </p>
-              </div>
+    <div>
+    <Header />
+    <div className="login_main">
+        {/* Left Section */}
+        <div className="flex items-center justify-center items-start login_left">
+            <div className="login_photos">
+                <div className="login_photos_column">
+                    <div className="login_photo">
+                        <img src={reg_img1} alt="gallery-image"/>
+                    </div>
+                    <div className="login_photo">
+                        <img src={reg_img2} alt="gallery-image"/>
+                    </div>
+                    <div className="login_photo">
+                        <img src={reg_img3} alt="gallery-image"/>
+                    </div>
+                </div>
+                <div className="login_photos_column">
+                    <div className="login_photo">
+                        <img src={reg_img4} alt="gallery-image"/>
+                    </div>
+                    <div className="login_photo">
+                        <img src={reg_img5} alt="gallery-image"/>
+                    </div>
+                    <div className="login_photo">
+                        <img src={reg_img6} alt="gallery-image"/>
+                    </div>
+                    <div className="login_photo">
+                        <img src={reg_img9} alt="gallery-image"/>
+                    </div>
+                </div>
+                <div className="login_photos_column">
+                    <div className="login_photo">
+                        <img src={reg_img7} alt="gallery-image"/>
+                    </div>
+                    <div className="login_photo">
+                        <img src={reg_img8} alt="gallery-image"/>
+                    </div>
+                </div>
             </div>
-          </Col>
-        </Row>
-      </Container>
-      <Footer />
-    </section>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex flex-col items-center login_right">
+            <p className="login_form_title">Login</p>
+
+            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 login_form w-full px-5">
+                <div className="login_form_element">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" required id="email" name="email" value={credentials.email} onChange={handleChange} />
+                </div>
+
+                <div className="login_form_element">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" required id="password" name="password" value={credentials.password} onChange={handleChange} />
+                </div>
+
+                <div className="flex justify-center mt-2 login_form_bttn">
+                    <button type="submit">Login</button>
+                </div>
+
+                <p className='text-center text-semibold'>Donot have an acoount? <a href="/register" className="cursor-pointer">Register</a></p>
+            </form>
+        </div>
+    </div>
+    <Footer />
+</div>
   );
 };
 
