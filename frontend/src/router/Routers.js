@@ -12,7 +12,7 @@ import AddActivity from '../Pages/AddActivity';
 import ManageBooking from '../Pages/ManageBooking';
 import Payment from '../Pages/Payment';
 import BalancePay from '../Pages/BalancePay';
-import Profile from '../Pages/Profile'
+import Profile from '../Pages/Profile';
 
 
 const Routers = () => {

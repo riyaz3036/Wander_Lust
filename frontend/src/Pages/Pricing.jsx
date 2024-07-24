@@ -27,14 +27,14 @@ const Pricing = () => {
         <div>
             <Header />
             {/* Heading and subheading section */}
-            <div className="pb-24 flex flex-col gap-2 items-center home_description">
-                <h2 className="text-center font-semibold home_description_title">
+            <div className="pb-24 flex items-center justify-center gap-2 items-center pricing_description">
+                <h2 className="text-center font-semibold text-white pricing_description_title">
                     Discover the best travel experiences with our plans
                 </h2>
             </div>
 
             {/* Plans Section */}
-            <div className="bg-black flex flex-col items-center pricing_plans_section">
+            <div className="flex flex-col items-center pricing_plans_section">
                 <p className="text-center font-semibold pricing_plans_title">Choose Your <span>Travel Plan</span></p>
                 <p className="text-center pricing_plans_subtitle">
                     Our plans offer you the best options for an unforgettable travel experience.

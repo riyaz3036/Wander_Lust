@@ -1,6 +1,14 @@
-.home_description_title{
+.pricing_description{
+    background-image: url('../assets/images/pricing_back.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 350px;
+}
+
+.pricing_description_title{
     margin-top: 50px;
-    max-width: 60%;
+    max-width: 50%;
     font-size: 40px;
 }
 
@@ -8,6 +16,7 @@
 /* Pricing section styles */
 .pricing_plans_section{
     padding: 50px 20px;
+    background-color: rgba(0,0,0,1);
 }
 
 .pricing_plans_title,.pricing_plans_subtitle{
@@ -187,7 +196,7 @@
 
 /* Screen size <= 768px (Mobile Phones)*/
 @media (max-width: 768px) {
-    .home_description_title{
+    .pricing_description_title{
         max-width: 90%;
         font-size: 28px;
     }
@@ -199,12 +208,12 @@
     
     .pricing_plans_subtitle{
         max-width: 90%;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .pricing_plan_card{
-        padding: 20px;
-        width: 280px;
+        padding: 16px;
+        width: 260px;
      }
 
     .pricing_plan_desc_card_element i{

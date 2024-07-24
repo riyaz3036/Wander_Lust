@@ -111,7 +111,7 @@ const Home = () => {
 
             {/* Hero section starts here */}
             <section>
-                <Container>
+                <Container className="home_hero_section">
                     <Row>
                         <Col lg='6'>
                             <div className="hero__content">
@@ -259,7 +259,7 @@ const Home = () => {
                                     <div className="flex justify-center items-center cursor-pointer home_features_play_button pr-1">
                                         <i class="ri-play-line"></i>
                                     </div>
-                                    <p className="text-white absolute text-center font-medium">See how we helped Groover to grow 11x faster</p>
+                                    <p className="text-white absolute text-center font-medium"> Discover how our travel platform can make your adventures unforgettable!</p>
                                 </>
                         )}
 

@@ -1,6 +1,6 @@
 .profile_title_img{
     width: 100%;
-    height: 400px;
+    height: 300px;
 }
 
 .profile_title_img img{
@@ -14,6 +14,7 @@
 }
 
 .profile_img {
+    background-color: #fff;
     position: relative;
     height: 200px;
     width: 200px;
@@ -29,30 +30,6 @@
     width: 100%;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.upload-btn {
-    position: absolute;
-    bottom: 10px; 
-    right: 60px; 
-    background-color: rgba(0, 0, 0, 0.4); 
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
-}
-
-.profile_img:hover .upload-btn {
-    opacity: 1; 
-}
-
-.upload-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .profile_phone_email{
@@ -83,7 +60,7 @@
 
 /* Bookings section styles */
 .profile_bookings{
-    background-color: rgba(0,0,0,0.1);
+    padding: 20px;
 }
 
 .profile_bookings_title{
@@ -94,7 +71,8 @@
 
 .profile_bookins_main{
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 0 18px 0 0;
+    box-shadow: rgba(0,0,0,0.3) 0px 2px 5px 1px;
 }
 
 .profile_booking_element{
@@ -259,5 +237,89 @@
 .profile_pricing_bttn p{
     margin:0;
     font-size: 20px;
-    /* background-color: aqua; */
+}
+
+
+
+
+/* Responsive design for mobiles (small screens) */
+@media (max-width: 768px){
+
+    .profile_details{
+        padding: 0px 10px;
+    }
+    
+    .profile_img {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+    }
+    
+    .profile_img img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .profile_phone_email i{
+        font-size: 16px;
+    }
+    
+    .profile_phone_email p{
+        font-size: 14px;
+    }
+    
+    .profile_membership i,.profile_balance i{
+        font-size: 18px;
+    }
+    
+    .profile_membership p,.profile_balance p{
+        font-size: 18px;
+    }
+
+    .profile_bookings{
+        padding: 16px;
+    }
+
+    .profile_bookings_title{
+        font-size: 20px;
+    }
+    
+    .profile_booking_element{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        padding-bottom: 40px;
+    }
+    
+    .profile_booking_element_img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .profile_pricing_subtitle{
+        font-size: 20px;  
+        max-width: 100%;
+    }
+    
+    .profile_pricing_bttn i{
+        font-size: 18px;
+    }
+    
+    .profile_pricing_bttn p{
+        font-size: 18px;
+    }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1200px){
+    
+    .profile_booking_element_img{
+        width: 400px;
+    }
+
 }

@@ -141,16 +141,9 @@ const Profile = () => {
                 </div>
                 
                 {/* Profile details */}
-                <div className="flex gap-2 profile_details">
+                <div className="flex gap-1 profile_details">
                     <div className="profile_img">
                         <img src={userData.image?`${BASE_URL}/${userData.image.replace(/\\/g, '/')}`:user_alt} alt="Profile" />
-                        <input 
-                            type="file" 
-                            id="upload" 
-                            style={{ display: 'none' }} 
-                            onChange={handleImageUpload} 
-                        />
-                        <label htmlFor="upload" className="upload-btn">Upload</label>
                     </div>
 
                    
@@ -158,7 +151,7 @@ const Profile = () => {
                         { userDataLoading && (<p className="p-5 add_tour_error">Loading...</p>)}    
                         {
                             !userDataError && !userDataLoading && (
-                                <div className="profile_details_main p-3 flex flex-col gap-2">
+                                <div className="profile_details_main p-2 flex flex-col gap-2">
                                     <p className="m-0 font-bold text-2xl">{userData.username}</p>
                                     <div className="flex flex-wrap gap-3 profile_phone_email">
                                         <div className="flex gap-1 items-center">
@@ -184,7 +177,7 @@ const Profile = () => {
                 </div>
 
                 {/* Bookings Section */}
-                <div className="p-5 flex flex-col gap-3 profile_bookings">
+                <div className="flex flex-col gap-3 profile_bookings">
                     {bookings.length > 0 ? (
                     <>
                         <h5 className="profile_bookings_title">My Bookings:</h5>
