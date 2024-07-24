@@ -1,0 +1,85 @@
+.admin_header{
+    height: 70px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.admin_header_logo{
+    height: 70px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.admin_header_logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.admin_header_right{
+    padding: 0px 20px;
+}
+
+.admin_header_menu i{
+   margin: 0;
+   font-size: 30px;
+   font-weight: 400;
+}
+
+.admin_header_user{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.admin_header_user img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.admin_header_dropdown{
+    position: absolute;
+    top: 70px;
+    right: 5px;
+    background-color: #fff;
+    width: 180px;
+    border-radius: 5px;
+    padding: 5px 0px;
+}
+
+.admin_header_dropdown_option{
+    display: flex;
+    gap: 10px;
+    padding: 0px 16px;
+    height: 50px;
+    align-items: center;
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.admin_header_dropdown_option:hover{
+    color: gray;
+    background-color: #fdebe1;
+}
+
+.admin_header_dropdown_option i{
+    margin: 0;
+    font-size: 18px;
+}
+
+.admin_header_dropdown_option p{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}

@@ -1,18 +1,16 @@
-.add_tour_container{
-    height: 100%;
-}
-
-.add_tour_main{
+.admin_dashboard_main{
     margin-top: 70px;
-    padding: 30px;
+    padding: 20px;
+    min-height: calc(100vh - 70px);
+    background-color: #f3f3f3;
 }
-
 
 /* Buttons Section Styles */
 .add_tour_bttns button{
     border: 1px solid #C4C4C4;
     border-radius: 10px;
     padding: 5px 14px;
+    background-color: #fff;
 }
 
 .add_tour_all_bttn_active,.add_tour_add_bttn_active{
@@ -22,6 +20,7 @@
 
 /* Add Events Section STEP 1*/
 .add_tour_add{
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: rgba(0,0,0,0.3) 0px 2px 5px 1px;
@@ -106,10 +105,16 @@
 
 
 /* Tour Card styles */
+.add_tour_cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
 .add_tour_card{
-    max-width: 300px;
-    box-shadow: rgba(0,0,0,0.1) 0px 0px 10px 5px;
+    background-color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
 }
 
 .add_tour_card:hover {
@@ -118,8 +123,8 @@
 }
 
 .add_tour_card_img{
-    width: 300px;
-    height: 150px;
+    width: 100%;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -127,6 +132,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px 5px 0 0;
 }
 
 .add_tour_desc{
@@ -140,20 +146,27 @@
     .add_tour_main{
         padding: 20px;
     }
-    .add_tour_card{
-        max-width: 250px;
-        box-shadow: rgba(0,0,0,0.1) 0px 0px 10px 5px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .add_tour_card_img{
-        width: 250px;
-        height: 100px;
-        overflow: hidden;
-    }
     .add_tour_add_section input{
         width: 200px;
     }
     .add_tour_add_section label{
         width: 80px;
+    }
+}
+
+/* Special for cards */
+@media (min-width: 961px) and (max-width: 1260px){
+    .add_tour_cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 960px){
+    .add_tour_cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }

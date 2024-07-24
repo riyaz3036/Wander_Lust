@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/add-tour.css';
-import UniSidebar from "../Components/Dashboard/DashboardSidebar/DashboardSidebar.jsx";
-import UniDashboardHeader from "../Components/Dashboard/DashboardHeader/DashboardHeader.jsx";
+import AdminHeader from '../Components/Dashboard/AdminHeader/AdminHeader';
+import AdminSidebar from '../Components/Dashboard/AdminSidebar/AdminSidebar';
 import EditActivity from '../Components/Dashboard/ManageActivity/EditActivity.jsx';
 import DeleteActivity from '../Components/Dashboard/ManageActivity/DeleteActivity.jsx';
 import { BASE_URL } from '../utils/config.js';
@@ -16,6 +16,7 @@ const AddActivity = () => {
     const [activities, setActivities] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [toggleSidebar,setToggleSidebar] = useState(0);
 
     const [activityData, setActivityData] = useState({
        title: '',
@@ -91,11 +92,11 @@ const AddActivity = () => {
 
     
     return (
-        <div className="add_tour_container">
-            <UniSidebar />
-            <UniDashboardHeader />
+        <div>
+            <AdminHeader setToggleSidebar={setToggleSidebar} toggleSidebar={toggleSidebar}/>
+            <AdminSidebar toggleSidebar={toggleSidebar}/>
 
-            <div className="add_tour_main" style={{marginLeft:'50px'}}>
+            <div className={`admin_dashboard_main ml-[60px] ${toggleSidebar?'md:ml-[250px]':''}`}>
 
                 {/* Buttons Section */}
                 <div className="flex gap-3 py-3 add_tour_bttns">
@@ -171,7 +172,7 @@ const AddActivity = () => {
                                 <p className="text-2xl font-semibold">All Activities</p>
                             </div>
 
-                            <div className="flex flex-wrap gap-5">
+                            <div className="add_tour_cards">
                             {loading && <p className="text-center p-5 add_tour_error">Loading...</p>}
                             {error && <p className="text-center p-5 add_tour_error">{error}</p>}
                             {!loading && !error && activities.length === 0 && (
@@ -180,15 +181,15 @@ const AddActivity = () => {
                             {!loading && !error &&
                                 activities.map((activity) => (
                                 <div key={activity._id} className="add_tour_card">
-                                    <div className="flex py-1 px-2">
+                                    <div className="flex flex-wrap py-1 px-2">
                                         <p className="m-0 text-lg"><span className="font-semibold">#id:</span> {activity._id}</p>
                                     </div>
-                                    <div className="flex py-1 px-2">
+                                    <div className="flex flex-wrap py-1 px-2">
                                         <p className="m-0 text-lg"><span className="font-semibold">Destination #id:</span> {activity.dest_id}</p>
                                     </div>
-                                    <div className="flex justify-between items-center py-1 px-2">
-                                        <p className="m-0 font-semibold truncate w-1/2">Availability: {activity.vacancy}/{activity.capacity}</p>
-                                        <p className="m-0 font-semibold truncate w-1/2 text-right">₹{activity.price}</p>
+                                    <div className="flex flex-wrap justify-between items-center py-1 px-2">
+                                        <p className="m-0 font-semibold w-1/2">Availability: {activity.vacancy}/{activity.capacity}</p>
+                                        <p className="m-0 font-semibold w-1/2 text-right">₹{activity.price}</p>
                                     </div>                                   
                                     <div className="flex justify-between items-center py-1 px-2">
                                         <p className="m-0 font-bold text-lg truncate w-1/2">{activity.title}</p>

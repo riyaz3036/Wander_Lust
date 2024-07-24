@@ -75,17 +75,14 @@
     font-size: 28px;
 }
 
-.profile_bookins_main{
-    background-color: #fff;
-    border-radius: 0 18px 0 0;
-    box-shadow: rgba(0,0,0,0.3) 0px 2px 5px 1px;
-}
-
 .profile_booking_element{
+    background-color: #fff;
     height: 300px;
     display: flex;
     gap: 10px;
     position: relative;
+    box-shadow: rgba(0,0,0,0.3) 0px 2px 5px 1px;
+    border-radius: 0 18px 0 0;
 }
 
 .profile_booking_element_img{

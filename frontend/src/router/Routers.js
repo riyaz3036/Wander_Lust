@@ -13,7 +13,7 @@ import ManageBooking from '../Pages/ManageBooking';
 import Payment from '../Pages/Payment';
 import BalancePay from '../Pages/BalancePay';
 import Profile from '../Pages/Profile';
-
+import DasboardAnalytics from '../Pages/DashboardAnalytics'
 
 const Routers = () => {
     
@@ -33,6 +33,7 @@ const Routers = () => {
             <Route path='/payment/:id' element={<Payment />} />
             <Route path='/balance-pay/:id' element={<BalancePay />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/analytics' element={<DasboardAnalytics />} />
         </Routes>
     );
 };

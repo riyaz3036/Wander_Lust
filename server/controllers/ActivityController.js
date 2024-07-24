@@ -4,7 +4,7 @@ const Tour = require('../models/Tour');
 
 // Create a new activity
 const createActivity = async (req, res) => {
-  console.log(req.body);
+  
   try {
     const { title, dest_id, price, description, capacity, vacancy } = req.body;
     const newActivity = new Activity({

@@ -9,6 +9,7 @@ const authRoute = require('./routes/auth.js');
 const destinationRoute = require('./routes/destinations.js');
 const activityRoute = require('./routes/activities.js');
 const bookingRoute = require('./routes/bookings.js');
+const analyticsRoute = require('./routes/analytics.js');
 
 
 dotenv.config();
@@ -54,6 +55,7 @@ app.use('/auth', authRoute);
 app.use('/destinations', destinationRoute);
 app.use('/activities', activityRoute);
 app.use('/bookings', bookingRoute);
+app.use('/analytics', analyticsRoute);
 
 
 app.listen(port,()=>{

@@ -188,7 +188,7 @@ const Profile = () => {
                     <>
                         <h5 className="profile_bookings_title">My Bookings:</h5>
                         <div className="flex flex-col gap-3 profile_bookins_main">
-                        {bookingError && (<p className="p-5 add_tour_error">{userDataError}</p>)}
+                        {bookingError && (<p className="p-5 add_tour_error">{bookingError}</p>)}
                         {bookingLoading && (<p className="p-5 add_tour_error">Loading...</p>)}
                         {!bookingError && !bookingLoading && bookings.map((booking, index) => (
                             <div key={index} className="profile_booking_element">

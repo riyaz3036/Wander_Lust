@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/add-tour.css';
-import UniSidebar from "../Components/Dashboard/DashboardSidebar/DashboardSidebar.jsx";
-import UniDashboardHeader from "../Components/Dashboard/DashboardHeader/DashboardHeader.jsx";
+import AdminHeader from '../Components/Dashboard/AdminHeader/AdminHeader';
+import AdminSidebar from '../Components/Dashboard/AdminSidebar/AdminSidebar';
 import EditDestination from '../Components/Dashboard/ManageDestination/EditDestination.jsx';
 import DeleteDestination from '../Components/Dashboard/ManageDestination/DeleteDestination.jsx';
 import { BASE_URL } from '../utils/config.js';
@@ -16,6 +16,7 @@ const AddDestination = () => {
     const [destinations, setDestinations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [toggleSidebar,setToggleSidebar] = useState(0);
 
     const [destinationData, setDestinationData] = useState({
        title: '',
@@ -111,11 +112,11 @@ const AddDestination = () => {
 
     
     return (
-        <div className="add_tour_container">
-            <UniSidebar />
-            <UniDashboardHeader />
+        <div>
+            <AdminHeader setToggleSidebar={setToggleSidebar} toggleSidebar={toggleSidebar}/>
+            <AdminSidebar toggleSidebar={toggleSidebar}/>
 
-            <div className="add_tour_main" style={{marginLeft:'50px'}}>
+            <div className={`admin_dashboard_main ml-[60px] ${toggleSidebar?'md:ml-[250px]':''}`}>
 
                 {/* Buttons Section */}
                 <div className="flex gap-3 py-3 add_tour_bttns">
@@ -183,7 +184,7 @@ const AddDestination = () => {
                                 <p className="text-2xl font-semibold">All Destinations</p>
                             </div>
 
-                            <div className="flex flex-wrap gap-5">
+                            <div className="add_tour_cards">
                             {loading && <p className="text-center p-5 add_tour_error">Loading...</p>}
                             {error && <p className="text-center p-5 add_tour_error">{error}</p>}
                             {!loading && !error && destinations.length === 0 && (
@@ -195,14 +196,14 @@ const AddDestination = () => {
                                     <div className="add_tour_card_img">
                                         <img src={`${BASE_URL}/${destination.image.replace(/\\/g, '/')}`} alt="destination poster"/>
                                     </div>
-                                    <div className="flex py-1 px-2">
+                                    <div className="flex flex-wrap py-1 px-2">
                                         <p className="m-0 text-lg"><span className="font-semibold">#id:</span> {destination._id}</p>
                                     </div>
-                                    <div className="flex py-1 px-2">
+                                    <div className="flex flex-wrap py-1 px-2">
                                         <p className="m-0 text-lg"><span className="font-semibold">Tour #id:</span> {destination.tour_id}</p>
                                     </div>
-                                    <div className="flex justify-between items-center py-1 px-2">
-                                        <p className="m-0 font-bold text-lg truncate w-1/2">{destination.title}</p>
+                                    <div className="flex flex-wrap justify-between items-center py-1 px-2">
+                                        <p className="m-0 font-bold text-lg w-1/2">{destination.title}</p>
                                     </div>                                   
                                     <div className="py-1 px-2 add_tour_desc">
                                         <p className="m-0"><span className="font-semibold">Description: </span>{destination.description}</p>

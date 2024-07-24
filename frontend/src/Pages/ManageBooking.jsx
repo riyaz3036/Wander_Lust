@@ -5,15 +5,16 @@ import { BASE_URL } from '../utils/config.js';
 import { AuthContext } from './../context/AuthContext';
 import { useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
-import UniSidebar from "../Components/Dashboard/DashboardSidebar/DashboardSidebar.jsx";
-import UniDashboardHeader from "../Components/Dashboard/DashboardHeader/DashboardHeader.jsx";
+import AdminHeader from '../Components/Dashboard/AdminHeader/AdminHeader';
+import AdminSidebar from '../Components/Dashboard/AdminSidebar/AdminSidebar';
 import DeleteBooking from '../Components/Dashboard/ManageBooking/DeleteBooking.jsx';
 
 const ManageBooking = () => {
   const [bookings, setBookings] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [bookingLoading, setBookingLoading] = useState(true);
+  const [bookingError, setBookingError] = useState('');
   const [del, setDelete] = useState(0);
+  const [toggleSidebar,setToggleSidebar] = useState(0);
 
 
   useEffect(() => {
@@ -25,13 +26,10 @@ const ManageBooking = () => {
         }
         const data = await response.json();
         setBookings(data);
-        if (data.length === 0) {
-          setError('No bookings available');
-        }
       } catch (error) {
-        setError('Error loading bookings');
+        setBookingError('Error loading bookings');
       } finally {
-        setLoading(false);
+        setBookingLoading(false);
       }
     };
 
@@ -58,47 +56,51 @@ const ManageBooking = () => {
  
 
   return (
-    <div className="add_tour_container">
-        <UniSidebar />
-        <UniDashboardHeader />
+    <div>
+        <AdminHeader setToggleSidebar={setToggleSidebar} toggleSidebar={toggleSidebar}/>
+        <AdminSidebar toggleSidebar={toggleSidebar}/>
 
-        <div className="add_tour_main" style={{marginLeft:'50px'}}>
+        <div className={`admin_dashboard_main ml-[60px] ${toggleSidebar?'md:ml-[250px]':''}`}>
             <section>
-            {bookings.length > 0 ? (
-                <>
-                <h5 className="book__title">All Bookings:</h5>
-                <div className="my__orders-content">
-                    {bookings.map((booking, index) => (
-                    <div key={index} className="booking-item">
-                        <div className="booking__img">
-                        <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} alt="tour-image" />
-                        </div>
-                        <div className="booking__data">
-                        <p><span>Booked Tour:</span>{booking.tour_id.title}</p>
-                        <p><span>Guest Size:</span> {booking.guestSize}</p>
-                        <p><span>Tour Date:</span> {formatDate(booking.tour_id.start_date)}</p>
-                        <p><span>Booking Name:</span> {booking.bookFor}</p>
-                        <p><span>Price:</span>₹{booking.price}</p>
-                        <p><span>Activities:</span></p>
-                        {booking.signed_activities.length === 0 ? (
-                            <p>(No Additional signed Activities)</p>
-                        ) : (
-                            booking.signed_activities.map((activity, index) => (
-                            <div key={index} className="activity-item">
-                                <p>{activity.title}</p>
+            {/* Bookings Section */}
+            <div className="flex flex-col gap-3 profile_bookings">
+                    {bookings.length > 0 ? (
+                    <>
+                        <h5 className="profile_bookings_title">All Bookings:</h5>
+                        <div className="flex flex-col gap-3 profile_bookins_main" >
+                        {bookingError && (<p className="p-5 add_tour_error">{bookingError}</p>)}
+                        {bookingLoading && (<p className="p-5 add_tour_error">Loading...</p>)}
+                        {!bookingError && !bookingLoading && bookings.map((booking, index) => (
+                            <div key={index} className="profile_booking_element">
+                                <div className="profile_booking_element_img">
+                                    <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} alt="tour-image" />
+                                </div>
+                                <div className="booking_element_main">
+                                    <p><span>Booked Tour:</span> {booking.tour_id.title}</p>
+                                    <p><span>Tour Date:</span> {formatDate(booking.tour_id.start_date)}</p>
+                                    <p><span>Booking Name:</span> {booking.bookFor}</p>
+                                    <p><span>Guest Size:</span> {booking.guestSize}</p>
+                                    <p><span>Price:</span> ₹{booking.price}</p>
+                                    <p className=""><span>Activities:</span></p>
+                                    <div className="flex flex-wrap gap-1">
+                                        {booking.signed_activities.length === 0 ? (
+                                        <p>(No Additional signed Activities)</p>
+                                        ) : (
+                                        booking.signed_activities.map((activity, index) => (
+                                            <p key={index}>{activity.title}, </p>
+                                        ))
+                                        )}
+                                    </div>
+                                    <button className="text-white bg-red-600 font-semibold px-3 py-2 booking_cancel" onClick={() => setDelete(booking._id)}>Cancel Booking</button>
+                                </div>
                             </div>
-                            ))
-                        )}
-                        <button className="text-white bg-red-600 font-semibold px-5 py-2" onClick={() => setDelete(booking._id)}>Cancel Booking</button>
-                        </div>
+                        ))}
                     </div>
-                    ))}
+                  </>
+                ) : (
+                  <p className="no__bookings text-center m-0">(No Bookings yet)</p>
+                )}
                 </div>
-
-                </>
-            ) : (
-                <p className="no__bookings">(No Bookings yet)</p>
-            )}
             </section>
             {del !== 0 && <DeleteBooking setDelete={setDelete} id={del} />}
         </div>
