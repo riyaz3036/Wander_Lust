@@ -1,21 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState } from 'react';
 import './Footer.css';
 import { Row, Col, Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 import { AuthContext } from "./../../context/AuthContext";
+import Logout from '../Logout/Logout'
 
 const Footer = () => {
   const navigate = useNavigate();
   const { user, dispatch } = useContext(AuthContext);
+  const [logout,setLogout] = useState(0);
 
-  // Logout
-  const logout = () => {
-    dispatch({ type: 'LOGOUT' });
-    navigate('/');
-    alert("Successfully Logged out!!");
-  };
-
+ 
   const quick__links = [
     {path: '/home',display: 'Home'},
     {path: '/pricing', display: 'Pricing'}
@@ -60,7 +56,7 @@ const Footer = () => {
               {
                 user ? (
                   <ListGroupItem className="ps-0 border-0">
-                    <Link to="/" onClick={logout}>Logout</Link>
+                    <Link to="" onClick={()=>setLogout(1)}>Logout</Link>
                   </ListGroupItem>
                 ) : (
                   <>
@@ -83,6 +79,13 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
+
+      {
+          logout?
+          <Logout setLogout={setLogout}/>
+          :
+          <></>
+      }
     </footer>
   );
 };

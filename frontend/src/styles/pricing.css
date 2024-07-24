@@ -274,7 +274,7 @@
 
 /* Screen size > 768px and <=1200px (tablets/small-laptops)*/
 @media (min-width: 769px) and (max-width: 1200px) { 
-    .home_description_title{
+    .pricing_description_title{
         max-width: 70%;
         font-size: 30px;
     }

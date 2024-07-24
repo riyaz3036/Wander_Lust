@@ -109,9 +109,16 @@ const Home = () => {
         <>
             <Header />
 
+            {/* Heading and subheading section */}
+            <div className="pb-24 flex items-center justify-center gap-2 items-center home_description">
+                <h2 className="text-center font-semibold text-white home_description_title">
+                Unlock Your Next Adventure with Exclusive Travel Deals
+                </h2>
+            </div>
+
             {/* Hero section starts here */}
             <section>
-                <Container className="home_hero_section">
+                <Container>
                     <Row>
                         <Col lg='6'>
                             <div className="hero__content">
@@ -186,11 +193,11 @@ const Home = () => {
             {/* Packages section ends here */}
 
             {/* Customer video reviews section */}
-            <div className="py-12 home_video_reviews">
+            <div className="home_video_reviews">
                 <div className="flex justify-center mb-3 home_video_reviews_title">
                     <p className="font-semibold text-4xl"><span>Over</span> 1000+ <span>people trust us</span></p>
                 </div>
-                <div className="mb-3 flex justify-center home_video_reviews_subtitle">
+                <div className="flex justify-center home_video_reviews_subtitle">
                     <p className="text-normal text-xl text-center">Discover the world with confidence. We provide the best travel deals, comprehensive guides, and exceptional customer service to make your journey unforgettable.</p>
                 </div>
                 <div className="flex justify-center mb-3 gap-14 home_video_reviews_main">

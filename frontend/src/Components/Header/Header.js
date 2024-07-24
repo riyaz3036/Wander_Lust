@@ -4,10 +4,12 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import './Header.css';
 import { AuthContext } from './../../context/AuthContext';
+import Logout from '../Logout/Logout'
 
 const Header = () => {
   const navigate = useNavigate();
   const { user, dispatch } = useContext(AuthContext);
+  const [logout,setLogout] = useState(0);
 
   // Dropdown state
   const [dropdown, setDropdown] = useState(false);
@@ -17,22 +19,9 @@ const Header = () => {
     setDropdown(!dropdown);
   };
 
-  // Logout
-  const logout = () => {
-    dispatch({ type: 'LOGOUT' });
-    navigate('/');
-    alert("Successfully Logged out!!");
-  };
-
   const nav_links = [
-    {
-      path: '/home',
-      display: 'Home'
-    },
-    {
-      path: '/pricing',
-      display: 'Pricing'
-    }
+    { path: '/home', display: 'Home' },
+    { path: '/pricing',display: 'Pricing'}
   ];
 
   if (user) {
@@ -88,7 +77,7 @@ const Header = () => {
               <div className="nav__right d-flex align-items-center gap-4">
                 <div className="nav__btns d-flex align-items-center gap-4">
                   {user ? (
-                    <Button className="btn btn-dark" onClick={logout}>Logout</Button>
+                    <Button className="btn btn-dark" onClick={()=>setLogout(1)}>Logout</Button>
                   ) : (
                     <>
                       <Button className="btn secondary__btn">
@@ -116,7 +105,7 @@ const Header = () => {
                 ))}
                 {user ? (
                   <li className="dropdown__link">
-                    <Button className="btn btn-dark" onClick={() => { logout(); toggleDropdown(); }}>Logout</Button>
+                    <Button className="btn btn-dark" onClick={() => { setLogout(1); toggleDropdown(); }}>Logout</Button>
                   </li>
                 ) : (
                   <>
@@ -137,6 +126,13 @@ const Header = () => {
           </div>
         </Row>
       </Container>
+
+      {
+          logout?
+          <Logout setLogout={setLogout}/>
+          :
+          <></>
+      }
     </header>
   );
 };

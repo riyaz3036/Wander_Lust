@@ -10,6 +10,7 @@ import user_alt from '../assets/images/user_alt.jpg';
 import topup from '../assets/images/topup.png';
 import { format } from 'date-fns';
 import DeleteBooking from '../Components/Dashboard/ManageBooking/DeleteBooking.jsx';
+import EditProfile from '../Components/EditProfile/EditProfile.jsx'
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Profile = () => {
     const [bookingLoading, setBookingLoading] = useState(true);
     const [bookingError, setBookingError] = useState('');
     const [del, setDelete] = useState(0);
+    const [edit,setEdit] = useState(0);
   
     useEffect(() => {
         if (user) {
@@ -152,7 +154,10 @@ const Profile = () => {
                         {
                             !userDataError && !userDataLoading && (
                                 <div className="profile_details_main p-2 flex flex-col gap-2">
-                                    <p className="m-0 font-bold text-2xl">{userData.username}</p>
+                                    <div className="flex items-center gap-3 profile_edit">
+                                        <p className="m-0 font-bold text-2xl">{userData.username}</p>
+                                        <i class="ri-pencil-fill m-0" onClick={()=>setEdit(1)}></i>
+                                    </div>
                                     <div className="flex flex-wrap gap-3 profile_phone_email">
                                         <div className="flex gap-1 items-center">
                                             <i className="ri-mail-fill"></i>
@@ -171,6 +176,7 @@ const Profile = () => {
                                         <i className="ri-wallet-3-fill"></i>
                                         <p className="m-0">₹{userData.balance}</p>
                                     </div>
+                                    
                                 </div>
                             )
                         }                 
@@ -249,8 +255,13 @@ const Profile = () => {
                     <i class="ri-arrow-right-line"></i>
                 </div>
             </div>
-
             
+            {/* Edit profile details */}
+            {edit?
+                    <EditProfile setEdit={setEdit} userData={userData} />
+                    :
+                    <></>
+                }
             {/* Cancel booking confirmation */}
             {del !== 0 && <DeleteBooking setDelete={setDelete} id={del} />}
 

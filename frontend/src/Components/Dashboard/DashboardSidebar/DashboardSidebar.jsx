@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './dash-sidebar.css';
 import logo from '../../../assets/images/logo.png'
 import logo_mini from '../../../assets/images/logo_mini.png'
-import Logout from '../Logout/Logout'
+import Logout from '../../Logout/Logout'
 
 const DashboardSidebar = () => {
 
