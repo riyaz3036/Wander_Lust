@@ -12,12 +12,15 @@
 - By clicking on book now on the tour package you can view all the details of the tour
 - A tour has a fixed Iternary of destinations.
 - Additional to the normal Iternary you can add addition activities at that destination 
-- You can also view the passenger list of the passage by clicking get passenger list
 - Each tour package has a vacancy, you cannot book if it is less that the guest size you are booking for
 - It also applies for the activities
-- The discount is applied according to you membership (premium user: 50%, gold user 10% , normal user 0%)
-- Once you have booked your tour you can view your booking details by clicking on Bookings in the headers section
-- For testing purpose you can change your membership and balance by clicking on your name in the header section
+- The discount is applied according to you membership (premium user: 50%, gold user 10% , normal user 0%). You can choose a membership from pricings section
+- Once you have booked your tour you can view your booking details by clicking on profile in the headers section
+- You can also top-up your balance from the profile section
+
+### Highlights
+- Readable and Maintainable code
+- Responsive design principles are applied to every page throughout the website
 
 ## A sneak peek into what we have here!
 
@@ -25,7 +28,19 @@ Visit my website at: https://wander-lust-drab.vercel.app/
 
 ### Home Page
 
-<img src="readmeassets/home.png"  >
+<img src="readmeassets/home.png" width="500px" >
+
+### Login Page
+
+<img src="readmeassets/login.png" width="500px" >
+
+### Profile Page
+
+<img src="readmeassets/profile.png" width="500px" >
+
+### Pricing Page
+
+<img src="readmeassets/pricing.png" width="500px" >
 
 
 
