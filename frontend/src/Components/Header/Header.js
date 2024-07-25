@@ -31,102 +31,83 @@ const Header = () => {
     });
   }
 
-  // Sticky header
-  const headerRef = useRef(null);
-
-  const stickyHeaderFunc = () => {
-    window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        headerRef?.current.classList.add('sticky__header');
-      } else {
-        headerRef?.current.classList.remove('sticky__header');
-      }
-    });
-  };
-
-  useEffect(() => {
-    stickyHeaderFunc();
-    return () => window.removeEventListener('scroll', stickyHeaderFunc);
-  }, []);
 
   return (
-    <header className="header" ref={headerRef}>
-      <Container>
-        <Row>
-          <div className="nav__wrapper d-flex align-items-center justify-content-between">
-            {/* Logo */}
-            <div className="logo-top">
-              <img className="logo-img" src={logo} alt="logo-image" />
-            </div>
+    <header className="flex justify-between items-center header" >
+        {/* Logo */}
+        <div className="header_logo">
+            <img src={logo} alt="logo-image" />
+        </div>
 
-            {/* Navigation menu */}
-            <div className="navigation">
-              <ul className="menu d-flex align-items-center gap-5">
-                {nav_links.map((item, index) => (
-                  <li className="nav__item" key={index}>
-                    <NavLink to={item.path} className={(navClass) => (navClass.isActive ? "active__link" : "")}>
-                      {item.display}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* Navigation menu */}
+        <div className="gap-8 header_nav_links">
+            {nav_links.map((item, index) => (
+                <NavLink to={item.path} className={(navClass) => (navClass.isActive ? "header_nav_link active" : "header_nav_link")}>
+                    {item.display}
+                </NavLink>
+            ))}
+        </div>
 
-            {/* User actions */}
-            <div className="navigation2">
-              <div className="nav__right d-flex align-items-center gap-4">
-                <div className="nav__btns d-flex align-items-center gap-4">
-                  {user ? (
-                    <Button className="btn btn-dark" onClick={()=>setLogout(1)}>Logout</Button>
-                  ) : (
-                    <>
-                      <Button className="btn secondary__btn">
-                        <Link to='/login'>Login</Link>
-                      </Button>
-                      <Button className="btn primary__btn">
-                        <Link to='/register'>Register</Link>
-                      </Button>
-                    </>
-                  )}
+        {/* User actions */}
+        <div className="header_right">
+            {user ? (
+            <button className="text-white bg-black header_logout_bttn" onClick={()=>setLogout(1)}>Logout</button>
+            ) : (
+            <>
+                <button className="text-black bg-white header_login_bttn" >
+                    <Link to='/login'>Login</Link>
+                </button>
+                <button className="text-white header_register_bttn">
+                    <Link to='/register'>Register</Link>
+                </button>
+            </>
+            )}
+        </div>
+
+        {/* Mobile menu */}
+        <div className='header_mobile_menu'>
+            <div className='header_mobile_menu_logo'>
+                {
+                    dropdown?
+                    <i class="ri-close-line" onClick={toggleDropdown}></i>
+                    :
+                    <i class="ri-menu-line" onClick={toggleDropdown}></i>                    
+                }
+            </div>
+            {
+                dropdown?
+                <div className='flex flex-col header_mobile_menu_main'>
+                    {nav_links.map((item, index) => (
+                        <div className="mobile_menu_element">
+                            <NavLink to={item.path} className={(navClass) => (navClass.isActive ? "header_nav_link active" : "header_nav_link")}>
+                                {item.display}
+                            </NavLink>
+                        </div>
+                    ))}
+                    {user ? (
+                        <div className="mobile_menu_element">
+                            <button className="text-white bg-black header_logout_bttn" onClick={()=>setLogout(1)}>Logout</button>
+                        </div>
+                    ) : (
+                        <>
+                        <div className="mobile_menu_element">
+                            <button className="text-black bg-white header_login_bttn" >
+                                <Link to='/login'>Login</Link>
+                            </button>
+                        </div>
+                        <div className="mobile_menu_element">
+                            <button className="text-white header_register_bttn">
+                                <Link to='/register'>Register</Link>
+                            </button>
+                        </div>
+                        </>
+                    )}
                 </div>
-              </div>
-            </div>
-
-            {/* Mobile menu */}
-            <div className='mobile__menu'>
-              <i className="ri-menu-line" onClick={toggleDropdown}></i>
-              <div className={dropdown ? 'dropdown__menu' : 'dropdown__menu_close'}>
-                {nav_links.map((item, index) => (
-                  <li className="dropdown__link" key={index}>
-                    <Button className="btn secondary__btn">
-                      <Link onClick={toggleDropdown} to={item.path}><span className="dropdown__text">{item.display}</span></Link>
-                    </Button>
-                  </li>
-                ))}
-                {user ? (
-                  <li className="dropdown__link">
-                    <Button className="btn btn-dark" onClick={() => { setLogout(1); toggleDropdown(); }}>Logout</Button>
-                  </li>
-                ) : (
-                  <>
-                    <li className="dropdown__link">
-                      <Button className="btn secondary__btn">
-                        <Link to='/login'><span className="dropdown__text" onClick={toggleDropdown}>Login</span></Link>
-                      </Button>
-                    </li>
-                    <li className="dropdown__link">
-                      <Button className="btn primary__btn">
-                        <Link to='/register' onClick={toggleDropdown}>Register</Link>
-                      </Button>
-                    </li>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        </Row>
-      </Container>
-
+                :
+                <></>
+            }
+        </div>
+        
       {
           logout?
           <Logout setLogout={setLogout}/>

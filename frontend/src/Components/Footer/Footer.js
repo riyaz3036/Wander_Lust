@@ -26,66 +26,65 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <Container>
-        <Row>
-          <Col lg="6" className="temp2">
-            <div className="logo">
-              <img src={Logo} alt="logo" />
-              <p>
-                We offer curated travel experiences, blending luxury with exploration, to create unforgettable journeys around the globe.
-              </p>
+        <div className="flex flex-wrap gap-5 justify-between footer_main">
+            <div className="footer_company_desc">
+                <div className="footer_logo">
+                    <img src={Logo} alt="logo" />
+                </div>
+                <p>We offer curated travel experiences, blending luxury with exploration, to create unforgettable journeys around the globe. Discover hidden gems and exclusive destinations tailored to your unique preferences.</p>
             </div>
-          </Col>
 
-          <Col lg="3">
-            <h5 className="footer__link-title">Discover</h5>
-            <div className="flex flex-col gap-3 footer_quick-links z-1">
-              {
-                quick__links.map((item, index) => (
-                  <ListGroupItem key={index} className="ps-0 border-0">
-                    <Link to={item.path}>{item.display}</Link>
-                  </ListGroupItem>
-                ))
-              }
+            <div className="flex flex-wrap gap-5 footer_links">
+                <div className="footer_links_section">
+                    <h5 className="footer_links_title">Discover</h5>
+                    <div className="footer_links_section_main">
+                    {
+                        quick__links.map((item, index) => (
+                        <div key={index} className="footer_link">
+                            <Link to={item.path}>{item.display}</Link>
+                        </div>
+                        ))
+                    }
+                    </div>
+                </div>
+
+                <div className="footer_links_section">
+                    <h5 className="footer_links_title">Quick Links</h5>
+                    <div className="footer_links_section_main">
+                    {
+                        user ? (
+                        <div className="footer_link">
+                            <Link to="" onClick={()=>setLogout(1)}>Logout</Link>
+                        </div>
+                        ) : (
+                        <>
+                            <div className="footer_link">
+                                <Link to="/login">Login</Link>
+                            </div>
+                            <div className="footer_link">
+                                <Link to="/register">Register</Link>
+                            </div>
+                        </>
+                        )
+                    }
+                    </div>
+                </div>
             </div>
-          </Col>
-
-          <Col lg="3">
-            <h5 className="footer__link-title">Quick Links</h5>
-            <div className="flex flex-col gap-3 footer_quick-links">
-              {
-                user ? (
-                  <ListGroupItem className="ps-0 border-0">
-                    <Link to="" onClick={()=>setLogout(1)}>Logout</Link>
-                  </ListGroupItem>
-                ) : (
-                  <>
-                    <ListGroupItem className="ps-0 border-0">
-                      <Link to="/login">Login</Link>
-                    </ListGroupItem>
-                    <ListGroupItem className="ps-0 border-0">
-                      <Link to="/register">Register</Link>
-                    </ListGroupItem>
-                  </>
-                )
-              }
-            </div>
-          </Col>
-
-          <Col lg="12" className="copy">
-            <p className="copyright">
-              developed by MD RIYAZ AHMED
-            </p>
-          </Col>
-        </Row>
-      </Container>
-
-      {
-          logout?
-          <Logout setLogout={setLogout}/>
-          :
-          <></>
-      }
+        </div>
+            
+        {/* Copyright */}
+        <div className="footer_copyright">
+            <p>developed by MD RIYAZ AHMED</p>
+        </div>
+          
+       
+        {/* Logout dialogue box */}
+        {
+            logout?
+            <Logout setLogout={setLogout}/>
+            :
+            <></>
+        }
     </footer>
   );
 };
