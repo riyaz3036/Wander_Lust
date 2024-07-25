@@ -73,7 +73,7 @@ const ManageBooking = () => {
                         {!bookingError && !bookingLoading && bookings.map((booking, index) => (
                             <div key={index} className="profile_booking_element">
                                 <div className="profile_booking_element_img">
-                                    <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} alt="tour-image" />
+                                    <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image" />
                                 </div>
                                 <div className="booking_element_main">
                                     <p><span>Booked Tour:</span> {booking.tour_id.title}</p>

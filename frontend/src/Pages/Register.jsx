@@ -85,35 +85,35 @@ const Register = () => {
                     <div className="register_photos">
                         <div className="register_photos_column">
                             <div className="register_photo">
-                                <img src={reg_img1} alt="gallery-image"/>
+                                <img src={reg_img1} loading="lazy" alt="gallery-image"/>
                             </div>
                             <div className="register_photo">
-                                <img src={reg_img2} alt="gallery-image"/>
+                                <img src={reg_img2} loading="lazy" alt="gallery-image"/>
                             </div>
                             <div className="register_photo">
-                                <img src={reg_img3} alt="gallery-image"/>
-                            </div>
-                        </div>
-                        <div className="register_photos_column">
-                            <div className="register_photo">
-                                <img src={reg_img4} alt="gallery-image"/>
-                            </div>
-                            <div className="register_photo">
-                                <img src={reg_img5} alt="gallery-image"/>
-                            </div>
-                            <div className="register_photo">
-                                <img src={reg_img6} alt="gallery-image"/>
-                            </div>
-                            <div className="register_photo">
-                                <img src={reg_img9} alt="gallery-image"/>
+                                <img src={reg_img3} loading="lazy" alt="gallery-image"/>
                             </div>
                         </div>
                         <div className="register_photos_column">
                             <div className="register_photo">
-                                <img src={reg_img7} alt="gallery-image"/>
+                                <img src={reg_img4} loading="lazy" alt="gallery-image"/>
                             </div>
                             <div className="register_photo">
-                                <img src={reg_img8} alt="gallery-image"/>
+                                <img src={reg_img5} loading="lazy" alt="gallery-image"/>
+                            </div>
+                            <div className="register_photo">
+                                <img src={reg_img6} loading="lazy" alt="gallery-image"/>
+                            </div>
+                            <div className="register_photo">
+                                <img src={reg_img9} loading="lazy" alt="gallery-image"/>
+                            </div>
+                        </div>
+                        <div className="register_photos_column">
+                            <div className="register_photo">
+                                <img src={reg_img7} loading="lazy" alt="gallery-image"/>
+                            </div>
+                            <div className="register_photo">
+                                <img src={reg_img8} loading="lazy" alt="gallery-image"/>
                             </div>
                         </div>
                     </div>

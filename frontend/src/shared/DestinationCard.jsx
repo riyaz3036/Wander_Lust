@@ -10,7 +10,7 @@ const DestinationCard =({dest})=>{
         <div className="dest__card">
             <Card>
                 <div className="dest__img bg-red-300">
-                    <img src={`${BASE_URL}/${dest.image.replace(/\\/g, '/')}`} alt="destination-image"/>
+                    <img src={`${BASE_URL}/${dest.image.replace(/\\/g, '/')}`} loading="lazy" alt="destination-image"/>
                 </div>
                 <div className="p-3">
                     <h5 className="dest__title truncate">{title}</h5>

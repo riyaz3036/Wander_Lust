@@ -10,7 +10,7 @@ const TourCard =({tour})=>{
         <div className="tour__card">
             <Card>
                 <div className="tour__img">
-                    <img src={`${BASE_URL}/${tour.image.replace(/\\/g, '/')}`} alt="tour-image"/>
+                    <img src={`${BASE_URL}/${tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image"/>
                 </div>
                 <CardBody>
                     <div className="card__top d-flex align-items-center justify-content-between">

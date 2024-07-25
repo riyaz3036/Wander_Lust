@@ -132,6 +132,7 @@ const Profile = () => {
         }
     };
 
+    console.log(userData);
     return (
         <div>
             <Header />
@@ -139,13 +140,13 @@ const Profile = () => {
             <div>
                 {/* Image */}
                 <div className="profile_title_img">
-                    <img src={profile_title} alt="Profile Title" />
+                    <img src={profile_title} loading="lazy" alt="Profile Title" />
                 </div>
                 
                 {/* Profile details */}
                 <div className="flex gap-1 profile_details">
                     <div className="profile_img">
-                        <img src={userData.image?`${BASE_URL}/${userData.image.replace(/\\/g, '/')}`:user_alt} alt="Profile" />
+                        <img src={userData.image?`${BASE_URL}/${userData.image.replace(/\\/g, '/')}`:user_alt} loading="lazy" alt="Profile" />
                     </div>
 
                    
@@ -193,7 +194,7 @@ const Profile = () => {
                         {!bookingError && !bookingLoading && bookings.map((booking, index) => (
                             <div key={index} className="profile_booking_element">
                                 <div className="profile_booking_element_img">
-                                    <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} alt="tour-image" />
+                                    <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image" />
                                 </div>
                                 <div className="booking_element_main">
                                     <p><span>Booked Tour:</span> {booking.tour_id.title}</p>
@@ -238,7 +239,7 @@ const Profile = () => {
                         </div>
                     </div>
 
-                    <div className="topup_img"><img src={topup} alt="Top Up" /></div>
+                    <div className="topup_img"><img src={topup} loading="lazy" alt="Top Up" /></div>
                 </div>
             </div>
 

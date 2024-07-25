@@ -68,7 +68,7 @@ const TourDetails = () => {
                         ) : (
                             tour && (
                                 <div className="tour__content">
-                                    <img src={`${BASE_URL}/${tour.image.replace(/\\/g, '/')}`} alt="" />
+                                    <img src={`${BASE_URL}/${tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="" />
                                     <div className="tour__info">
                                         <h2>{tour.title}</h2>
                                         <div className="tour__details">

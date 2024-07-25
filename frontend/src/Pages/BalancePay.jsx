@@ -120,7 +120,7 @@ const BalancePay = () => {
         </div>
         <div className="" style={{ width: '500px' }}>
           <div className="flex flex-col justify-center items-center gap-3">
-            <img src={payment} alt="Payment Options" />
+            <img src={payment} loading="lazy" alt="Payment Options" />
           </div>
         </div>
       </div>

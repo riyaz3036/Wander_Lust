@@ -137,19 +137,19 @@ const Home = () => {
 
                         <Col lg='2'>
                             <div className="hero__img-box">
-                                <img src={heroImg01} alt="" />
+                                <img src={heroImg01} loading="lazy" alt="" />
                             </div>
                         </Col>
 
                         <Col lg='2'>
                             <div className="hero__img-box mt-4">
-                                <img src={heroImg02} alt="" />
+                                <img src={heroImg02} loading="lazy" alt="" />
                             </div>
                         </Col>
 
                         <Col lg='2'>
                             <div className="hero__img-box mt-5">
-                                <img src={heroImg03} alt="" />
+                                <img src={heroImg03} loading="lazy" alt="" />
                             </div>
                         </Col>
                     </Row>

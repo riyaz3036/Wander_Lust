@@ -81,6 +81,7 @@ const EditProfile = ({ setEdit, userData }) => {
             alert('Error editing details');
         }
     };
+    
 
     return (
         <div className="edit_tour_main">

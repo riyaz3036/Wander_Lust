@@ -32,8 +32,8 @@ const updateUser = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-
-    // Handle the profile picture update
+    
+ 
     if (req.file) {
       user.image = req.file.path; 
     }

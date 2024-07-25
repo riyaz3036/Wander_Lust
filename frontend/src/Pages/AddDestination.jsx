@@ -194,7 +194,7 @@ const AddDestination = () => {
                                 destinations.map((destination) => (
                                 <div key={destination._id} className="add_tour_card">
                                     <div className="add_tour_card_img">
-                                        <img src={`${BASE_URL}/${destination.image.replace(/\\/g, '/')}`} alt="destination poster"/>
+                                        <img src={`${BASE_URL}/${destination.image.replace(/\\/g, '/')}`} loading="lazy" alt="destination poster"/>
                                     </div>
                                     <div className="flex flex-wrap py-1 px-2">
                                         <p className="m-0 text-lg"><span className="font-semibold">#id:</span> {destination._id}</p>
