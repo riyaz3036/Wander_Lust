@@ -42,7 +42,7 @@ Visit my website at: https://wander-lust-drab.vercel.app/
 
 <img src="readmeassets/pricing.png" width="500px" >
 
-### Admin Manage Tour Page (o more pictures visit readmeassets in the main directory)
+### Admin Manage Tour Page (for more pictures visit readmeassets in the main directory)
 
 <img src="readmeassets/admin_manage_tours.png" width="500px" >
 
