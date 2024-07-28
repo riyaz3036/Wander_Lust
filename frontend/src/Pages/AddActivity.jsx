@@ -22,17 +22,15 @@ const AddActivity = () => {
        title: '',
        description: '',
        dest_id: '',
-       price: '',
-       capacity: '',
-       vacancy: ''
+       price: ''
     });
 
     const [isFormValid, setIsFormValid] = useState(false);
 
     useEffect(() => {
-        const { title, description,dest_id, price, capacity,vacancy } = activityData;
+        const { title, description,dest_id, price } = activityData;
         setIsFormValid(
-            title && description && dest_id && price && capacity && vacancy
+            title && description && dest_id && price 
         );
     }, [activityData]);
 
@@ -131,14 +129,6 @@ const AddActivity = () => {
                                                 <label htmlFor="price"><p>Price<span style={{ color: 'red' }}>*</span></p></label>
                                                 <input type="text" id="price" name="price" placeholder='Enter the Price' value={activityData.price} onChange={handleChange} />
                                             </div>
-                                            <div className="add_tour_add_section">
-                                                <label htmlFor="capacity"><p>Capacity<span style={{ color: 'red' }}>*</span></p></label>
-                                                <input type="text" id="capacity" name="capacity" placeholder='Enter the Capacity' value={activityData.capacity} onChange={handleChange} />
-                                            </div>
-                                            <div className="add_tour_add_section">
-                                                <label htmlFor="vacancy"><p>Vacancy<span style={{ color: 'red' }}>*</span></p></label>
-                                                <input type="text" id="vacancy" name="vacancy" placeholder='Enter the Vacancy' value={activityData.vacancy} onChange={handleChange} />
-                                            </div>
                                             <div className="flex justify-center pt-5 add_tour_add_section_bttn">
                                                 <button disabled={!isFormValid} style={{ opacity: isFormValid ? 1 : 0.5 }} onClick={handleSubmit}>ADD</button>
                                             </div>
@@ -187,9 +177,8 @@ const AddActivity = () => {
                                     <div className="flex flex-wrap py-1 px-2">
                                         <p className="m-0 text-lg"><span className="font-semibold">Destination #id:</span> {activity.dest_id}</p>
                                     </div>
-                                    <div className="flex flex-wrap justify-between items-center py-1 px-2">
-                                        <p className="m-0 font-semibold w-1/2">Availability: {activity.vacancy}/{activity.capacity}</p>
-                                        <p className="m-0 font-semibold w-1/2 text-right">₹{activity.price}</p>
+                                    <div className="flex flex-wrap py-1 px-2">
+                                        <p className="m-0 font-semibold w-1/2">₹{activity.price}</p>
                                     </div>                                   
                                     <div className="flex justify-between items-center py-1 px-2">
                                         <p className="m-0 font-bold text-lg truncate w-1/2">{activity.title}</p>

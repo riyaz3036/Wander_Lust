@@ -6,6 +6,7 @@ import Booking from '../Components/Booking/Booking';
 import { BASE_URL } from '../utils/config.js';
 import Header from '../Components/Header/Header.js';
 import Footer from '../Components/Footer/Footer.js';
+import { format } from 'date-fns';
 
 const TourDetails = () => {
     const { pathname } = useLocation();
@@ -53,6 +54,17 @@ const TourDetails = () => {
     const isActAdded = (act) => {
         return addAct.includes(act);
     };
+
+    // Format date utility function using date-fns
+    const formatDate = (dateString) => {
+        try {
+        const date = new Date(dateString);
+        return format(date, 'dd-MM-yyyy');
+        } catch (error) {
+        console.error('Error formatting date:', error);
+        return 'Invalid Date';
+        }
+    };
     
 
     return (
@@ -84,6 +96,9 @@ const TourDetails = () => {
                                             <span className="d-flex align-items-center gap-1">
                                                 <i className="ri-time-fill"></i> {tour.duration}
                                             </span>
+                                            <span className="d-flex align-items-center gap-1">
+                                            <i class="ri-calendar-fill"></i> {formatDate(tour.start_date)}
+                                            </span>
                                         </div>
 
                                         <div className="description">
@@ -102,15 +117,12 @@ const TourDetails = () => {
                                                             <span className="d-flex align-items-center gap-1">
                                                                 Additional Price:<i className="ri-wallet-3-fill"></i> ₹{act.price}
                                                             </span>
-                                                            <span className="d-flex align-items-center gap-1">
-                                                                <i className="ri-group-line"></i> Vacancies: {act.vacancy}/{tour.capacity}
-                                                            </span>
+                                                    
                                                             <button
                                                                 className={`primary__btn ${isActAdded(act) ? 'remove' : 'add'}`}
                                                                 onClick={() => addHandler(act)}
-                                                                disabled={act.vacancy === 0}
                                                             >
-                                                                {act.vacancy === 0 ? 'No Vacancy in the' : (isActAdded(act) ? 'Remove' : 'Add')} Activity
+                                                                {isActAdded(act) ? 'Remove' : 'Add'} Activity
                                                             </button>
                                                         </div>
                                                     ))}

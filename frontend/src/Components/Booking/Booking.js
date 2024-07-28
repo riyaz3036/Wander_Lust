@@ -62,13 +62,8 @@ const Booking = ({ tour, addAct }) => {
     // Check if any activity with vacancy < guest size is selected and balance >= price
     const check = () => {
         let chk__ = 1;
+        //vacancy check
         if (tour.vacancy < formData.guestSize) chk__ = 0;
-
-        addAct.forEach(this_act => {
-            if (this_act.vacancy < formData.guestSize) {
-                chk__ = 0;
-            }
-        });
 
         // Balance check
         if (user && calcTot() - calcDisc() > userData.balance) {
@@ -180,7 +175,7 @@ const Booking = ({ tour, addAct }) => {
                     disabled={check() <= 0}
                 >
                     {check() === 0
-                        ? 'Make sure if added activities/tour vacancy greater than guest size'
+                        ? 'No Vacancy'
                         : check() === -1
                             ? 'Insufficient Balance'
                             : 'Book Now'}

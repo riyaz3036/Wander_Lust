@@ -11,17 +11,15 @@ const EditActivity = ({ setEdit, activity }) => {
         title: activity.title,
         description: activity.description,
         dest_id: activity.dest_id,
-        price: activity.price,
-        capacity: activity.capacity,
-        vacancy: activity.vacancy
+        price: activity.price
      });
 
      const [isFormValid, setIsFormValid] = useState(false);
     // To check if all the details are filled and passwords match
     useEffect(() => {
-        const { title, description,dest_id, price, capacity,vacancy } = activityData;
+        const { title, description,dest_id, price } = activityData;
         setIsFormValid(
-            title && description && dest_id && price && capacity && vacancy
+            title && description && dest_id && price 
         );
     }, [activityData]);
 
@@ -87,14 +85,6 @@ const EditActivity = ({ setEdit, activity }) => {
                         <div className="add_tour_add_section">
                             <label htmlFor="price"><p>Price<span style={{ color: 'red' }}>*</span></p></label>
                             <input type="text" id="price" name="price" placeholder='Enter the Price' value={activityData.price} onChange={handleChange} />
-                        </div>
-                        <div className="add_tour_add_section">
-                            <label htmlFor="capacity"><p>Capacity<span style={{ color: 'red' }}>*</span></p></label>
-                            <input type="text" id="capacity" name="capacity" placeholder='Enter the Capacity' value={activityData.capacity} onChange={handleChange} />
-                        </div>
-                        <div className="add_tour_add_section">
-                            <label htmlFor="vacancy"><p>Vacancy<span style={{ color: 'red' }}>*</span></p></label>
-                            <input type="text" id="vacancy" name="vacancy" placeholder='Enter the Vacancy' value={activityData.vacancy} onChange={handleChange} />
                         </div>
                         <div className="flex justify-center pt-5 add_tour_add_section_bttn">
                             <button disabled={!isFormValid} style={{ opacity: isFormValid ? 1 : 0.5 }} onClick={handleSubmit}>Edit</button>
