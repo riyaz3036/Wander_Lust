@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{memo} from 'react'
 import './tour-card.css'
 import {Card, CardBody} from 'reactstrap';
 import {Link} from 'react-router-dom'
@@ -31,4 +31,4 @@ const TourCard =({tour})=>{
     )
 };
 
-export default TourCard;
+export default memo(TourCard);

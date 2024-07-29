@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import './scroll-section.css'
 import travlogo1 from "../../assets/images/travlogo1.jpg"
 import travlogo2 from "../../assets/images/travlogo2.png"
@@ -34,4 +34,4 @@ const ScrollSection=()=>{
     )
 }
 
-export default ScrollSection;
+export default memo(ScrollSection);

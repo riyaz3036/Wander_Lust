@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/tour-details.css';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col} from 'reactstrap';
 import { useParams, useLocation } from 'react-router-dom';
 import Booking from '../Components/Booking/Booking';
 import { BASE_URL } from '../utils/config.js';
@@ -12,7 +12,7 @@ const TourDetails = () => {
     const { pathname } = useLocation();
     const { id } = useParams();
 
-    const [tour, setTour] = useState(null);  // Change initial state to null for better handling
+    const [tour, setTour] = useState(null);  
     const [tourLoading, setTourLoading] = useState(true);
     const [tourError, setTourError] = useState('');
     const [addAct, setAddAct] = useState([]);

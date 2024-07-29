@@ -1,0 +1,86 @@
+
+
+/* Bookings section styles */
+.profile_bookings{
+    padding: 20px;
+}
+
+.profile_bookings_title{
+    margin: 0;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.profile_booking_element{
+    background-color: #fff;
+    height: 300px;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    box-shadow: rgba(0,0,0,0.3) 0px 2px 5px 1px;
+    border-radius: 0 18px 0 0;
+}
+
+.profile_booking_element_img{
+    height: 100%;
+    width: 500px;
+}
+
+.profile_booking_element_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.booking_element_main{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 5px;
+}
+
+.booking_element_main p{
+    margin: 0;
+}
+
+.booking_element_main p span{
+   font-weight: 500;
+}
+
+.booking_cancel{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+@media (max-width: 768px){
+    .profile_bookings{
+        padding: 16px;
+    }
+
+    .profile_bookings_title{
+        font-size: 20px;
+    }
+    
+    .profile_booking_element{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        padding-bottom: 40px;
+    }
+    
+    .profile_booking_element_img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1200px){
+    .profile_booking_element_img{
+        width: 400px;
+    }
+}

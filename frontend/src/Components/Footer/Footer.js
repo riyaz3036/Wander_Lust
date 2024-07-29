@@ -1,4 +1,4 @@
-import React, { useContext,useState } from 'react';
+import React, { useContext,useState,memo} from 'react';
 import './Footer.css';
 import { Row, Col, Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
@@ -89,4 +89,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

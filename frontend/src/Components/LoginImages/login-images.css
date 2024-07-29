@@ -1,0 +1,29 @@
+/* Left Side Styling */
+.login_left {
+    padding: 20px;
+}
+
+.login_photos{
+    display: flex;
+    gap: 10px;
+}
+
+.login_photos_column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login_photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { 
+    .login_left {
+        padding: 20px;
+    }  
+}

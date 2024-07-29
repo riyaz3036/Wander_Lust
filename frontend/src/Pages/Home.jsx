@@ -5,10 +5,8 @@ import { Container, Col, Row } from 'reactstrap';
 import heroImg01 from '../assets/images/hero-img01.jpg';
 import heroImg02 from '../assets/images/hero-img02.jpg';
 import heroImg03 from '../assets/images/hero-img03.jpg';
-import customer_rev1 from "../assets/videos/customer_rev1.mp4";
-import customer_rev2 from "../assets/videos/customer_rev2.mp4";
-import customer_rev3 from "../assets/videos/customer_rev3.mp4";
-import features_vid from "../assets/videos/features_vid.mp4";
+import VideoReviews from '../Components/homeVideoReviews/VideoReviews.js'
+import Features from '../Components/homeFeatures/Featuers.js'
 import Subtitle from '../shared/Subtitle';
 import ScrollSection from '../Components/ScrollSection/ScrollSection.jsx';
 import Assurance from '../Components/Assurance/Assurance.js';
@@ -29,6 +27,7 @@ const Home = () => {
     const [destinations, setDestinations] = useState([]);
     const [destLoading, setDestLoading] = useState(true);
     const [destError, setDestError] = useState('');
+
 
     useEffect(() => {
         const fetchTours = async () => {
@@ -77,33 +76,7 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    const navigate = useNavigate();
-
-    const customerRevRef1 = useRef();
-    const customerRevRef2 = useRef();
-    const customerRevRef3 = useRef();
-    const featuresVidRef = useRef();
-
-    // Function and states to handle playing and pausing videos
-    const [currentVideo, setCurrentVideo] = useState(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-
-    const handlePlayPause = (videoRef) => {
-        if (currentVideo && currentVideo !== videoRef) {
-            currentVideo.pause();
-            setIsPlaying(false);
-        }
-
-        if (videoRef.paused) {
-            videoRef.play();
-            setCurrentVideo(videoRef);
-            setIsPlaying(true);
-        } else {
-            videoRef.pause();
-            setCurrentVideo(null);
-            setIsPlaying(false);
-        }
-    };
+    
 
     return (
         <>
@@ -193,105 +166,14 @@ const Home = () => {
             {/* Packages section ends here */}
 
             {/* Customer video reviews section */}
-            <div className="home_video_reviews">
-                <div className="flex justify-center mb-3 home_video_reviews_title">
-                    <p className="font-semibold text-4xl"><span>Over</span> 1000+ <span>people trust us</span></p>
-                </div>
-                <div className="flex justify-center home_video_reviews_subtitle">
-                    <p className="text-normal text-xl text-center">Discover the world with confidence. We provide the best travel deals, comprehensive guides, and exceptional customer service to make your journey unforgettable.</p>
-                </div>
-                <div className="flex justify-center mb-3 gap-14 home_video_reviews_main">
-                    <div className="relative home_reviews_section">
-                        <div className="home_review_img"><video src={customer_rev1} ref={customerRevRef1} /></div>
-                        <div className="flex justify-between p-5 absolute bottom-0 home_review_content">
-                            <div className="home_reviewer_details">
-                                <p className="text-base font-medium text-white reviewer_name">Arjun Sharma</p>
-                            </div>
-                            <div className="home_play_button" onClick={() => handlePlayPause(customerRevRef1.current)}>
-                                {isPlaying && currentVideo === customerRevRef1.current ? (
-                                    <i className="ri-pause-line"></i>
-                                ) : (
-                                    <div className=""><i className="ri-play-line"></i></div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="relative home_reviews_section">
-                        <div className="home_review_img"><video src={customer_rev2} ref={customerRevRef2} /></div>
-                        <div className="flex justify-between p-5 absolute bottom-0 home_review_content">
-                            <div className="home_reviewer_details">
-                                <p className="text-base font-medium text-white reviewer_name">Vihaan Patel</p>
-                            </div>
-                            <div className="home_play_button" onClick={() => handlePlayPause(customerRevRef2.current)}>
-                                {isPlaying && currentVideo === customerRevRef2.current ? (
-                                    <i className="ri-pause-line"></i>
-                                ) : (
-                                    <div className=""><i className="ri-play-line"></i></div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="relative home_reviews_section">
-                        <div className="home_review_img"><video src={customer_rev3} ref={customerRevRef3} /></div>
-                        <div className="flex justify-between p-5 absolute bottom-0 home_review_content">
-                            <div className="home_reviewer_details">
-                                <p className="text-base font-medium text-white reviewer_name">Aisha Khan</p>
-                            </div>
-                            <div className="home_play_button" onClick={() => handlePlayPause(customerRevRef3.current)}>
-                                {isPlaying && currentVideo === customerRevRef3.current ? (
-                                    <i className="ri-pause-line"></i>
-                                ) : (
-                                    <div className=""><i className="ri-play-line"></i></div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <VideoReviews />
+            
             {/* Assurance section */}
             <Assurance />
 
             {/* Features Video Section */}
-            <div className="home_features">
-                <div className="flex justify-center home_features_video">
-                    <div className="flex relative justify-center items-center home_features_video_main" onClick={() => handlePlayPause(featuresVidRef.current)}>
-
-                        <video src={features_vid} ref={featuresVidRef}/>
-
-                        {isPlaying && currentVideo === featuresVidRef.current ? (
-                                <></>
-                        ) : (
-                                <>
-                                    <div className="flex justify-center items-center cursor-pointer home_features_play_button pr-1">
-                                        <i class="ri-play-line"></i>
-                                    </div>
-                                    <p className="text-white absolute text-center font-medium"> Discover how our travel platform can make your adventures unforgettable!</p>
-                                </>
-                        )}
-
-                    </div>
-                </div>
-
-                <div className="flex flex-wrap px-5 justify-center gap-10 py-12 home_customer_reviews">
-                    <div className="flex flex-col items-center home_customer_review_section">
-                        <p className="text-center font-lg mb-4 home_customer_review">"WanderLust made our family vacation amazing! The detailed itineraries and personalized recommendations made our trip truly memorable."</p>
-                        <p className="text-center font-base font-medium home_reviewer">Aarav Patel</p>
-                    </div>
-
-                    <div className="flex flex-col items-center home_customer_review_section">
-                        <p className="text-center font-lg mb-4 home_customer_review">"Thanks to WanderLust, our honeymoon was perfect. The suggestions for off-the-beaten-path locations and activities were just what we wanted!"</p>
-                        <p className="text-center font-base font-medium home_reviewer">Ishita Sharma</p>
-                    </div>
-
-                    <div className="flex flex-col items-center home_customer_review_section">
-                        <p className="text-center font-lg mb-4 home_customer_review">"WanderLust turned our weekend getaway into an cheerful and unforgettable experience. The local insights and tips helped us explore like a local!"</p>
-                        <p className="text-center font-base font-medium home_reviewer">Rohan Gupta</p>
-                    </div>
-                </div>
-
-
-            </div>
+            <Features />
+            
 
             <Footer />
         </>

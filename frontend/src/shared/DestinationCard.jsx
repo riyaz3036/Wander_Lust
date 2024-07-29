@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{memo} from 'react'
 import './destination-card.css'
 import {Card, CardBody} from 'reactstrap';
 import { BASE_URL } from '../utils/config';
@@ -20,4 +20,4 @@ const DestinationCard =({dest})=>{
     )
 };
 
-export default DestinationCard;
+export default memo(DestinationCard);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import {BASE_URL} from '../../../utils/config';
 
 const DeleteBooking = ({ setDelete, id }) => {
@@ -52,4 +52,4 @@ const DeleteBooking = ({ setDelete, id }) => {
     );
 }
 
-export default DeleteBooking;
+export default memo(DeleteBooking);

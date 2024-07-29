@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{memo} from 'react'
 import './assurance.css'
 
 const Assurance=()=>{
@@ -31,4 +31,4 @@ const Assurance=()=>{
     )
 }
 
-export default Assurance;
+export default memo(Assurance);

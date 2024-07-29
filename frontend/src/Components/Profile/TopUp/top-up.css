@@ -1,0 +1,62 @@
+/* Topup section Styles */
+.profile_topup_left{
+    max-width: 500px;
+}
+
+.top-up-title{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.top-up-title span{
+    color: var(--primary-color);
+}
+
+.top-up-description{
+   margin: 0 0 40px 0;
+   font-size: 24px;
+   font-weight: 500;
+}
+
+.top_up_input label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.top_up_input input{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #EDF4FA;
+    padding: 5px;
+}
+
+.top_up_input input:focus{
+    outline: none;
+}
+
+.topup_bttn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.topup_img{
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.topup_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

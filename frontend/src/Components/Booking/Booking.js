@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, memo } from 'react';
 import './booking.css';
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
@@ -185,4 +185,4 @@ const Booking = ({ tour, addAct }) => {
     )
 };
 
-export default Booking;
+export default memo(Booking);

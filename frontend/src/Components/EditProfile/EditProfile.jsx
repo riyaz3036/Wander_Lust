@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import {BASE_URL} from '../../utils/config';
 
 
@@ -125,4 +125,4 @@ const EditProfile = ({ setEdit, userData }) => {
     );
 }
 
-export default EditProfile;
+export default memo(EditProfile);

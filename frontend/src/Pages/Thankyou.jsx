@@ -1,4 +1,4 @@
-import React, {useEffect}from 'react'
+import React, {useEffect, memo}from 'react'
 import {Container,Row,Col,Button} from 'reactstrap'
 import '../styles/thank-you.css'
 import {Link,useLocation} from 'react-router-dom'
@@ -35,5 +35,5 @@ return (
 };
 
 
-export default Thankyou;
+export default memo(Thankyou);
 

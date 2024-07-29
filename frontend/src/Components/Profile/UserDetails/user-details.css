@@ -1,0 +1,90 @@
+.profile_details{
+    padding: 0px 40px;
+}
+
+.profile_img {
+    background-color: #fff;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.profile_img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile_edit i{
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.profile_phone_email{
+    color: var(--text-color);
+}
+
+.profile_phone_email i{
+    margin: 0;
+    font-size: 20px;
+}
+
+.profile_phone_email p{
+    font-size: 16px;
+}
+
+.profile_membership i,.profile_balance i{
+    margin: 0;
+    font-size: 26px;
+    color: var(--text-color);
+}
+
+.profile_membership p,.profile_balance p{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+
+@media (max-width: 768px){
+    .profile_details{
+        padding: 0px 10px;
+    }
+    
+    .profile_img {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+    }
+    
+    .profile_img img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .profile_phone_email i{
+        font-size: 16px;
+    }
+    
+    .profile_phone_email p{
+        font-size: 14px;
+    }
+    
+    .profile_membership i,.profile_balance i{
+        font-size: 18px;
+    }
+    
+    .profile_membership p,.profile_balance p{
+        font-size: 18px;
+    }
+}
