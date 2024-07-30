@@ -1,7 +1,7 @@
 /* Customer video reviews section */
 .home_video_reviews{
     position: relative;
-    padding: 20px 0 0 0;
+    padding: 20px 0 ;
     margin-bottom: 50px;
 }
 
@@ -40,9 +40,9 @@
 }
 
 .home_reviews_section{
-    transform: translateY(50px);
     box-shadow: rgba(0,0,0,0.3) 0px 2px 10px 2px;
     border-radius: 20px;
+    background-color: transparent;
 }
 
 .home_review_img{

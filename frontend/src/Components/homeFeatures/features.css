@@ -98,6 +98,7 @@
     .home_features_video_main{
         width: 90%;
         height: 350px;
+        background-color: rgba(0,0,0,0.1);
     }
 
     .home_features_video_main p{
