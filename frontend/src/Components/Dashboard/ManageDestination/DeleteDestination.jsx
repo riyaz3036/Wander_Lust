@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import {BASE_URL} from '../../../utils/config';
 
 const DeleteDestination = ({ setDelete, id }) => {
@@ -52,4 +52,4 @@ const DeleteDestination = ({ setDelete, id }) => {
     );
 }
 
-export default DeleteDestination;
+export default memo(DeleteDestination);

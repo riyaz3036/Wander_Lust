@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import {BASE_URL} from '../../../utils/config';
 
 
@@ -103,4 +103,4 @@ const EditActivity = ({ setEdit, activity }) => {
     );
 }
 
-export default EditActivity;
+export default memo(EditActivity);

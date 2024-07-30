@@ -2,8 +2,8 @@ import React, {useState,useContext, useEffect, memo} from 'react';
 import './user-bookings.css'
 import { AuthContext } from '../../../context/AuthContext';
 import { BASE_URL } from '../../../utils/config';
-import { format } from 'date-fns';
 import DeleteBooking from '../../Dashboard/ManageBooking/DeleteBooking';
+import BookingCard from '../../../shared/BookingCard';
 
 const UserBookings = () => {
 
@@ -36,17 +36,6 @@ const UserBookings = () => {
     },[user])
 
 
-    // Format date utility function using date-fns
-    const formatDate = (dateString) => {
-        try {
-        const date = new Date(dateString);
-        return format(date, 'dd-MM-yyyy');
-        } catch (error) {
-        console.error('Error formatting date:', error);
-        return 'Invalid Date';
-        }
-    };
-
   return (
     <div className="flex flex-col gap-3 profile_bookings">
        
@@ -55,30 +44,8 @@ const UserBookings = () => {
             {bookingError && (<p className="p-5 add_tour_error">{bookingError}</p>)}
             {bookingLoading && (<p className="p-5 add_tour_error">Loading...</p>)}
             {!bookingLoading && !bookingError && bookings.length===0 && (<p className="p-5 add_tour_error">No Bookings Yet</p>)}
-            {!bookingError && !bookingLoading && bookings.map((booking, index) => (
-                <div key={index} className="profile_booking_element">
-                    <div className="profile_booking_element_img">
-                        <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image" />
-                    </div>
-                    <div className="booking_element_main">
-                        <p><span>Booked Tour:</span> {booking.tour_id.title}</p>
-                        <p><span>Tour Date:</span> {formatDate(booking.tour_id.start_date)}</p>
-                        <p><span>Booking Name:</span> {booking.bookFor}</p>
-                        <p><span>Guest Size:</span> {booking.guestSize}</p>
-                        <p><span>Price:</span> ₹{booking.price}</p>
-                        <p className=""><span>Activities:</span></p>
-                        <div className="flex flex-wrap gap-1">
-                            {booking.signed_activities.length === 0 ? (
-                            <p>(No Additional signed Activities)</p>
-                            ) : (
-                            booking.signed_activities.map((activity, index) => (
-                                <p key={index}>{activity.title}, </p>
-                            ))
-                            )}
-                        </div>
-                        <button className="text-white bg-red-600 font-semibold px-3 py-2 booking_cancel" onClick={() => setDelete(booking._id)}>Cancel Booking</button>
-                    </div>
-                </div>
+            {!bookingError && !bookingLoading && bookings.map((booking) => (
+                <BookingCard booking={booking} setDelete={setDelete}/>
             ))}
         </div>
   

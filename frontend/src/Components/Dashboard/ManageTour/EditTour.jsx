@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo} from 'react';
 import './edit-tour.css';
 import {BASE_URL} from '../../../utils/config';
 
@@ -163,4 +163,4 @@ const EditTour = ({ setEdit, tour }) => {
     );
 }
 
-export default EditTour;
+export default memo(EditTour);

@@ -1,5 +1,4 @@
-import React,{useState} from 'react'
-import { NavLink } from 'react-router-dom'
+import React,{useState, memo} from 'react'
 import './admin-header.css'
 import logo from '../../../assets/images/logo.png'
 import logo_mini from '../../../assets/images/logo_mini.png'
@@ -53,4 +52,4 @@ const AdminHeader=({toggleSidebar,setToggleSidebar})=>{
 }
 
 
-export default AdminHeader;
+export default memo(AdminHeader);

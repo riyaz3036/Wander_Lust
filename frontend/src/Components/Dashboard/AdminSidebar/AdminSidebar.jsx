@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{memo} from 'react'
 import {NavLink} from 'react-router-dom'
 import './admin-sidebar.css'
 
@@ -50,4 +50,4 @@ const AdminSidebar=({toggleSidebar})=>{
 }
 
 
-export default AdminSidebar;
+export default memo(AdminSidebar);

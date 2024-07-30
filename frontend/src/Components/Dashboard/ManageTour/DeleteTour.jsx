@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import './delete-tour.css';
 import {BASE_URL} from '../../../utils/config';
 
@@ -53,4 +53,4 @@ const DeleteTour = ({ setDelete, id }) => {
     );
 }
 
-export default DeleteTour;
+export default memo(DeleteTour);
