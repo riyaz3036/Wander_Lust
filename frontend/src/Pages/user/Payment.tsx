@@ -4,6 +4,7 @@ import payment from '../../assets/images/payment.png';
 import Success from '../../Components/Success/Success';
 import { AuthContext } from '../../context/AuthContext';
 import { BASE_URL } from '../../utils/config';
+import {message} from 'antd';
 
 
 const Payment = () => {
@@ -48,7 +49,7 @@ const Payment = () => {
 
     } catch (error) {
       console.error('Error:', error);
-      alert('Failed to update Membership. Please try again later.');
+      message.error('Failed to update Membership. Please try again later.');
     }
   };
 

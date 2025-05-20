@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Assurance from '../../Components/Assurance/Assurance';
 import { AuthContext } from '../../context/AuthContext';
 import '../../styles/pricing.css';
+import {message} from 'antd';
 
 const Pricing = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Pricing = () => {
         if (user) {
             navigate(`/payment/${plan}`);
         } else {
-            alert('Please log in to choose a plan.');
+            message.error('Please log in to choose a plan.');
         }
     };
 

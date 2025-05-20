@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {message} from 'antd';
 
 const useFetch = (url: any)=>{
     const [data, setData]= useState([])
@@ -15,7 +16,7 @@ const useFetch = (url: any)=>{
 
             if(!res.ok){
                 setError('Failed to fetch data');
-                alert('failed to fetch data');
+                message.error('failed to fetch data');
             }
             const result = await res.json();
             setData(result.data);

@@ -4,6 +4,7 @@ import DeleteDestination from '../../Components/Dashboard/ManageDestination/Dele
 import EditDestination from '../../Components/Dashboard/ManageDestination/EditDestination';
 import '../../styles/add-tour.css';
 import { BASE_URL } from '../../utils/config';
+import {message} from 'antd';
 
 
 
@@ -65,7 +66,7 @@ const AddDestination = () => {
     
         if (file) {
             if (file.size > 2 * 1024 * 1024) { 
-                alert('File size exceeds 2 MB limit. Please choose a smaller file.');
+                message.error('File size exceeds 2 MB limit. Please choose a smaller file.');
                 event.target.value = '';  
                 return;
             }

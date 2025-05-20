@@ -1,5 +1,6 @@
 import React, { useState, useEffect, memo } from 'react';
 import {BASE_URL} from '../../utils/config';
+import {message} from 'antd';
 
 interface EditProfileProps {
     setEdit: any;
@@ -39,7 +40,7 @@ const EditProfile: React.FC<EditProfileProps> = ({ setEdit, userData }) => {
     
         if (file) {
             if (file.size > 2 * 1024 * 1024) { 
-                alert('File size exceeds 2 MB limit. Please choose a smaller file.');
+                message.error('File size exceeds 2 MB limit. Please choose a smaller file.');
                 event.target.value = '';  
                 return;
             }
@@ -82,7 +83,7 @@ const EditProfile: React.FC<EditProfileProps> = ({ setEdit, userData }) => {
             }, 1000);
         } catch (error) {
             console.error('Error editing details', error);
-            alert('Error editing details');
+            message.error('Error editing details');
         }
     };
     

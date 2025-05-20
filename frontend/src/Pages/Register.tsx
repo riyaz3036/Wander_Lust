@@ -4,6 +4,7 @@ import RegisterImages from '../Components/RegisterImages/RegisterImages';
 import { AuthContext } from '../context/AuthContext';
 import '../styles/register.css';
 import { BASE_URL } from '../utils/config';
+import {message} from 'antd';
 
 
 const Register = () => {
@@ -39,7 +40,7 @@ const Register = () => {
         e.preventDefault();
 
         if(details.role==='admin' && details.ADMIN_KEY===''){
-            alert('Please enter the ADMIN KEY to register as an admin');
+            message.info('Please enter the ADMIN KEY to register as an admin');
             return;
         }
 
@@ -55,15 +56,15 @@ const Register = () => {
             const data = await res.json();
 
             if (res.ok) {
-                alert('Successfully Registered!!! Please login');
+                message.success('Successfully Registered!!! Please login');
                 dispatch({ type: 'REGISTER_SUCCESS' });
                 navigate('/login');
             } else {
-                alert(data.message || 'Registration failed. Please try again.');
+                message.error(data.message || 'Registration failed. Please try again.');
                 window.location.reload();
             }
         } catch (err: any) {
-            alert(err.message || 'Registration Failed!!');
+            message.error(err.message || 'Registration Failed!!');
         }
     };
 

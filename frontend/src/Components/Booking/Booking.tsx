@@ -4,6 +4,7 @@ import { Form, FormGroup, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../../utils/config';
 import { AuthContext } from "../../context/AuthContext";
+import {message} from 'antd';
 
 interface BookingProps {
     tour: any;
@@ -90,13 +91,13 @@ const Booking: React.FC<BookingProps> = ({ tour, addAct }) => {
 
         // Check if the user is logged in
         if (!user) {
-            alert('Please Login to Book your trip');
+            message.error('Please Login to Book your trip');
             return;
         }
         // Check if all required fields are filled
         const { bookFor, guestSize } = formData;
         if (!bookFor || !guestSize) {
-            alert('Please fill in all required fields.');
+            message.error('Please fill in all required fields.');
             return;
         }
 
@@ -133,7 +134,7 @@ const Booking: React.FC<BookingProps> = ({ tour, addAct }) => {
 
         } catch (error) {
             console.error('Error Booking Trip:', error);
-            alert('Error Booking Trip. Please try again later.');
+            message.error('Error Booking Trip. Please try again later.');
         }
     };
 

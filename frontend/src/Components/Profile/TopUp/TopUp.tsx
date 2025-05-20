@@ -2,6 +2,7 @@ import React,{useState, memo} from 'react';
 import {useNavigate} from 'react-router-dom'
 import './top-up.css'
 import topup from '../../../assets/images/topup.png';
+import {message} from 'antd';
 
 const TopUp = () => {
     const navigate = useNavigate();
@@ -14,7 +15,7 @@ const TopUp = () => {
 
     const handleSubmit = async () => {
         if (balance === '') {
-            alert('Add Amount');
+            message.info('Add Amount');
             return;
         }
         navigate(`/balance-pay/${balance}`);

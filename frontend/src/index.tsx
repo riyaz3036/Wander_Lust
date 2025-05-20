@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {BrowserRouter} from'react-router-dom';
 import {AuthContextProvider} from "./context/AuthContext";
-
-
+import 'antd/dist/reset.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";

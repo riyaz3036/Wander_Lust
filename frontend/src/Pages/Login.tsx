@@ -4,6 +4,7 @@ import LoginImages from '../Components/LoginImages/LoginImages';
 import { AuthContext } from '../context/AuthContext';
 import '../styles/login.css';
 import { BASE_URL } from '../utils/config';
+import { message } from "antd";
 
 
 const Login = () => {
@@ -44,12 +45,12 @@ const Login = () => {
       const result = await res.json();
 
       if (!res.ok) {
-        alert(result.message);
+        message.error(result.message);
         return;
       }
 
       dispatch({ type: 'LOGIN_SUCCESS', payload: result.data });
-      alert('Login Successful');
+      message.success("Logged in Successfully")
   
       if (result.data.role === 'admin') {
         navigate('/analytics');

@@ -1,5 +1,6 @@
 import React, { useState, memo } from 'react';
 import {BASE_URL} from '../../../utils/config';
+import {message} from 'antd';
 
 interface DeleteActivityProps {
     setDelete: any;
@@ -30,7 +31,7 @@ const DeleteActivity: React.FC<DeleteActivityProps> = ({ setDelete, id }) => {
             }, 1000);
         } catch (error) {
             console.error('Error deleting activity:', error);
-            alert('Error deleting activity');
+            message.error('Error deleting activity');
         }
     };
 

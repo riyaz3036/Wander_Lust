@@ -1,6 +1,7 @@
 import React, { useState, useEffect, memo} from 'react';
 import './edit-tour.css';
 import {BASE_URL} from '../../../utils/config';
+import {message} from 'antd';
 
 interface EditTourProps {
     setEdit: any;
@@ -52,7 +53,7 @@ const EditTour: React.FC<EditTourProps> = ({ setEdit, tour }) => {
     
         if (file) {
             if (file.size > 2 * 1024 * 1024) { 
-                alert('File size exceeds 2 MB limit. Please choose a smaller file.');
+                message.error('File size exceeds 2 MB limit. Please choose a smaller file.');
                 event.target.value = '';  
                 return;
             }
@@ -98,7 +99,7 @@ const EditTour: React.FC<EditTourProps> = ({ setEdit, tour }) => {
             }, 1000);
         } catch (error) {
             console.error('Error editing tour:', error);
-            alert('Error editing tour');
+            message.error('Error editing tour');
         }
     };
 

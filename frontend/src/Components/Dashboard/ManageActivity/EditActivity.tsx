@@ -1,5 +1,6 @@
 import React, { useState, useEffect, memo } from 'react';
 import {BASE_URL} from '../../../utils/config';
+import {message} from 'antd';
 
 interface EditActivityProps {
     setEdit: any;
@@ -58,7 +59,7 @@ const EditActivity: React.FC<EditActivityProps> = ({ setEdit, activity }) => {
             }, 1000);
         } catch (error) {
             console.error('Error editing activity:', error);
-            alert('Error editing activity');
+            message.error('Error editing activity');
         }
     };
 
