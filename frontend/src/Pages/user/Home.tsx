@@ -1,20 +1,19 @@
-import React, { useEffect, useState, useRef } from 'react';
-import '../styles/home.css';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Container, Col, Row } from 'reactstrap';
-import heroImg01 from '../assets/images/hero-img01.jpg';
-import heroImg02 from '../assets/images/hero-img02.jpg';
-import heroImg03 from '../assets/images/hero-img03.jpg';
-import { BASE_URL } from '../utils/config';
-import Header from '../Components/Header/Header';
-import Subtitle from '../shared/Subtitle';
-import ScrollSection from '../Components/ScrollSection/ScrollSection';
-import DestinationList from '../Components/Destination/DestinationList';
-import PackageList from '../Components/Package/PackageList';
-import VideoReviews from '../Components/homeVideoReviews/VideoReviews';
-import Assurance from '../Components/Assurance/Assurance';
-import Footer from '../Components/Footer/Footer';
-import FeaturesDisplay from '../Components/homeFeatures/Featuers'
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Col, Container, Row } from 'reactstrap';
+import Assurance from '../../Components/Assurance/Assurance';
+import DestinationList from '../../Components/Destination/DestinationList';
+import PackageList from '../../Components/Package/PackageList';
+import ScrollSection from '../../Components/ScrollSection/ScrollSection';
+import FeaturesDisplay from '../../Components/homeFeatures/Featuers';
+import VideoReviews from '../../Components/homeVideoReviews/VideoReviews';
+import heroImg01 from '../../assets/images/hero-img01.jpg';
+import heroImg02 from '../../assets/images/hero-img02.jpg';
+import heroImg03 from '../../assets/images/hero-img03.jpg';
+import Subtitle from '../../shared/Subtitle';
+import '../../styles/home.css';
+import { BASE_URL } from '../../utils/config';
+
 
 const Home = () => {
     // To get Tour data
@@ -79,8 +78,6 @@ const Home = () => {
 
     return (
         <>
-            <Header />
-
             {/* Heading and subheading section */}
             <div className="pb-24 flex items-center justify-center gap-2 items-center home_description">
                 <h2 className="text-center font-semibold text-white home_description_title">
@@ -172,9 +169,6 @@ const Home = () => {
 
             {/* Features Video Section */}
             <FeaturesDisplay />
-            
-
-            <Footer />
         </>
     );
 };

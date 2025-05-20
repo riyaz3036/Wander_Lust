@@ -1,10 +1,8 @@
-import React, { useContext,useEffect } from 'react';
-import { useNavigate,useLocation } from 'react-router-dom';
-import '../styles/pricing.css';
-import { AuthContext } from '../context/AuthContext';
-import Header from '../Components/Header/Header';
-import Assurance from '../Components/Assurance/Assurance';
-import Footer from '../Components/Footer/Footer';
+import { useContext, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Assurance from '../../Components/Assurance/Assurance';
+import { AuthContext } from '../../context/AuthContext';
+import '../../styles/pricing.css';
 
 const Pricing = () => {
     const navigate = useNavigate();
@@ -25,7 +23,6 @@ const Pricing = () => {
 
     return (
         <div>
-            <Header />
             {/* Heading and subheading section */}
             <div className="pb-24 flex items-center justify-center gap-2 items-center pricing_description">
                 <h2 className="text-center font-semibold text-white pricing_description_title">
@@ -180,7 +177,6 @@ const Pricing = () => {
                     <button className="pricing_newsletter_bttn"><i className="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };

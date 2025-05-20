@@ -1,11 +1,10 @@
-import { useState, useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { BASE_URL } from '../utils/config';
-import payment from '../assets/images/payment.png';
-import { AuthContext } from '../context/AuthContext';
-import Header from '../Components/Header/Header';
-import Success from '../Components/Success/Success';
-import Footer from '../Components/Footer/Footer';
+import payment from '../../assets/images/payment.png';
+import Success from '../../Components/Success/Success';
+import { AuthContext } from '../../context/AuthContext';
+import { BASE_URL } from '../../utils/config';
+
 
 const Payment = () => {
   const { user } = useContext(AuthContext);
@@ -54,9 +53,7 @@ const Payment = () => {
   };
 
   return (
-    <main>
-      <Header />
-      <div className="flex flex-wrap items-center justify-center gap-20 py-10 px-5">
+      <main className="flex flex-wrap items-center justify-center gap-20 py-10 px-5">
         <div className="" style={{ width: '700px' }}>
           <p className="text-3xl font-bold mb-5 mt-0 mx-0">PAYMENT</p>
           <div className="flex flex-col mb-5">
@@ -94,9 +91,7 @@ const Payment = () => {
             <img src={payment} loading="lazy" alt="Payment Options" />
           </div>
         </div>
-      </div>
-      <Footer />
-    </main>
+      </main>
   );
 };
 

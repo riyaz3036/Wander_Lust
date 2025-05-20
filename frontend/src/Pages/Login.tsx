@@ -1,11 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
-import '../styles/login.css';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { BASE_URL } from '../utils/config';
-import { AuthContext } from '../context/AuthContext';
-import Header from '../Components/Header/Header';
+import { useContext, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import LoginImages from '../Components/LoginImages/LoginImages';
-import Footer from '../Components/Footer/Footer';
+import { AuthContext } from '../context/AuthContext';
+import '../styles/login.css';
+import { BASE_URL } from '../utils/config';
 
 
 const Login = () => {
@@ -66,8 +64,6 @@ const Login = () => {
 
 
   return (
-    <div>
-    <Header />
     <div className="login_main">
         {/* Left Section */}
         <LoginImages />
@@ -95,8 +91,6 @@ const Login = () => {
             </form>
         </div>
     </div>
-    <Footer />
-</div>
   );
 };
 

@@ -1,12 +1,11 @@
-import {useEffect } from 'react';
-import '../styles/profile.css';
-import { useNavigate, useLocation } from 'react-router-dom';
-import profile_title from '../assets/images/profile_title.jpg';
-import Header from '../Components/Header/Header';
-import UserBookings from '../Components/Profile/UserBookings/UserBookings';
-import UserDetails from '../Components/Profile/UserDetails/UserDetails';
-import TopUp from '../Components/Profile/TopUp/TopUp';
-import Footer from '../Components/Footer/Footer';
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import profile_title from '../../assets/images/profile_title.jpg';
+import TopUp from '../../Components/Profile/TopUp/TopUp';
+import UserBookings from '../../Components/Profile/UserBookings/UserBookings';
+import UserDetails from '../../Components/Profile/UserDetails/UserDetails';
+import '../../styles/profile.css';
+
 
 
 const Profile = () => {
@@ -21,8 +20,6 @@ const Profile = () => {
 
     return (
         <div>
-            <Header />
-
             <div>
                 {/* Image */}
                 <div className="profile_title_img">
@@ -52,8 +49,6 @@ const Profile = () => {
                     <i className="ri-arrow-right-line"></i>
                 </div>
             </div>
-            
-            <Footer />
         </div>
     );
 };

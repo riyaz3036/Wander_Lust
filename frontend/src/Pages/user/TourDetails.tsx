@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react';
-import '../styles/tour-details.css';
-import { Container, Row, Col} from 'reactstrap';
-import { useParams, useLocation } from 'react-router-dom';
-import Booking from '../Components/Booking/Booking';
-import { BASE_URL } from '../utils/config';
 import { format } from 'date-fns';
-import Header from '../Components/Header/Header';
-import Footer from '../Components/Footer/Footer';
+import { useEffect, useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
+import { Col, Container, Row } from 'reactstrap';
+import Booking from '../../Components/Booking/Booking';
+import '../../styles/tour-details.css';
+import { BASE_URL } from '../../utils/config';
+
 
 const TourDetails = () => {
     const { pathname } = useLocation();
@@ -16,7 +15,6 @@ const TourDetails = () => {
     const [tourLoading, setTourLoading] = useState(true);
     const [tourError, setTourError] = useState('');
     const [addAct, setAddAct] = useState<any>([]);
-    const [buttonText, setButtonText] = useState('Add');
     
 
     useEffect(() => {
@@ -69,7 +67,6 @@ const TourDetails = () => {
 
     return (
         <section>
-            <Header />
             <Container>
                 <Row>
                     <Col lg="8">
@@ -145,7 +142,6 @@ const TourDetails = () => {
                     </Col>
                 </Row>
             </Container>
-            <Footer />
         </section>
     );
 };

@@ -1,9 +1,8 @@
-import {useEffect, memo}from 'react'
-import {Container,Row,Col,Button} from 'reactstrap'
-import '../styles/thank-you.css'
-import {Link,useLocation} from 'react-router-dom'
-import Header from '../Components/Header/Header';
-import Footer from '../Components/Footer/Footer';
+import { memo, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Button, Col, Container, Row } from 'reactstrap';
+import '../../styles/thank-you.css';
+
 
 
 const Thankyou = ()=>{
@@ -16,7 +15,6 @@ const Thankyou = ()=>{
       
 return (
     <section>
-        <Header />
         <Container>
             <Row>
                 <Col lg="12" className="pt-5 text-center">
@@ -30,7 +28,6 @@ return (
                 </Col>
             </Row>
         </Container>
-        <Footer />
     </section>
 )
 };
