@@ -1,12 +1,12 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import success from '../../assets/images/success.png';
+import RouteConstants from "../../constants/RouteConstants";
 
 const Success = () => {
     const navigate = useNavigate();
 
     const handleContinueShopping = () => {
-        navigate('/');
+        navigate(RouteConstants.root);
     };
 
     return (

@@ -4,6 +4,7 @@ import payment from '../../assets/images/payment.png';
 import Success from '../../Components/Success/Success';
 import { AuthContext } from '../../context/AuthContext';
 import { BASE_URL } from '../../utils/config';
+import {message} from 'antd';
 
 
 const BalancePay = () => {
@@ -34,7 +35,7 @@ const BalancePay = () => {
       // Ensure id is a number and convert it to float
       const amount = id ? parseFloat(id) : 0;
       if (isNaN(amount) || amount <= 0) {
-        alert('Invalid amount');
+        message.error('Invalid amount');
         return;
       }
 
@@ -55,7 +56,7 @@ const BalancePay = () => {
 
     } catch (error) {
       console.error('Error:', error);
-      alert('Failed to update balance. Please try again later.');
+      message.error('Failed to update balance. Please try again later.');
     }
   };
 

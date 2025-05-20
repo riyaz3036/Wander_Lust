@@ -1,5 +1,6 @@
 import React, { useState, memo } from 'react';
 import {BASE_URL} from '../../../utils/config';
+import {message} from 'antd';
 
 interface DeleteDestinationProps {
     setDelete: any;
@@ -30,7 +31,7 @@ const DeleteDestination: React.FC<DeleteDestinationProps> = ({ setDelete, id }) 
             }, 1000);
         } catch (error) {
             console.error('Error deleting destination:', error);
-            alert('Error deleting destination');
+            message.error('Error deleting destination');
         }
     };
 

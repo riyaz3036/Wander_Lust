@@ -1,5 +1,6 @@
 import React, { useState, useEffect, memo } from 'react';
 import {BASE_URL} from '../../../utils/config';
+import {message} from 'antd';
 
 interface DeleteDestinationProps {
     setEdit: any;
@@ -39,7 +40,7 @@ const EditDestination: React.FC<DeleteDestinationProps> = ({ setEdit, destinatio
     
         if (file) {
             if (file.size > 2 * 1024 * 1024) { 
-                alert('File size exceeds 2 MB limit. Please choose a smaller file.');
+                message.error('File size exceeds 2 MB limit. Please choose a smaller file.');
                 event.target.value = '';  
                 return;
             }
@@ -80,7 +81,7 @@ const EditDestination: React.FC<DeleteDestinationProps> = ({ setEdit, destinatio
             }, 1000);
         } catch (error) {
             console.error('Error editing destination:', error);
-            alert('Error editing destination');
+            message.error('Error editing destination');
         }
     };
 

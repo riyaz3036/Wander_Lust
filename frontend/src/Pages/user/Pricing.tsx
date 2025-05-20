@@ -4,6 +4,7 @@ import Assurance from '../../Components/Assurance/Assurance';
 import { AuthContext } from '../../context/AuthContext';
 import '../../styles/pricing.css';
 import {message} from 'antd';
+import { generateRoute } from '../../utils/generateRoute';
 
 const Pricing = () => {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Pricing = () => {
 
     const handleNavigate = (plan: any) => {
         if (user) {
-            navigate(`/payment/${plan}`);
+            navigate(generateRoute.payment(plan));
         } else {
             message.error('Please log in to choose a plan.');
         }

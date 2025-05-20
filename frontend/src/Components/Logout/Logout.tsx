@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import './logout.css';
 import {message} from 'antd';
+import RouteConstants from '../../constants/RouteConstants';
 
 interface LogoutProps {
     setLogout: any;
@@ -16,7 +17,7 @@ const Logout: React.FC<LogoutProps> = ({setLogout}) => {
 
     const handleLogout=()=>{
         dispatch({type:'LOGOUT'})
-        navigate('/')
+        navigate(RouteConstants.root)
         message.success("Successfully Logged out!!")
     }
     

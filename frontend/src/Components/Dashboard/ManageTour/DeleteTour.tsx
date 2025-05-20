@@ -1,6 +1,7 @@
 import React, { useState, memo } from 'react';
 import './delete-tour.css';
 import {BASE_URL} from '../../../utils/config';
+import {message} from 'antd';
 
 interface DeleteTourProps {
     setDelete: any;
@@ -31,7 +32,7 @@ const DeleteTour:React.FC<DeleteTourProps> = ({ setDelete, id }) => {
             }, 1000);
         } catch (error) {
             console.error('Error deleting Tour:', error);
-            alert('Error deleting tour');
+            message.error('Error deleting tour');
         }
     };
 

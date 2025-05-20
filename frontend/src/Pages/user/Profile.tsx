@@ -5,6 +5,7 @@ import TopUp from '../../Components/Profile/TopUp/TopUp';
 import UserBookings from '../../Components/Profile/UserBookings/UserBookings';
 import UserDetails from '../../Components/Profile/UserDetails/UserDetails';
 import '../../styles/profile.css';
+import RouteConstants from '../../constants/RouteConstants';
 
 
 
@@ -44,7 +45,7 @@ const Profile = () => {
                 <p className="profile_pricing_subtitle">
                     Discover the perfect plan that suits your needs. Whether you are looking for basic access or premium features, we have a plan for you.
                 </p>
-                <div className="mt-4 flex gap-1 items-center profile_pricing_bttn" onClick={()=>navigate("/pricing")}>
+                <div className="mt-4 flex gap-1 items-center profile_pricing_bttn" onClick={()=>navigate(RouteConstants.pricing)}>
                     <p >Explore Pricing</p>
                     <i className="ri-arrow-right-line"></i>
                 </div>

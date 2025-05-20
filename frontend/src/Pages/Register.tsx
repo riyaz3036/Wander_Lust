@@ -5,6 +5,7 @@ import { AuthContext } from '../context/AuthContext';
 import '../styles/register.css';
 import { BASE_URL } from '../utils/config';
 import {message} from 'antd';
+import RouteConstants from '../constants/RouteConstants';
 
 
 const Register = () => {
@@ -58,7 +59,7 @@ const Register = () => {
             if (res.ok) {
                 message.success('Successfully Registered!!! Please login');
                 dispatch({ type: 'REGISTER_SUCCESS' });
-                navigate('/login');
+                navigate(RouteConstants.login);
             } else {
                 message.error(data.message || 'Registration failed. Please try again.');
                 window.location.reload();

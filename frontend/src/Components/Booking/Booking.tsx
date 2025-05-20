@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../../utils/config';
 import { AuthContext } from "../../context/AuthContext";
 import {message} from 'antd';
+import RouteConstants from '../../constants/RouteConstants';
 
 interface BookingProps {
     tour: any;
@@ -130,7 +131,7 @@ const Booking: React.FC<BookingProps> = ({ tour, addAct }) => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             
-            navigate("/thank-you");
+            navigate(RouteConstants.thankYou);
 
         } catch (error) {
             console.error('Error Booking Trip:', error);

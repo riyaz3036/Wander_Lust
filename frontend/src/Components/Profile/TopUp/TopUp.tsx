@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import './top-up.css'
 import topup from '../../../assets/images/topup.png';
 import {message} from 'antd';
+import { generateRoute } from '../../../utils/generateRoute';
 
 const TopUp = () => {
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ const TopUp = () => {
             message.info('Add Amount');
             return;
         }
-        navigate(`/balance-pay/${balance}`);
+        navigate(generateRoute.balancePay(balance));
     };
 
 
