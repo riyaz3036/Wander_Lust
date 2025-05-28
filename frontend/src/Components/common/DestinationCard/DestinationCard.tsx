@@ -1,7 +1,7 @@
 import React,{memo} from 'react'
 import './destination-card.css'
-import {Card, CardBody} from 'reactstrap';
-import { BASE_URL } from '../utils/config';
+import {Card} from 'reactstrap';
+import { BASE_URL } from '../../../utils/config';
 
 interface DestinationCardProps {
     dest: any

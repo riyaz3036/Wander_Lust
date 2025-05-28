@@ -1,5 +1,5 @@
 import React,{memo} from 'react'
-import DestinationCard from '../../shared/DestinationCard'
+import DestinationCard from '../common/DestinationCard/DestinationCard'
 import {Col } from 'reactstrap'
 
 interface DestinationListProps {

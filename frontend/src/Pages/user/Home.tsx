@@ -10,7 +10,7 @@ import VideoReviews from '../../Components/homeVideoReviews/VideoReviews';
 import heroImg01 from '../../assets/images/hero-img01.jpg';
 import heroImg02 from '../../assets/images/hero-img02.jpg';
 import heroImg03 from '../../assets/images/hero-img03.jpg';
-import Subtitle from '../../shared/Subtitle';
+import Subtitle from '../../Components/common/Subtitle/Subtitle';
 import '../../styles/home.css';
 import { BASE_URL } from '../../utils/config';
 

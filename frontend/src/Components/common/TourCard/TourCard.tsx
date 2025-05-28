@@ -2,7 +2,7 @@ import React,{memo} from 'react'
 import './tour-card.css'
 import {Card, CardBody} from 'reactstrap';
 import {Link} from 'react-router-dom'
-import { BASE_URL } from '../utils/config';
+import { BASE_URL } from '../../../utils/config';
 
 interface TourCardProps {
     tour: any;

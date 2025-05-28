@@ -1,6 +1,6 @@
 import React,{memo} from 'react'
-import TourCard from '../../shared/TourCard'
 import {Col } from 'reactstrap'
+import TourCard from '../common/TourCard/TourCard';
 
 interface PackageListProps {
     tours: any;

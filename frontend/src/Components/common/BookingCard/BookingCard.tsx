@@ -1,7 +1,7 @@
 import React, {memo}from 'react'
 import './booking-card.css'
-import { BASE_URL } from '../utils/config';
 import { format } from 'date-fns';
+import { BASE_URL } from '../../../utils/config';
 
 interface BookingCardProps {
     booking: any;

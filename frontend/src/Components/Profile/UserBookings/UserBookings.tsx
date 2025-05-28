@@ -3,7 +3,7 @@ import './user-bookings.css'
 import { AuthContext } from '../../../context/AuthContext';
 import { BASE_URL } from '../../../utils/config';
 import DeleteBooking from '../../Dashboard/ManageBooking/DeleteBooking';
-import BookingCard from '../../../shared/BookingCard';
+import BookingCard from '../../common/BookingCard/BookingCard';
 
 const UserBookings = () => {
 

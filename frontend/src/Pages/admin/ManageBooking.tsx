@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import DeleteBooking from '../../Components/Dashboard/ManageBooking/DeleteBooking';
-import BookingCard from '../../shared/BookingCard';
+import BookingCard from '../../Components/common/BookingCard/BookingCard';
 import '../../styles/my-bookings.css';
 import { BASE_URL } from '../../utils/config';
 
