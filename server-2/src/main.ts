@@ -17,6 +17,12 @@ async function bootstrap() {
 
   app.useGlobalGuards(new ApiKeyGuard(configService));
 
+  app.enableCors({
+    origin: 'http://localhost:5000',
+    credentials: true,
+  });
+
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,     

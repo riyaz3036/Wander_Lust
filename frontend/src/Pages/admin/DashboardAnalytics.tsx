@@ -1,87 +1,53 @@
+import { message } from 'antd';
 import { useEffect, useState } from 'react';
+import LoadingOverlay from '../../components/common/LoadingOverlay/LoadingOverlay';
+import ColorConstants from '../../constants/ColorConstants';
+import AnalyticsService from '../../service/analytics.service';
 import '../../styles/dashboard-analytics.css';
-import { BASE_URL } from '../../utils/config';
+import { AnalyticsCount } from '../../types/analytics.types';
+import AnalyticsCard from '../../components/DashboardAnalytics/AnalyticsCard';
 
 
 const DashboardAnalytics = () => {
-    const [count,setCount] = useState<any>({});
-    const [countLoading,setCountLoading] = useState<any>(1);
-    const [countError,setCountError] = useState('');
+    const [count, setCount] = useState<AnalyticsCount>();
+    const [countLoading,setCountLoading] = useState<boolean>(false);
+    const [countError,setCountError] = useState<string>('');
+
+    const fetchCount = () => {
+        setCountLoading(true);
+        AnalyticsService.getCount()
+            .then((response) => {
+                setCount(response?.data);
+            })
+            .catch((error) => {
+                console.error('Error while fetching analytics.', error);
+                message.error(error.message || 'Error while fetching analytics.');
+                setCountError(error.message || 'Error while fetching analytics.')
+            })
+            .finally(() => {
+                setCountLoading(false);
+            });
+    }
+
 
     useEffect(() => {
-        
-            const fetchCount = async () => {
-                try {
-                  const response = await fetch(`${BASE_URL}/analytics/count/`);
-                  if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                  }
-                  const data = await response.json();
-                  setCount(data);
-                } catch (error) {
-                  setCountError('Error loading bookings');
-                } finally {
-                  setCountLoading(false);
-                }
-              };
-            fetchCount();
+        fetchCount();
     }, []);
 
 
     return (
-        <div>
-            {countLoading && (<p className="p-5 add_tour_error">Loading...</p>)}
+        <div className="p-[10px]" style={{backgroundColor: ColorConstants.white }}>
             {countError && (<p className="p-5 add_tour_error">{countError}</p>)}
-            {!countError && !countLoading && (
+            {count && !countError && !countLoading && (
             <div className="analytics_display_cards">
-                <div className="analytics_display_card" style={{backgroundColor: '#6a73fa'}}>
-                    <div className="analytics_display_card_logo">
-                        <i className="ri-group-line"></i>
-                    </div>
-                    <div className="analytics_display_card_main">
-                        <p>USERS</p>
-                        <p>{count.users}</p>
-                    </div>
-                </div>
-                <div className="analytics_display_card" style={{backgroundColor: '#ffaa16'}}>
-                    <div className="analytics_display_card_logo">
-                        <i className="ri-suitcase-3-line"></i>
-                    </div>
-                    <div className="analytics_display_card_main">
-                        <p>TOURS</p>
-                        <p>{count.tours}</p>
-                    </div>
-                </div>
-                <div className="analytics_display_card" style={{backgroundColor: '#673bb7'}}>
-                    <div className="analytics_display_card_logo">
-                        <i className="ri-road-map-line"></i>
-                    </div>
-                    <div className="analytics_display_card_main">
-                        <p>DESTINATIONS</p>
-                        <p>{count.destinations}</p>
-                    </div>
-                </div>
-                <div className="analytics_display_card" style={{backgroundColor: '#ff1616'}}>
-                    <div className="analytics_display_card_logo">
-                        <i className="ri-run-line"></i>
-                    </div>
-                    <div className="analytics_display_card_main">
-                        <p>ACTIVITIES</p>
-                        <p>{count.activities}</p>
-                    </div>
-                </div>
-                <div className="analytics_display_card" style={{backgroundColor: '#4a6f6f'}}>
-                    <div className="analytics_display_card_logo">
-                        <i className="ri-booklet-line"></i>
-                    </div>
-                    <div className="analytics_display_card_main">
-                        <p>BOOKINGS</p>
-                        <p>{count.bookings}</p>
-                    </div>
-                </div>
+                <AnalyticsCard title={"Users"} value={count.users} color={ColorConstants.analyticsCard1} icon={<i className="ri-group-line" style={{margin: 0, color: ColorConstants.analyticsCard1, fontSize: '30px'}}></i>} />
+                <AnalyticsCard title={"Tours"} value={count.tours} color={ColorConstants.analyticsCard2} icon={<i className="ri-suitcase-3-line" style={{margin: 0, color: ColorConstants.analyticsCard2, fontSize: '30px'}}></i>}  /> 
+                <AnalyticsCard title={"Destinations"} value={count.destinations} color={ColorConstants.analyticsCard3} icon={<i className="ri-road-map-line" style={{margin: 0, color: ColorConstants.analyticsCard3, fontSize: '30px'}}></i>}/>
+                <AnalyticsCard title={"Activities"} value={count.activities} color={ColorConstants.analyticsCard4} icon={<i className="ri-run-line" style={{margin: 0, color: ColorConstants.analyticsCard4, fontSize: '30px'}}></i>}/>
+                <AnalyticsCard title={"Bookings"} value={count.bookings} color={ColorConstants.analyticsCard5} icon={<i className="ri-booklet-line" style={{margin: 0, color: ColorConstants.analyticsCard5, fontSize: '30px'}}></i>}/>
             </div>                    
             )}
-
+            {countLoading && (<LoadingOverlay />)}
         </div>
     );
 }

@@ -22,6 +22,8 @@ import { CreateDestinationDTO } from './dto/create-destination.dto';
 import { DestinationFilterDTO } from './dto/destination-filter.dto';
 import { UpdateDestinationDTO } from './dto/update-destination.dto';
 import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
+import { SuccessArrayResponseDTO } from 'src/common/dtos/success-array-response.dto';
+import { ToursByDestsFiltersDTO } from './dto/tours-by-dests.filter.dto';
 
 @ApiTags('Destination')
 @ApiBearerAuth()
@@ -35,16 +37,14 @@ export class DestinationController {
   @Post(RouteConstants.ADD_DESTINATION)
   @UseInterceptors(FileInterceptor('file'))
   async create(
-    @UploadedFile() file: Express.Multer.File,
     @Body() body: CreateDestinationDTO,
+    @UploadedFile() file?: Express.Multer.File,
   ) {
-    const image = file ? file.path : null;
-    const result = await this.destinationService.createDestination({ ...body, image });
+    const result = await this.destinationService.createDestination(body, file);
     return new SuccessObjectResponseDTO(result);
   }
 
 
-  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Fetch all destinations' })
   @Get(RouteConstants.GET_ALL_DESTINATIONS)
   async findAll(
@@ -57,6 +57,32 @@ export class DestinationController {
     const destinations = await this.destinationService.findAllPaginatedDestinations(filters, pageNum, sizeNum);
     return new SuccessPaginatedResponseDTO(destinations.data, pageNum, sizeNum, destinations.total);
   }
+
+
+  @ApiOperation({ summary: 'Fetch all destinations' })
+  @Get(RouteConstants.GET_ALL_DESTINATIONS_WITHOUT_PAGINATION)
+  async findAllWithoutPagination(
+    @Query() filters: DestinationFilterDTO
+  ) {
+    const destinations = await this.destinationService.findAllDestinations(filters);
+    return new SuccessArrayResponseDTO(destinations.data);
+  }0
+
+
+
+  @ApiOperation({ summary: 'Fetch all tours by destination ids' })
+  @Post(RouteConstants.GET_ALL_TOURS_WITH_DEST_IDS)
+  async findToursByDestIds(
+    @Body() filters: {dest_id: string[]},
+    @Query('page') page = '1',
+    @Query('size') size = '10',
+  ) {
+    const pageNum = parseInt(page, 10);
+    const sizeNum = parseInt(size, 10);
+    const tours = await this.destinationService.findToursByDestIds(filters.dest_id, pageNum, sizeNum);
+    return new SuccessPaginatedResponseDTO(tours.data, pageNum, sizeNum, tours.total);
+  }
+  
 
 
   @UseGuards(JwtAuthGuard)
@@ -74,13 +100,10 @@ export class DestinationController {
   @UseInterceptors(FileInterceptor('file'))
   async update(
     @Param('id') id: string,
-    @UploadedFile() file: Express.Multer.File,
     @Body() body: UpdateDestinationDTO,
+    @UploadedFile() file?: Express.Multer.File,
   ) {
-    if (file) {
-      body.image = file.path;
-    }
-    const updated = await this.destinationService.updateDestination(id, body);
+    const updated = await this.destinationService.updateDestination(id, body, file);
     return new SuccessObjectResponseDTO(updated);
   }
 

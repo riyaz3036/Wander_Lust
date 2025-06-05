@@ -36,17 +36,13 @@ export class TourController {
   @UseInterceptors(FileInterceptor('file'))
   async create(
     @Body() createTourDto: CreateTourRequestDTO,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile() file?: Express.Multer.File,
   ) {
-    if (file) {
-      createTourDto.image = file.path;
-    }
-    const result = await this.tourService.createTour(createTourDto);
+    const result = await this.tourService.createTour(createTourDto, file);
     return new SuccessObjectResponseDTO(result);
   }
 
 
-  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Fetch all tours' })
   @Get(RouteConstants.GET_ALL_TOURS)
   async findAll(
@@ -61,7 +57,6 @@ export class TourController {
   }
 
 
-  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Fetch a tour by ID' })
   @Get(RouteConstants.GET_TOUR_BY_ID)
   async findOne(@Param('id') id: string) {
@@ -77,12 +72,9 @@ export class TourController {
   async update(
     @Param('id') id: string,
     @Body() updateTourDto: UpdateTourRequestDTO,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile() file?: Express.Multer.File,
   ) {
-    if (file) {
-      updateTourDto.image = file.path;
-    }
-    const updated = await this.tourService.updateTour(id, updateTourDto);
+    const updated = await this.tourService.updateTour(id, updateTourDto, file);
     return new SuccessObjectResponseDTO(updated);
   }
 

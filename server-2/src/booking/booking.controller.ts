@@ -58,12 +58,13 @@ export class BookingController {
   ) {
     const pageNum = parseInt(page, 10);
     const sizeNum = parseInt(size, 10);
+
     const bookings = await this.bookingService.findAllBookingsForUser(userId, pageNum, sizeNum);
     return new SuccessPaginatedResponseDTO(bookings.data, pageNum, sizeNum, bookings.total);
   }
 
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Fetch all bookings' })
   @Get(RouteConstants.GET_ALL_BOOKINGS)
   async findAll(

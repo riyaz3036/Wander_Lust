@@ -1,15 +1,14 @@
-import React, {memo}from 'react'
-import './booking-card.css'
 import { format } from 'date-fns';
-import { BASE_URL } from '../../../utils/config';
+import React, { memo } from 'react';
+import { Booking } from '../../../types/booking.types';
+import './booking-card.css';
 
 interface BookingCardProps {
-    booking: any;
-    setDelete: any;
+    booking: Booking;
+    setToDeleteBooking: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const BookingCard: React.FC<BookingCardProps> = ({booking, setDelete}) =>{
-
+const BookingCard: React.FC<BookingCardProps> = ({booking, setToDeleteBooking}) =>{
 
     // Format date utility function using date-fns
     const formatDate = (dateString: string) => {
@@ -23,13 +22,13 @@ const BookingCard: React.FC<BookingCardProps> = ({booking, setDelete}) =>{
     };
 
     return(
-        <div key={booking._id} className="booking_card">
+        <div key={booking.id} className="booking_card">
             <div className="booking_card_img">
-                <img src={`${BASE_URL}/${booking.tour_id.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image" />
+                {booking.tour.image && <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${booking.tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image" />}
             </div>
             <div className="booking_card_main">
-                <p><span>Booked Tour:</span> {booking.tour_id.title}</p>
-                <p><span>Tour Date:</span> {formatDate(booking.tour_id.start_date)}</p>
+                <p><span>Booked Tour:</span> {booking.tour.title}</p>
+                <p><span>Tour Date:</span> {formatDate(booking.tour.start_date)}</p>
                 <p><span>Booking Name:</span> {booking.bookFor}</p>
                 <p><span>Guest Size:</span> {booking.guestSize}</p>
                 <p><span>Price:</span> ₹{booking.price}</p>
@@ -38,12 +37,12 @@ const BookingCard: React.FC<BookingCardProps> = ({booking, setDelete}) =>{
                     {booking.signed_activities.length === 0 ? (
                     <p>(No Additional signed Activities)</p>
                     ) : (
-                    booking.signed_activities.map((activity: any, index: any) => (
-                        <p key={index}>{activity.title}, </p>
+                    booking.signed_activities.map((activity, index) => (
+                        <p key={index}>{activity.title}{index < booking.signed_activities.length -1 ? ',' : ''} </p>
                     ))
                     )}
                 </div>
-                <button className="text-white bg-red-600 font-semibold px-3 py-2 booking_cancel" onClick={() => setDelete(booking._id)}>Cancel Booking</button>
+                <button style={{fontSize: '14px'}} className="text-white bg-red-600 font-medium px-[20px] py-[4px] booking_cancel" onClick={() => setToDeleteBooking(booking.id)}>Cancel Booking</button>
             </div>
         </div>
     )

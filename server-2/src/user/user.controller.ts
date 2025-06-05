@@ -6,7 +6,9 @@ import {
   Param,
   Patch,
   Query,
+  UploadedFile,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { RouteConstants } from 'src/common/constants/route.constants';
@@ -16,6 +18,7 @@ import { SuccessPaginatedResponseDTO } from 'src/common/dtos/success-paginated-r
 import { UpdateUserRequestDTO } from './dto/update-user-request.dto';
 import { UsersService } from './user.service';
 import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 
 @ApiTags('User')
@@ -41,7 +44,10 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Get a user by ID' })
   @Get(RouteConstants.GET_USER_BY_ID)
-  async getUser(@Param('id') id: string) {
+  async getUser(
+    @Param('id') id: string
+  ) {
+    
     const user = await this.usersService.getUserById(id);
     return new SuccessObjectResponseDTO(user);
   }
@@ -50,8 +56,13 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Update a user by ID' })
   @Patch(RouteConstants.UPDATE_USER_BY_ID)
-  async updateUser(@Param('id') id: string, @Body() updateUserDto: UpdateUserRequestDTO) {
-    const updated = await this.usersService.updateUser(id, updateUserDto);
+  @UseInterceptors(FileInterceptor('file'))
+  async updateUser(
+    @Param('id') id: string, 
+    @Body() updateUserDto: UpdateUserRequestDTO,
+     @UploadedFile() file?: Express.Multer.File,
+  ) {
+    const updated = await this.usersService.updateUser(id, updateUserDto, file);
     return new SuccessObjectResponseDTO(updated);
   }
 

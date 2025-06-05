@@ -8,12 +8,16 @@ import { UsersController } from './user.controller';
 import { UsersRepository } from './user.repository';
 import { User, UserSchema } from './user.schema';
 import { UsersService } from './user.service';
+import { MulterModule } from '@nestjs/platform-express';
 
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     forwardRef(() => BookingModule),
+    MulterModule.register({
+      dest: './uploads', 
+    }),
     TourModule,
     DestinationModule,
     ActivityModule

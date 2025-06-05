@@ -1,23 +1,28 @@
-import { useContext, useEffect, useState } from 'react';
+import { message } from 'antd';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import RegisterImages from '../Components/RegisterImages/RegisterImages';
-import { AuthContext } from '../context/AuthContext';
-import '../styles/register.css';
-import { BASE_URL } from '../utils/config';
-import {message} from 'antd';
+import LoadingOverlay from '../components/common/LoadingOverlay/LoadingOverlay';
+import LoginImages from '../components/Login/LoginImages/LoginImages';
 import RouteConstants from '../constants/RouteConstants';
+import { RolesEnum } from '../enums/roles.enum';
+import AuthService from '../service/auth.service';
+import '../styles/register.css';
+import { RegisterRequest } from '../types/auth.types';
 
 
 const Register = () => {
     // To store all the registration details
-    const [details, setDetails] = useState({
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState<boolean>(false);
+    const [details, setDetails] = useState<RegisterRequest>({
         username: '',
         password: '',
         email: '',
         phone: '',
-        role: 'user',
+        role: RolesEnum.USER,
         ADMIN_KEY: '',
     });
+    
 
     // To scroll to top
     const { pathname } = useLocation();
@@ -25,9 +30,7 @@ const Register = () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    const { dispatch } = useContext(AuthContext);
-    const navigate = useNavigate();
-
+  
     // Handling change and submit
     const handleChange = (e: any) => {
         const { id, value } = e.target;
@@ -37,48 +40,32 @@ const Register = () => {
         }));
     };
 
-    const handleSubmit = async (e: any) => {
+
+    // Handle register 
+    const handleRegister = (e: any) => {
         e.preventDefault();
-
-        if(details.role==='admin' && details.ADMIN_KEY===''){
-            message.info('Please enter the ADMIN KEY to register as an admin');
-            return;
-        }
-
-        try {
-            const res = await fetch(`${BASE_URL}/auth/register`, {
-                method: 'post',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                body: JSON.stringify(details),
-            });
-
-            const data = await res.json();
-
-            if (res.ok) {
-                message.success('Successfully Registered!!! Please login');
-                dispatch({ type: 'REGISTER_SUCCESS' });
+        setLoading(true);
+        AuthService.register(details)
+            .then((response: any) => {
+                message.success('Registered Successfully');
                 navigate(RouteConstants.login);
-            } else {
-                message.error(data.message || 'Registration failed. Please try again.');
-                window.location.reload();
-            }
-        } catch (err: any) {
-            message.error(err.message || 'Registration Failed!!');
-        }
+            })
+            .catch((error) => {
+                console.error('Error while registering.', error);
+                message.error(error.response.data.message || 'Error while registering.');
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
 
     return (
-        <div className="register_main">
+        <div className="register_main p-[30px]">
             {/* Left Section */}
-            <RegisterImages />
-
-            {/* Right Section */}
-            <div className="flex flex-col items-center register_right">
+            <div className="flex flex-col items-center">
                 <p className="register_form_title">Register</p>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-3 register_form">
+                <form onSubmit={handleRegister} className="flex flex-col gap-3 register_form">
                     <div className="register_form_container">
                         <div className="register_form_element">
                             <label htmlFor="username">Full Name</label>
@@ -125,6 +112,12 @@ const Register = () => {
                     <p className='text-center text-semibold'>Aready have an acoount? <a href="/login" className="cursor-pointer">Login</a></p>
                 </form>
             </div>
+
+            {/* Right Section */}
+            <LoginImages />
+
+            {/* Loader */}
+            {loading && <LoadingOverlay />}
         </div>
     );
 };

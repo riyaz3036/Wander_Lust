@@ -1,16 +1,20 @@
-import { useContext, useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import LoginImages from '../Components/LoginImages/LoginImages';
-import { AuthContext } from '../context/AuthContext';
-import '../styles/login.css';
-import { BASE_URL } from '../utils/config';
 import { message } from "antd";
-import RouteConstants from '../constants/RouteConstants';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import '../styles/login.css';
+import { LoginRequest } from "../types/auth.types";
+import AuthService from "../service/auth.service";
+import { authStore } from "../store/auth.store";
+import { setAccessTokenInCookie } from "../utils/cookie.utils";
+import RouteConstants from "../constants/RouteConstants";
+import LoginImages from "../components/Login/LoginImages/LoginImages";
+import LoadingOverlay from "../components/common/LoadingOverlay/LoadingOverlay";
+
 
 
 const Login = () => {
-  const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Scroll to top on route change
   const { pathname } = useLocation();
@@ -19,7 +23,7 @@ const Login = () => {
   }, [pathname]);
 
   // State to store login details
-  const [credentials, setCredentials] = useState({
+  const [credentials, setCredentials] = useState<LoginRequest>({
     email: '',
     password: '',
   });
@@ -29,52 +33,47 @@ const Login = () => {
     setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+
   // Handle form submission
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    dispatch({ type: 'LOGIN_START' });
-
-    try {
-      const res = await fetch(`${BASE_URL}/auth/login`, {
-        method: 'post',
-        headers: {
-          'content-type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify(credentials)
-      });
-      const result = await res.json();
-
-      if (!res.ok) {
-        message.error(result.message);
-        return;
-      }
-
-      dispatch({ type: 'LOGIN_SUCCESS', payload: result.data });
-      message.success("Logged in Successfully")
-  
-      if (result.data.role === 'admin') {
-        navigate(RouteConstants.analytics);
-      } else {
-        navigate(RouteConstants.root);
-      }
-    } catch (e: any) {
-      dispatch({ type: 'LOGIN_FAILURE', payload: e.message });
-    }
+  const handleLogin = (e: any) => {
+      e.preventDefault();
+      setLoading(true);
+      AuthService.login(credentials)
+          .then((response) => {
+              const accessToken: string = response.data.token;
+              authStore.setAccessToken(accessToken);
+              authStore.setUser({
+                  id: response.data._id,
+                  username: response.data.username,
+                  email: response.data.email,
+                  phone: response.data.phone,
+                  image: response.data.image,
+                  balance: response.data.balance,
+                  membership: response.data.membership,
+                  role: response.data.role
+              });
+              authStore.setIsAuthenticated(true);
+              setAccessTokenInCookie(accessToken);
+              message.success('Login Successful!')
+              navigate(RouteConstants.home);
+          })
+          .catch((error) => {
+              console.error('Error while login.', error);
+              message.error(error.response.data.message || 'Error while login.');
+          })
+          .finally(() => {
+              setLoading(false);
+          });
   };
 
 
-
   return (
-    <div className="login_main">
+    <div className="login_main p-[30px]">
         {/* Left Section */}
-        <LoginImages />
-
-        {/* Right Section */}
-        <div className="flex flex-col items-center login_right">
+        <div className="flex flex-col items-center">
             <p className="login_form_title">Login</p>
 
-            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 login_form w-full px-5">
+            <form onSubmit={handleLogin} className="flex flex-col items-center gap-3 login_form w-full px-5">
                 <div className="login_form_element">
                     <label htmlFor="email">Email</label>
                     <input type="email" required id="email" name="email" value={credentials.email} onChange={handleChange} />
@@ -89,9 +88,16 @@ const Login = () => {
                     <button type="submit">Login</button>
                 </div>
 
-                <p className='text-center text-semibold'>Donot have an acoount? <a href="/register" className="cursor-pointer">Register</a></p>
+                <p className='text-center text-semibold'>Don't have an account? <a href="/register" className="cursor-pointer">Register</a></p>
             </form>
         </div>
+
+        {/* Right Section */}
+        <LoginImages />
+       
+
+        {/* Loader */}
+        {loading && <LoadingOverlay />}
     </div>
   );
 };

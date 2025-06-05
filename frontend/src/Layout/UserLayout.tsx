@@ -1,16 +1,22 @@
-import { useContext, useEffect } from "react";
-import Footer from "../Components/Footer/Footer";
-import Header from "../Components/Header/Header";
-import { AuthContext } from "../context/AuthContext";
-import { RolesEnum } from "../enums/roles.enum";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthProvider";
+import Footer from "../components/common/Footer/Footer";
+import Header from "../components/common/Header/Header";
 import RouteConstants from "../constants/RouteConstants";
-import { useNavigate } from "react-router-dom";
+import { RolesEnum } from "../enums/roles.enum";
+import { isSecureRoute } from "../utils/route.utils";
 
 const UserLayout = ({children} : {children: React.ReactNode})=> {
-    const { user } = useContext(AuthContext);
+    const { user } = useAuth();
+    const location = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
+        if(user === null && isSecureRoute(location.pathname)){
+            navigate(RouteConstants.root);
+        }
+
         if (user?.role === RolesEnum.ADMIN) {
             navigate(RouteConstants.pageNotFound);
         }
@@ -18,7 +24,7 @@ const UserLayout = ({children} : {children: React.ReactNode})=> {
     
 
     return (
-        <div className="w-full h-full">
+        <div className="w-[100vw] h-[100vh]">
             <Header />
             {children}
             <Footer />

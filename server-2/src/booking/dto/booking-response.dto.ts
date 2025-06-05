@@ -1,4 +1,5 @@
 import { IsString, IsNumber, IsOptional, IsArray, ArrayNotEmpty, IsMongoId } from 'class-validator';
+import { ActivityResponseDTO } from 'src/activity/dto/activity-response.dto';
 import { TourResponseDTO } from 'src/tour/dto/tour-response.dto';
 import { UserResponseDTO } from 'src/user/dto/user-response.dto';
 
@@ -11,9 +12,7 @@ export class BookingResponseDTO {
   tour: TourResponseDTO;
 
   @IsArray()
-  @ArrayNotEmpty()
-  @IsMongoId({ each: true })
-  signed_activities: string[];
+  signed_activities: ActivityResponseDTO[];
 
   @IsNumber()
   price: number;

@@ -43,6 +43,8 @@ export class RouteConstants {
     public static readonly UPDATE_DESTINATION_BY_ID: string = '/:id';
     public static readonly DELETE_DESTINATION_BY_ID: string = '/:id';
     public static readonly GET_ALL_DESTINATIONS: string = '/';
+    public static readonly GET_ALL_DESTINATIONS_WITHOUT_PAGINATION: string = '/all';
+    public static readonly GET_ALL_TOURS_WITH_DEST_IDS: string = '/tours';
 
     // ANALYTICS MODULE 
     public static readonly ANALYTICS: string = '/analytics';

@@ -14,4 +14,7 @@ export class TourFilterDTO {
     @Type(() => Number)
     @IsNumber()
     vacancy?: number;
+
+    @IsOptional()
+    ids: string[];
 }

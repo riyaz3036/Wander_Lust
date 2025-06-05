@@ -7,6 +7,7 @@ import { TourResponseDTO } from './dto/tour-response.dto';
 import { UpdateTourRequestDTO } from './dto/update-tour-request.dto';
 import { TourRepository } from './tour.repository';
 import { Tour } from './tour.schema';
+import { deleteFile } from 'src/common/utils/file.utils';
 
 
 
@@ -19,10 +20,11 @@ export class TourService {
 
 
   /* Service function to create a tour */
-  async createTour(createTourDto: CreateTourRequestDTO): Promise<TourResponseDTO> {
+  async createTour(createTourDto: CreateTourRequestDTO, file?: any): Promise<TourResponseDTO> {
     const tour = await this.tourRepository.create({
       ...createTourDto,
       start_date: new Date(createTourDto.start_date),
+      image: file? file.path : null
     });
 
     return new TourResponseDTO({
@@ -135,13 +137,22 @@ export class TourService {
 
 
   /* Service function to update a tour */
-  async updateTour(id: string, updateTourDto: UpdateTourRequestDTO): Promise<TourResponseDTO> {
+  async updateTour(id: string, updateTourDto: UpdateTourRequestDTO, file?: any): Promise<TourResponseDTO> {
     const { start_date, ...rest } = updateTourDto;
+
+    const existingTour = await this.tourRepository.findById(id);
+    if (!existingTour) {
+        throw new NotFoundException('Tour not found');
+    }
+
+    if (file && existingTour.image) {
+        await deleteFile(existingTour.image);
+    }
 
     const updatePayload: Partial<Tour> = {
         ...rest,
         ...(start_date !== undefined ? { start_date: new Date(start_date) } : {}),
-         ...(updateTourDto.image ? { image: updateTourDto.image } : {}),
+         ...(file ? { image: file.path} : {}),
     };
 
     const updatedTour = await this.tourRepository.update(id, updatePayload);
@@ -168,6 +179,15 @@ export class TourService {
 
   /* Service function to update a tour */
   async removeTour(id: string): Promise<string> {
+    const existingTour = await this.tourRepository.findById(id);
+    if (!existingTour) {
+        throw new NotFoundException('Tour not found');
+    }
+
+    if (existingTour.image) {
+        await deleteFile(existingTour.image);
+    }
+
     const deletedTour = await this.tourRepository.delete(id);
     if (!deletedTour) {
       throw new NotFoundException('Tour not found');

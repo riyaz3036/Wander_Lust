@@ -12,8 +12,4 @@ export class CreateDestinationDTO {
   @IsNotEmpty()
   @IsString()
   description: string;
-
-  @IsOptional()
-  @IsString()
-  image?: string | null;
 }

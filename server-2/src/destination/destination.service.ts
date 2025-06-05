@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { forwardRef, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { DestinationRepository } from './destination.repository';
 import { Types } from 'mongoose';
 import { Destination } from './destination.schema';
@@ -9,6 +9,9 @@ import { TourRepository } from 'src/tour/tour.repository';
 import { ActivityRepository } from 'src/activity/activity.repository';
 import { ActivityService } from 'src/activity/activity.service';
 import { DestinationFilterDTO } from './dto/destination-filter.dto';
+import { deleteFile } from 'src/common/utils/file.utils';
+import { TourResponseDTO } from 'src/tour/dto/tour-response.dto';
+import { TourService } from 'src/tour/tour.service';
 
 
 @Injectable()
@@ -18,10 +21,12 @@ export class DestinationService {
     private readonly tourRepository: TourRepository,
     private readonly activityRepository: ActivityRepository,
     private readonly activityService: ActivityService,
+    @Inject(forwardRef(() => TourService))
+    private readonly tourService: TourService,
   ) {}
 
   /* Service function to create a destination */
-  async createDestination(dto: CreateDestinationDTO): Promise<DestinationResponseDTO> {
+  async createDestination(dto: CreateDestinationDTO, file?: any): Promise<DestinationResponseDTO> {
     const tour = await this.tourRepository.findById(dto.tour_id);
     if (!tour) throw new NotFoundException('Tour not found');
 
@@ -29,7 +34,7 @@ export class DestinationService {
         title: dto.title,
         description: dto.description,
         tour_id: new Types.ObjectId(dto.tour_id),
-        image: dto.image ?? undefined, 
+        image: file? file.path : null, 
     };
 
     const createdDestination = await this.destinationRepo.create(createData);
@@ -100,6 +105,20 @@ export class DestinationService {
   }
 
 
+  async findToursByDestIds(
+    dest_id: string[],
+    page: number,
+    size: number
+  ): Promise<{ data: TourResponseDTO[]; total: number }> {
+      // get the tour ids
+      const destinations = await this.destinationRepo.findTourIds(dest_id, page, size);
+
+      // call the tour service funtion with ids
+      const tours = await this.tourService.findAllPaginatedTours({ids: destinations.map(dest => dest.tour_id._id.toString())}, page, size);
+
+      return {data: tours.data, total: tours.total};
+  }
+
 
   /* Service function to find a destination */
   async findDestination(id: string): Promise<DestinationResponseDTO> {
@@ -120,13 +139,22 @@ export class DestinationService {
 
 
   /* Service function to update a destination */
-  async updateDestination(id: string, dto: UpdateDestinationDTO) {
-    const { tour_id, image, ...rest } = dto;
+  async updateDestination(id: string, dto: UpdateDestinationDTO, file?: any) {
+    const { tour_id, ...rest } = dto;
+
+     const existingDest = await this.destinationRepo.findById(id);
+      if (!existingDest) {
+          throw new NotFoundException('Destination not found');
+      }
+  
+      if (file && existingDest.image) {
+          await deleteFile(existingDest.image);
+      }
 
     const updateData: Partial<Destination> = {
         ...rest,
         ...(tour_id ? { tour_id: new Types.ObjectId(tour_id) } : {}),
-        ...(image === null ? {} : { image }),
+        ...(file ? { image: file.path} : {}),
     };
 
     const updated = await this.destinationRepo.updateById(id, updateData);
@@ -149,7 +177,14 @@ export class DestinationService {
     const destination = await this.destinationRepo.findById(id);
     if (!destination) throw new NotFoundException('Destination not found');
 
-    const activities = await this.activityRepository.findByDestinationId(id);
+    const existingDest = await this.destinationRepo.findById(id);
+    if (!existingDest) {
+        throw new NotFoundException('Destination not found');
+    }
+
+    if (existingDest.image) {
+        await deleteFile(existingDest.image);
+    }
 
     await this.activityRepository.deleteManyByDestinationId(id);
     await this.destinationRepo.deleteById(id);

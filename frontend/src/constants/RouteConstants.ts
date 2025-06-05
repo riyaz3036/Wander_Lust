@@ -1,21 +1,39 @@
+import AllDestinations from "../components/ManageDestination/AllDestinations";
+
 const RouteConstants = {
     root: '/',
     home: '/home',
     login: '/login',
     register: '/register',
-    tours: '/tours/:id',
+    tours: '/tour/:id',
+    allTours: '/tours',
+    AllDestinations: '/destinations',
     thankYou: '/thank-you',
     pricing: '/pricing',
-    addTour: '/add-tour',
-    addDestination: '/add-destination',
-    addActivity: '/add-activity',
+    manageTour: '/manage-tour',
+    manageDestination: '/manage-destination',
+    manageActivity: '/manage-activity',
     manageBookings: '/manage-bookings',
-    payment: '/payment/:id',
+    membershipPayment: '/membership-payment/:id',
     balancePay: '/balance-pay/:id',
     profile: '/profile',
     analytics: '/analytics',
     pageNotFound: '/page-not-found'
 };
+
+
+export const secureRoutes = [
+  RouteConstants.thankYou,
+  RouteConstants.manageTour,
+  RouteConstants.manageDestination,
+  RouteConstants.manageActivity,
+  RouteConstants.manageBookings,
+  RouteConstants.membershipPayment,
+  RouteConstants.balancePay,
+  RouteConstants.profile,
+  RouteConstants.analytics
+];
+
 
 export default RouteConstants;
   

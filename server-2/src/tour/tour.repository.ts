@@ -26,6 +26,10 @@ export class TourRepository {
       query.vacancy = filters.vacancy;
     }
 
+    if (filters.ids && filters.ids.length > 0) {
+      query._id = { $in: filters.ids };
+    }
+
     let dataPromise: Promise<Tour[]>;
     let totalPromise: Promise<number>;
 

@@ -29,18 +29,23 @@ export class BookingsRepository {
     const query: any = {};
 
     if (filters.user_id?.length) {
-      query.user_id = { $in: filters.user_id };
+      query.user_id = {
+      $in: filters.user_id.map(id => new Types.ObjectId(id)),
+    };
     }
 
-    let data, total;
+    let dataPromise: Promise<Booking[]>;
+    let totalPromise: Promise<number>;
+
     if (page && size) {
       const skip = (page - 1) * size;
-      data = await this.bookingModel.find(query).skip(skip).limit(size).exec();
+      dataPromise = this.bookingModel.find(query).skip(skip).limit(size).exec();
     } else {
-      data = await this.bookingModel.find(query).exec();
+      dataPromise = this.bookingModel.find(query).exec();
     }
+    totalPromise = this.bookingModel.countDocuments(query).exec();
 
-    total = await this.bookingModel.countDocuments(query).exec();
+   const [data, total] = await Promise.all([dataPromise, totalPromise]);
     return {data, total};
   }
 

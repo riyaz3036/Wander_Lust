@@ -1,11 +1,10 @@
-import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
-import { UsersRepository } from './user.repository';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { BookingsRepository } from 'src/booking/booking.repository';
+import { deleteFile } from 'src/common/utils/file.utils';
+import { TourRepository } from 'src/tour/tour.repository';
 import { UpdateUserRequestDTO } from './dto/update-user-request.dto';
 import { UserResponseDTO } from './dto/user-response.dto';
-import { BookingsRepository } from 'src/booking/booking.repository';
-import { TourRepository } from 'src/tour/tour.repository';
-import { ActivityRepository } from 'src/activity/activity.repository';
-import { DestinationRepository } from 'src/destination/destination.repository';
+import { UsersRepository } from './user.repository';
 
 
 @Injectable()
@@ -57,7 +56,20 @@ export class UsersService {
 
 
   /* Service function to update a user by id */
-  async updateUser(id: string, updateUserDto: UpdateUserRequestDTO): Promise<UserResponseDTO> {
+  async updateUser(id: string, updateUserDto: UpdateUserRequestDTO, file?: any): Promise<UserResponseDTO> {
+    const existingUser = await this.usersRepository.findById(id);
+    if (!existingUser) {
+        throw new NotFoundException('User not found');
+    }
+
+    if (file && existingUser.image) {
+        await deleteFile(existingUser.image);
+    }
+
+    if(file){
+      updateUserDto.image = file.path;
+    }
+
     const updated = await this.usersRepository.update(id, updateUserDto);
     if (!updated) throw new NotFoundException('User not found');
     return new UserResponseDTO({
@@ -79,9 +91,13 @@ export class UsersService {
     const user = await this.usersRepository.findById(id);
     if (!user) throw new NotFoundException('User not found');
 
+    if (user.image) {
+        await deleteFile(user.image);
+    }
+
     await this.bookingRepository.deleteManyByUserId(id);
 
-    const tours = await this.tourRepository.findAll({});
+    const tours = await this.tourRepository.findAll({ids: []});
 
     for (const tour of tours.data) {
       const tourBooking = await this.bookingRepository.findOneByTourId(tour._id);

@@ -46,6 +46,31 @@ export class DestinationRepository {
   }
 
 
+  async findTourIds(
+    ids: string[],
+    page?: number,
+    size?: number
+  ) {
+    const query = {
+      _id: { $in: ids },
+    };
+
+    let findQuery = this.destinationModel
+      .find(query)
+      .select('tour_id') 
+      .lean();
+
+    if (page && size) {
+      const skip = (page - 1) * size;
+      findQuery = findQuery.skip(skip).limit(size);
+    }
+
+    const destinations = await findQuery.exec();
+    return destinations;
+  }
+
+
+
   findById(id: string) {
     return this.destinationModel.findById(id).exec();
   }

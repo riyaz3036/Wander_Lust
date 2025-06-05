@@ -1,27 +1,34 @@
-import React, { useContext, useEffect, useState } from "react";
-import AdminHeader from "../Components/Dashboard/AdminHeader/AdminHeader";
-import AdminSidebar from "../Components/Dashboard/AdminSidebar/AdminSidebar";
-import { AuthContext } from "../context/AuthContext";
-import { RolesEnum } from "../enums/roles.enum";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import AdminHeader from "../components/common/AdminHeader/AdminHeader";
+import AdminSidebar from "../components/common/AdminSidebar/AdminSidebar";
 import RouteConstants from "../constants/RouteConstants";
-import { useNavigate } from "react-router-dom";
+import { RolesEnum } from "../enums/roles.enum";
+import { authStore } from "../store/auth.store";
+import { isSecureRoute } from "../utils/route.utils";
+import ColorConstants from "../constants/ColorConstants";
 
 const AdminLayout = ({children}: {children: React.ReactNode}) => {
-    const { user } = useContext(AuthContext);
+    const user  = authStore.getUser();
     const navigate = useNavigate();
-    const [toggleSidebar, setToggleSidebar] = useState(0);
+    const location = useLocation();
+    const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
     
     useEffect(() => {
+        if(user === null && isSecureRoute(location.pathname)){
+            navigate(RouteConstants.root);
+        }
+
         if (!user || user.role === RolesEnum.USER) {
             navigate(RouteConstants.pageNotFound);
         }
     }, [user, navigate]);
 
     return (
-        <div className="w-full h-full">
+        <div className="w-[100vw] h-[100vh]">
             <AdminHeader setToggleSidebar={setToggleSidebar} toggleSidebar={toggleSidebar} />
             <AdminSidebar toggleSidebar={toggleSidebar} />
-            <div className={`admin_dashboard_main ml-[60px] ${toggleSidebar ? 'md:ml-[250px]' : ''}`}>
+            <div style={{backgroundColor: ColorConstants.adminBackground}}className={`h-[100vh] w-[100vw] min-w-[400px] pt-[90px] pb-[20px] pr-[20px] pl-[80px] overflow-y-auto overflow-x-auto lg:overflow-x-hidden ${toggleSidebar ? 'md:pl-[270px]' : ''}`}>
                 {children}
             </div>
         </div>
