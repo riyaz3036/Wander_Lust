@@ -6,6 +6,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { GlobalExceptionFilter } from './common/handlers/global-exception.handler';
 import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import { Reflector } from '@nestjs/core';
 import { join } from 'path';
 
 async function bootstrap() {
@@ -14,11 +15,12 @@ async function bootstrap() {
     prefix: '/uploads/',
   });
   const configService = app.get(ConfigService);
+  const reflector = app.get(Reflector);
 
-  app.useGlobalGuards(new ApiKeyGuard(configService));
+  app.useGlobalGuards(new ApiKeyGuard(configService, reflector));
 
   app.enableCors({
-    origin: 'http://localhost:5000',
+    origin: true,
     credentials: true,
   });
 

@@ -15,6 +15,7 @@ import { MulterModule } from '@nestjs/platform-express';
 import { JwtStrategy } from './jwt.strategy';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -41,8 +42,9 @@ import { PassportModule } from '@nestjs/passport';
     ActivityModule,
     BookingModule,
     DestinationModule,
-    AnalyticsModule,
+    AnalyticsModule
   ],
+  controllers: [AppController], 
   providers: [
     AppService,
     JwtStrategy,
