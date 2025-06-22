@@ -1,0 +1,14 @@
+.manage_activity_card{
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.manage_activity_card:hover {
+    transform: scale(1.01);
+}
+
+.add_activity_card_icon i:hover{
+    color: var(--secondary-color);
+}

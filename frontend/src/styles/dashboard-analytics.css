@@ -15,7 +15,6 @@
 }
 
 .analytics_display_card_logo{
-   background-color: #f3f3f3;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -24,15 +23,9 @@
    border-radius: 40px;
 }
 
-.analytics_display_card_logo i{
-    margin: 0;
-    color: #000000;
-    font-size: 30px;
-}
-
 .analytics_display_card_main p{
     margin: 0;
-    color: #fff;
+    color: #000000;
     font-size: 20px;
     font-weight: 500;
 }
