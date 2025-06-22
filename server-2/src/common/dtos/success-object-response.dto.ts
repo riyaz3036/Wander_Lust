@@ -3,10 +3,10 @@ import { ApiResponseStatus } from '../enums/api-response-status.enum';
 
 export class SuccessObjectResponseDTO<T> {
   @ApiProperty()
-  private data: T;
+  protected data: T;
 
   @ApiProperty()
-  private status: ApiResponseStatus;
+  protected status: ApiResponseStatus;
 
   constructor(data: T) {
     this.data = data;

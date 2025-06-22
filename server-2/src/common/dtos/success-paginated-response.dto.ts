@@ -4,21 +4,21 @@ import { isArray } from 'class-validator';
 
 export class SuccessPaginatedResponseDTO<T> {
   @ApiProperty({ isArray: true })
-  private data: T;
+  protected data: T[];
 
   @ApiProperty()
-  private totalElements: number;
+  protected totalElements: number;
 
   @ApiProperty()
-  private page: number;
+  protected page: number;
 
   @ApiProperty()
-  private size: number;
+  protected size: number;
 
   @ApiProperty()
-  private status: ApiResponseStatus;
+  protected status: ApiResponseStatus;
 
-  constructor(data: T, page = 1, size = 10, total: number) {
+  constructor(data: T[], page = 1, size = 10, total: number) {
     this.data = data;
     this.totalElements = total;
     this.page = page;
@@ -26,11 +26,11 @@ export class SuccessPaginatedResponseDTO<T> {
     this.status = ApiResponseStatus.SUCCESS;
   }
 
-  public getData(): T {
+  public getData(): T[] {
     return this.data;
   }
 
-  public setData(data: T): void {
+  public setData(data: T[]): void {
     this.data = data;
     this.totalElements = isArray(data) ? data.length : 1;
   }

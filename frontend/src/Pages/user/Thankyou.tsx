@@ -1,11 +1,15 @@
+import { Typography } from 'antd';
 import { memo, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Button, Col, Container, Row } from 'reactstrap';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import ColorConstants from '../../constants/ColorConstants';
 import '../../styles/thank-you.css';
+import RouteConstants from '../../constants/RouteConstants';
 
 
 const Thankyou = ()=>{
     const { pathname } = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -13,19 +17,16 @@ const Thankyou = ()=>{
       
     return (
         <section>
-            <Container>
-                <Row>
-                    <Col lg="12" className="pt-5 text-center">
-                        <div className="thank__you">
-                            <span><i className="ri-checkbox-circle-line"></i></span>
-                        <h1 className="mb-3 fw-semibold">Thank You!!</h1>
-                        <h3 className="mb-4">Your trip is booked</h3>
-                        {/* <h3 className="mb-4">You can check your Bookings in Bookings section</h3> */}
-                        <Button className="btn primary__btn w-25"><Link to='/home'>Back to Home</Link></Button>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+            <div className="my-[45px] text-center bg-red-300">
+                <div className="thank__you">
+                    <span><i className="ri-checkbox-circle-line"></i></span>
+                    <Typography.Title className="mb-3 fw-semibold" style={{fontSize: '36px'}}>Your trip is booked!</Typography.Title>
+                    <Typography.Paragraph className="mb-4" style={{ fontSize: '20px', color: '#555' }}>
+                        Start your countdown to adventure — we can't wait to see you there!
+                    </Typography.Paragraph>
+                    <button className="border-0 py-[5px] px-[15px] rounded-[5px]" style={{backgroundColor: ColorConstants.secondaryColor, outline: 'none', color: ColorConstants.white}} onClick={() => navigate(RouteConstants.home)}>Back to Home</button>
+                </div>
+            </div>
         </section>
     )
 };

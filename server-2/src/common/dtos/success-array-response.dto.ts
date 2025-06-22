@@ -4,9 +4,9 @@ import { isArray } from "class-validator";
 
 export class SuccessArrayResponseDTO<T> {
   @ApiProperty({ isArray: true })
-  private data: T;
+  protected data: T[];
   @ApiProperty()
-  private count: number;
+  protected count: number;
   @ApiProperty()
   status: ApiResponseStatus;
 
@@ -18,11 +18,11 @@ export class SuccessArrayResponseDTO<T> {
     this.count = count;
   }
 
-  public getData(): T {
+  public getData(): T[] {
     return this.data;
   }
 
-  public setData(data: T): void {
+  public setData(data: T[]): void {
     this.data = data;
   }
 
@@ -34,7 +34,7 @@ export class SuccessArrayResponseDTO<T> {
     this.status = status;
   }
 
-  constructor(data: T) {
+  constructor(data: T[]) {
     this.data = data;
     this.count = isArray(data) ? data.length : 1;
     this.status = ApiResponseStatus.SUCCESS;

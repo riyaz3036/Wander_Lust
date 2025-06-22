@@ -6,7 +6,7 @@ import {
   Post,
   Res
 } from '@nestjs/common';
-import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiBody, ApiExtraModels, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 import { RouteConstants } from 'src/common/constants/route.constants';
 import { SuccessMessageResponseDTO } from 'src/common/dtos/success-message-response.dto';
@@ -14,6 +14,7 @@ import { SuccessObjectResponseDTO } from 'src/common/dtos/success-object-respons
 import { AuthService } from './auth.service';
 import { LoginRequestDTO } from './dto/login-request.dto';
 import { RegisterRequestDTO } from './dto/register-request.dto';
+import { LoginSuccessResponse } from './dto/swagger/LoginSuccessResponse.dto';
 
 @ApiTags('Auth')
 @ApiBearerAuth()
@@ -23,6 +24,11 @@ export class AuthController {
 
 
   @ApiOperation({ summary: 'Registers a new user and returns the result' })
+  @ApiBody({ type: RegisterRequestDTO })
+  @ApiOkResponse({
+    description: 'Register Response',
+    type: SuccessMessageResponseDTO,
+  })
   @Post(RouteConstants.REGISTER)
   async register(@Body() dto: RegisterRequestDTO, @Res() res: Response) {
       const result = await this.authService.Register(dto);
@@ -31,8 +37,13 @@ export class AuthController {
   }
 
 
+
   @ApiOperation({ summary: 'Logs in the user and sets a secure token in cookies' })
-  @HttpCode(HttpStatus.OK)
+  @ApiBody({ type: LoginRequestDTO })
+  @ApiOkResponse({
+    description: 'Login Response',
+    type: LoginSuccessResponse,
+  })
   @Post(RouteConstants.LOGIN)
   async login(@Body() dto: LoginRequestDTO, @Res() res: Response) {
     const result = await this.authService.Login(dto);
