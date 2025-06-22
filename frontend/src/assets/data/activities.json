@@ -3,90 +3,68 @@
       "title": "Visit tea Estate",
       "description": "Explore the lush tea plantations of Munnar amidst serene surroundings.",
       "price": 200,
-      "capacity": 20,
-      "vacancy" : 10,
-      "dest_id": "65f70a176051f558433828f9"
+      "dest_id": "6836c77b1080c352e575d967"
 
     },
     {
         "title": "Elephant Safari",
         "description": "Embark on an unforgettable journey through the wilderness of Munnar atop majestic elephants.",
         "price": 250,
-        "capacity": 22,
-        "vacancy" : 11,
-        "dest_id": "65f70a176051f558433828f9"
+        "dest_id": "6836c77b1080c352e575d967"
       },
       {
         "title": "Boating",
         "description": "Cruise through the picturesque backwaters of Alleppey on a traditional houseboat.",
         "price": 400,
-        "capacity": 39,
-        "vacancy" : 15,
-        "dest_id": "65f70cac6051f558433828fc"
+        "dest_id": "6836c7b61080c352e575d96a"
       },
       {
         "title": "Ayurveda Spa",
         "description": "Relax and rejuvenate your mind, body, and soul with traditional Ayurvedic treatments in Alleppey.",
         "price": 900,
-        "capacity": 50,
-        "vacancy" : 25,
-        "dest_id": "65f70cac6051f558433828fc"
+        "dest_id": "6836c7b61080c352e575d96a"
       },
       {
         "title": "Visit to Kovalam beach",
         "description": "Bask in the sun and enjoy the golden sands of Kovalam Beach, renowned for its natural beauty.",
         "price": 300,
-        "capacity": 12,
-        "vacancy" : 8,
-        "dest_id": "65f70cb76051f558433828ff"
+        "dest_id": "6836c7c01080c352e575d96d"
       },
       {
         "title": "Visiting Art Gallery",
         "description": "Immerse yourself in the vibrant art scene of Kovalam at its charming art galleries.",
         "price": 180,
-        "capacity": 33,
-        "vacancy" : 22,
-        "dest_id": "65f70cb76051f558433828ff"
+        "dest_id": "6836c7c01080c352e575d96d"
       },
       {
         "title": "Toy train Ride",
         "description": "Experience the nostalgia of a scenic toy train journey through the breathtaking landscapes of Shimla.",
         "price": 200,
-        "capacity": 45,
-        "vacancy" : 21,
-        "dest_id": "65f70cc06051f55843382902"
+        "dest_id": "6836c7fb1080c352e575d988"
       },
       {
         "title": "Snow Treck",
         "description": "Embark on an exhilarating trek through the snow-covered trails of Shimla.",
         "price": 1500,
-        "capacity": 23,
-        "vacancy" : 14,
-        "dest_id": "65f70cc06051f55843382902"
+        "dest_id": "6836c7fb1080c352e575d988"
       },
       {
         "title": "River Rafting",
         "description": "Challenge the rapids of the Beas River with an adrenaline-pumping rafting adventure in Manali.",
         "price": 900,
-        "capacity": 33,
-        "vacancy" :18 ,
-        "dest_id": "65f70cc76051f55843382905"
+        "dest_id": "6836c8031080c352e575d98b"
       },
       {
         "title": "Skiing",
         "description": "Glide down the pristine slopes of Manali and experience the thrill of skiing in the Himalayas.",
         "price": 1100,
-        "capacity": 12,
-        "vacancy" : 0,
-        "dest_id": "65f70cc76051f55843382905"
+        "dest_id": "6836c8031080c352e575d98b"
       },
       {
         "title": "Paragliding",
         "description": "Soar high above the scenic valleys of Dalhousie with an unforgettable paragliding experience.",
         "price": 2500,
-        "capacity":19,
-        "vacancy" : 10,
-        "dest_id": "65f70cd06051f55843382908"
+        "dest_id": "6836c80a1080c352e575d98e"
 
 
       },
@@ -94,195 +72,147 @@
         "title": "Visit to The Golden Temple",
         "description": "Seek spiritual solace and marvel at the architectural splendor of the iconic Golden Temple in Amritsar",
         "price": 450,
-        "capacity": 26,
-        "vacancy" : 12,
-        "dest_id": "65f70cd96051f5584338290b"
+        "dest_id": "6836c8141080c352e575d991"
       },
       {
         "title": "Hot Air Baloon Ride",
         "description": "Get a bird's eye view of Jaipur's majestic forts and palaces with a mesmerizing hot air balloon ride.",
         "price": 2200,
-        "capacity": 35,
-        "vacancy" : 17,
-        "dest_id": "65f70ce16051f5584338290e"
+        "dest_id": "6836c83d1080c352e575d9b4"
       },
       {
         "title": "Camel Ride",
         "description": "Embark on a desert adventure and explore the golden sands of Jaisalmer atop a camel.",
         "price": 700,
-        "capacity": 21,
-        "vacancy" : 10,
-        "dest_id": "65f70cea6051f55843382911"
+        "dest_id": "6836c8451080c352e575d9b7"
       },
       {
         "title": "Night Safari",
         "description": "Embark on a desert adventure and explore the golden sands of Jaisalmer atop a camel.",
         "price": 2800,
-        "capacity": 33,
-        "vacancy" : 18,
-        "dest_id": "65f70cf26051f55843382914"
+        "dest_id": "6836c84f1080c352e575d9ba"
       },
       {
         "title": "Folk Dance",
         "description": "Immerse yourself in the vibrant culture of Udaipur with captivating folk dance performances.",
         "price": 890,
-        "capacity": 11,
-        "vacancy" : 6,
-        "dest_id": "65f70cf26051f55843382914"
+        "dest_id": "6836c84f1080c352e575d9ba"
       },
       {
         "title": "Club Night",
         "description": "Dance the night away and soak in the vibrant nightlife of Goa at its lively clubs.",
         "price": 3300,
-        "capacity": 28,
-        "vacancy" : 14,
-        "dest_id": "65f70cfe6051f55843382917"
+        "dest_id": "6836c8761080c352e575d9e3"
       },
       {
         "title": "Dinner at Baga Beach",
         "description": "Simply unwind on the sandy shores of Baga Beach, one of Goa's most popular destiny",
         "price": 1500,
-        "capacity": 37,
-        "vacancy" : 19,
-        "dest_id": "65f70cfe6051f55843382917"
+        "dest_id": "6836c8761080c352e575d9e3"
       },
       {
         "title": "Visit to Palolem Beach",
         "description": "Escape to the tranquil shores of Palolem Beach for a serene beach experience away from the crowds.",
         "price": 1400,
-        "capacity": 33,
-        "vacancy" : 15,
-        "dest_id": "65f70d086051f5584338291a"
+        "dest_id": "6836c87f1080c352e575d9e6"
       },
       {
         "title": "Pony Ride",
         "description": "Traverse the scenic landscapes of Gulmarg on a charming pony ride amidst breathtaking vistas.",
         "price": 1300,
-        "capacity": 45,
-        "vacancy" : 42,
-        "dest_id": "65f70d126051f5584338291d"
+        "dest_id": "6836c89f1080c352e575da13"
       },
       {
         "title": "Bird Watch",
         "description": "Discover the rich avian diversity of Gulmarg's pristine forests with an enchanting bird watching experience.",
         "price": 1200,
-        "capacity": 10,
-        "vacancy" : 4,
-        "dest_id": "65f70d126051f5584338291d"
+        "dest_id": "6836c89f1080c352e575da13"
       },
       {
         "title": "Sledge Riding",
         "description": "Glide over the glistening snow on a traditional sledge ride in the enchanting winter wonderland of Srinagar",
         "price": 1300,
-        "capacity": 26,
-        "vacancy" : 6,
-        "dest_id": "65f70d1b6051f55843382920"
+        "dest_id": "6836c8a81080c352e575da16"
       },
       {
         "title": "Snowmobling",
         "description": "Feel the adrenaline rush as you zoom through the snow-covered terrain of Srinagar on a thrilling snowmobiling adventure.",
         "price": 2300,
-        "capacity": 9,
-        "vacancy" : 3,
-        "dest_id": "65f70d1b6051f55843382920"
+        "dest_id": "6836c8a81080c352e575da16"
 
       },
      {
         "title": "Visit to Chandni Chowk",
         "description": "Dive into the bustling lanes of Chandni Chowk and savor the vibrant sights, sounds, and flavors of Old Delhi",
         "price": 2300,
-        "capacity": 37,
-        "vacancy" : 22,
-        "dest_id": "65f70d246051f55843382923"
+        "dest_id": "6836c8dd1080c352e575da47"
       },
       {
         "title": "Visit to India Gate",
         "description": "Pay homage to the brave soldiers at India Gate, a poignant memorial and iconic landmark of Delhi.",
         "price": 1100,
-        "capacity": 43,
-        "vacancy" : 20,
-        "dest_id": "65f70d246051f55843382923"
+        "dest_id": "6836c8dd1080c352e575da47"
       },
       {
         "title": "Visiting Jama Masjid",
         "description": "Marvel at the grandeur of Jama Masjid, one of India's largest mosques, and soak in its architectural splendor.",
         "price": 600,
-        "capacity": 28,
-        "vacancy" : 19,
-        "dest_id": "65f70d246051f55843382923"
+        "dest_id": "6836c8dd1080c352e575da47"
       },
       {
         "title": "Bison Ride",
         "description": "Explore the rugged terrain of Kullu on a thrilling bison ride, offering an exciting way to discover the region's natural beauty.",
         "price": 1300,
-        "capacity":20,
-        "vacancy" : 19,
-        "dest_id": "65f70d2c6051f55843382926"
+        "dest_id": "6836c8e51080c352e575da4a"
 
      },
       {
         "title": "Visiting Cellular Jail",
         "description": "Delve into the poignant history of India's struggle for independence at the historic Cellular Jail in Port Blair.",
         "price": 1800,
-        "capacity": 24,
-        "vacancy" : 14,
-        "dest_id": "65f70d336051f55843382929"
+        "dest_id": "6836c9151080c352e575da7f"
       },
       {
         "title": "Visit to Animal Park",
         "description": "Unwind amidst lush greenery and serene surroundings at the tranquil parks of Port Blair.",
         "price": 3200,
-        "capacity": 35,
-        "vacancy" : 15 ,
-        "dest_id": "65f70d336051f55843382929"
+        "dest_id": "6836c9151080c352e575da7f"
       },
       {
         "title": "Parasailing",
         "description": "Take to the skies and enjoy breathtaking views of Neil Island's coastline with an exhilarating parasailing adventure",
         "price": 1700,
-        "capacity": 19,
-        "vacancy" : 8,
-        "dest_id": "65f70d3c6051f5584338292c"
+        "dest_id": "6836c91c1080c352e575da82"
       },
       {
         "title": "Scubadiving",
         "description": "Dive into the azure waters of Havelock Island and discover a mesmerizing underwater world teeming with vibrant marine life.",
         "price": 3200,
-        "capacity": 18,
-        "vacancy" : 7,
-        "dest_id": "65f70d436051f5584338292f"
+        "dest_id": "6836c9241080c352e575da85"
       },
       {
         "title": "Coral Safari",
         "description": "Embark on a thrilling coral safari and marvel at the colorful coral reefs of Havelock Island from a glass-bottom boat.",
         "price": 3150,
-        "capacity": 27,
-        "vacancy" : 7,
-        "dest_id": "65f70d436051f5584338292f"
+        "dest_id": "6836c9241080c352e575da85"
       },
       {
         "title": "Visiting The Charminar",
         "description": "Admire the architectural splendor of Charminar, a historic monument and iconic symbol of Hyderabad.",
         "price": 2400,
-        "capacity": 33,
-        "vacancy" : 22,
-        "dest_id": "65f70d4c6051f55843382932"
+        "dest_id": "6836c9411080c352e575dac0"
       },
       {
         "title": "Hyderabadi Food Tour",
         "description": "Indulge in a gastronomic journey through the culinary delights of Hyderabad's rich and diverse cuisine.",
         "price": 4300,
-        "capacity": 21,
-        "vacancy" : 12,
-        "dest_id": "65f70d4c6051f55843382932"
+        "dest_id": "6836c9411080c352e575dac0"
       },
       {
         "title": "Visiting Salar Jung Museum",
         "description": "Explore the vast collection of art, artifacts, and antiques at the renowned Salar Jung Museum, showcasing India's cultural heritage.",
         "price": 1200,
-        "capacity": 30,
-        "vacancy" : 11,
-        "dest_id": "65f70d4c6051f55843382932"
+        "dest_id": "6836c9411080c352e575dac0"
       }
     
 ]
