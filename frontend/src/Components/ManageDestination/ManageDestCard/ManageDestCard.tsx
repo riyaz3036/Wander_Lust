@@ -12,7 +12,7 @@ const ManageDestCard: React.FC<DestCardProps> = ({destination, setToEditDestinat
     return(
         <div key={destination.id} className="add_dest_card">
             <div className="w-[100%] h-[200px] overflow-hidden">
-                {destination.image &&  <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${destination.image.replace(/\\/g, '/')}`} loading="lazy" className="w-full h-full object-cover" style={{borderRadius: '5px 5px 0 0'}} alt="destination poster"/>}
+                {destination.image &&  <img src={`${process.env.REACT_APP_BE_URL}/${destination.image.replace(/\\/g, '/')}`} loading="lazy" className="w-full h-full object-cover" style={{borderRadius: '5px 5px 0 0'}} alt="destination poster"/>}
             </div>
             <div className="flex flex-wrap py-1 px-2">
                 <p className="m-0 text-lg"><span className="font-semibold">id:</span> {destination.id}</p>

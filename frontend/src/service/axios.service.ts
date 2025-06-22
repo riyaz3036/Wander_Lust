@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from "axios";
 import { authStore } from "../store/auth.store";
 
 const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_LOCAL_BE_URL
+    baseURL: process.env.REACT_APP_BE_URL
 });
 
 // Request interceptor to add the auhorization to the request

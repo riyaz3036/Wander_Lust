@@ -15,7 +15,7 @@ const DestinationCard: React.FC<DestinationCardProps> =({destination})=>{
         <div className="dest__card cursor-pointer" onClick={() => navigate(`${RouteConstants.allTours}?destId=${destination.id}`)}>
             <Card>
                 <div className="dest__img">
-                    {destination.image && <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${destination?.image.replace(/\\/g, '/')}`} loading="lazy" alt="destination-image"/>}
+                    {destination.image && <img src={`${process.env.REACT_APP_BE_URL}/${destination?.image.replace(/\\/g, '/')}`} loading="lazy" alt="destination-image"/>}
                 </div>
                 <div className="p-3">
                     <h5 className="dest__title truncate">{destination.title}</h5>

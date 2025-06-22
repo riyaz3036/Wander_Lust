@@ -53,7 +53,7 @@ const UserDetails = () => {
   return (
     <div className="flex gap-[10px] profile_details" style={{backgroundColor: ColorConstants.grey}}>
         <div className="profile_img flex-shrink-0">
-            <img src={userData && userData.image?`${process.env.REACT_APP_LOCAL_BE_URL}/${userData.image.replace(/\\/g, '/')}`:user_alt} loading="lazy" alt="Profile" />
+            <img src={userData && userData.image?`${process.env.REACT_APP_BE_URL}/${userData.image.replace(/\\/g, '/')}`:user_alt} loading="lazy" alt="Profile" />
         </div>
         {
             !loading&& userData ? (

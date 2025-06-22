@@ -24,7 +24,7 @@ const BookingCard: React.FC<BookingCardProps> = ({booking, setToDeleteBooking}) 
     return(
         <div key={booking.id} className="booking_card">
             <div className="booking_card_img">
-                {booking.tour.image && <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${booking.tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image" />}
+                {booking.tour.image && <img src={`${process.env.REACT_APP_BE_URL}/${booking.tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image" />}
             </div>
             <div className="booking_card_main">
                 <p><span>Booked Tour:</span> {booking.tour.title}</p>

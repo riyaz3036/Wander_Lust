@@ -15,7 +15,7 @@ const TourCard: React.FC<TourCardProps> =({tour})=>{
         <div className="tour__card">
             <Card>
                 <div className="tour__img">
-                    {tour.image && <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image"/>}
+                    {tour.image && <img src={`${process.env.REACT_APP_BE_URL}/${tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="tour-image"/>}
                 </div>
                 <CardBody>
                     <div className="card__top d-flex align-items-center justify-content-between">

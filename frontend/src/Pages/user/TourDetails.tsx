@@ -87,7 +87,7 @@ const TourDetails = () => {
                         ) : (
                             tour && (
                                 <div className="tour__content">
-                                    {tour.image && <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="" />}
+                                    {tour.image && <img src={`${process.env.REACT_APP_BE_URL}/${tour.image.replace(/\\/g, '/')}`} loading="lazy" alt="" />}
                                     
                                     <div className="tour__info">
                                         <Typography.Title style={{fontSize: '26px'}}>{tour.title}</Typography.Title>
@@ -120,7 +120,7 @@ const TourDetails = () => {
                                                     <div className="flex flex-col md:flex-row gap-[20px]">
                                                         <div className="w-[240px] h-[120px] flex-shrink-0">
                                                             {destination.image && (
-                                                                <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${destination.image.replace(/\\/g, '/')}`} className="w-full h-full object-cover" />
+                                                                <img src={`${process.env.REACT_APP_BE_URL}/${destination.image.replace(/\\/g, '/')}`} className="w-full h-full object-cover" />
                                                             )}
                                                         </div>
                                                         <div className="min-w-[300px]">

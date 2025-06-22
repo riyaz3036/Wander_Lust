@@ -19,7 +19,7 @@ const ManageTourCard: React.FC<TourCardProps> = ({tour,setToDeleteTour,setToEdit
     return(
         <div key={tour.id} className="add_tour_card overflow-hidden">
             <div className="h-[230px] w-full">
-                <img src={tour.image ? `${process.env.REACT_APP_LOCAL_BE_URL}/${tour.image.replace(/\\/g, '/')}`: noImage} loading="lazy" alt="tour poster" className="h-full w-full object-cover" />
+                <img src={tour.image ? `${process.env.REACT_APP_BE_URL}/${tour.image.replace(/\\/g, '/')}`: noImage} loading="lazy" alt="tour poster" className="h-full w-full object-cover" />
             </div>
             <div className="px-[20px] py-[10px]">
                 <div className="flex">

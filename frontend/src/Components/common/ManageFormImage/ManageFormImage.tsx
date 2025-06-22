@@ -41,7 +41,7 @@ const ManageFormImage: React.FC<ManageFormImageProps> = ({ value, label, isManda
                 />
                 {newImageFile === null && value !== null && (
                     <div className="w-[200px] h-[100px]">
-                        <img src={`${process.env.REACT_APP_LOCAL_BE_URL}/${value.replace(/\\/g, '/')}`} className="w-full h-full object-cover"/>
+                        <img src={`${process.env.REACT_APP_BE_URL}/${value.replace(/\\/g, '/')}`} className="w-full h-full object-cover"/>
                     </div>
                 )}
                 {newImageFile !== null && (
