@@ -10,7 +10,7 @@ interface AdminHeaderProps {
     setToggleSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AdminHeader:React.FC<AdminHeaderProps> =({toggleSidebar,setToggleSidebar})=>{
+const AdminHeader: React.FC<AdminHeaderProps> =({toggleSidebar,setToggleSidebar})=>{
     const [userDropdown, setUserDropdown] = useState<boolean>(false);
     const [showLogout,setShowLogout] = useState<boolean>(false);
 
