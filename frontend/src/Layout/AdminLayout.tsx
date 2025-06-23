@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import AdminHeader from "../components/common/AdminHeader/AdminHeader";
-import AdminSidebar from "../components/common/AdminSidebar/AdminSidebar";
+import AdminSidebar from "../components/common/admin-sidebar/AdminSidebar";
 import RouteConstants from "../constants/RouteConstants";
 import { RolesEnum } from "../enums/roles.enum";
 import { authStore } from "../store/auth.store";
 import { isSecureRoute } from "../utils/route.utils";
 import ColorConstants from "../constants/ColorConstants";
+import AdminHeader from "../components/common/admin-header/AdminHeader";
 
 const AdminLayout = ({children}: {children: React.ReactNode}) => {
     const user  = authStore.getUser();
@@ -26,7 +26,7 @@ const AdminLayout = ({children}: {children: React.ReactNode}) => {
 
     return (
         <div className="w-[100vw] h-[100vh]">
-            <AdminHeader setToggleSidebar={setToggleSidebar} toggleSidebar={toggleSidebar} />
+            <AdminHeader  setToggleSidebar={setToggleSidebar} toggleSidebar={toggleSidebar} />
             <AdminSidebar toggleSidebar={toggleSidebar} />
             <div style={{backgroundColor: ColorConstants.adminBackground}}className={`h-[100vh] w-[100vw] min-w-[400px] pt-[90px] pb-[20px] pr-[20px] pl-[80px] overflow-y-auto overflow-x-auto lg:overflow-x-hidden ${toggleSidebar ? 'md:pl-[270px]' : ''}`}>
                 {children}
