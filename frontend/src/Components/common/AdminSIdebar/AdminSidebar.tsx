@@ -1,10 +1,9 @@
-import React,{memo} from 'react'
-import {NavLink} from 'react-router-dom'
-import './admin-sidebar.css'
-import RouteConstants from '../../../constants/RouteConstants';
-import { Tooltip } from 'antd';
+import { NavLink } from "react-router-dom";
+import RouteConstants from "../../../constants/RouteConstants";
+import './admin-sidebar.css';
 
-interface AdmnSidebarProps {
+
+interface AdminSidebarProps {
     toggleSidebar: any;
 }
 
@@ -36,8 +35,8 @@ const SidebarItems = [
     }
 ];
 
-const AdmnSidebar: React.FC<AdmnSidebarProps> =({toggleSidebar})=>{
-    return(
+const AdminSidebar: React.FC<AdminSidebarProps> = ({toggleSidebar}) => {
+    return (
         <div className="admin_sidebar" style={{width: toggleSidebar? '250px' : '60px' }}>
             <div className="admin_sidebar_section">
                 <div className="admin_sidebar_section_title">
@@ -58,4 +57,4 @@ const AdmnSidebar: React.FC<AdmnSidebarProps> =({toggleSidebar})=>{
 }
 
 
-export default memo(AdmnSidebar);
+export default AdminSidebar;
