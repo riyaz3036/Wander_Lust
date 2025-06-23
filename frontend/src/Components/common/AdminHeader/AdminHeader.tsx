@@ -1,19 +1,19 @@
-import React,{useState, memo} from 'react'
-import './admin-header.css'
-import logo from '../../../assets/images/logo.png'
+import { useState } from "react";
+import Logout from "../Logout/Logout";
 import logo_mini from '../../../assets/images/logo_mini.png'
+import logo from '../../../assets/images/logo.png'
 import admin from '../../../assets/images/user_alt.png'
-import Logout from '../Logout/Logout'
+import './admin-header.css'
 
-interface AdmnHeaderProps {
+interface AdminHeaderProps {
     toggleSidebar: boolean,
     setToggleSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AdmnHeader: React.FC<AdmnHeaderProps> =({toggleSidebar,setToggleSidebar})=>{
+
+const AdminHeader: React.FC<AdminHeaderProps> = ({toggleSidebar, setToggleSidebar}) => {
     const [userDropdown, setUserDropdown] = useState<boolean>(false);
     const [showLogout,setShowLogout] = useState<boolean>(false);
-
     return(
         <div className="admin_header">
             <div>
@@ -48,4 +48,4 @@ const AdmnHeader: React.FC<AdmnHeaderProps> =({toggleSidebar,setToggleSidebar})=
 }
 
 
-export default memo(AdmnHeader);
+export default AdminHeader;
