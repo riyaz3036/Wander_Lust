@@ -4,7 +4,7 @@ import './admin-sidebar.css'
 import RouteConstants from '../../../constants/RouteConstants';
 import { Tooltip } from 'antd';
 
-interface AdminSidebarProps {
+interface AdmnSidebarProps {
     toggleSidebar: any;
 }
 
@@ -36,7 +36,7 @@ const SidebarItems = [
     }
 ];
 
-const AdminSidebar: React.FC<AdminSidebarProps> =({toggleSidebar})=>{
+const AdmnSidebar: React.FC<AdmnSidebarProps> =({toggleSidebar})=>{
     return(
         <div className="admin_sidebar" style={{width: toggleSidebar? '250px' : '60px' }}>
             <div className="admin_sidebar_section">
@@ -58,4 +58,4 @@ const AdminSidebar: React.FC<AdminSidebarProps> =({toggleSidebar})=>{
 }
 
 
-export default memo(AdminSidebar);
+export default memo(AdmnSidebar);
