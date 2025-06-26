@@ -1,8 +1,8 @@
 import { message, Modal, Tabs, Typography } from 'antd';
 import { useEffect, useState } from 'react';
-import Loading from '../../components/common/Loading/Loading';
-import AddEditTour from '../../components/ManageTour/AddEditTour/AddEditTour';
-import AllTours from '../../components/ManageTour/AllTours/AllTours';
+import Loading from '../../Components/common/Loading/Loading';
+import AddEditTour from '../../Components/ManageTour/AddEditTour/AddEditTour';
+import AllTours from '../../Components/ManageTour/AllTours/AllTours';
 import ColorConstants from '../../constants/ColorConstants';
 import TourService from '../../service/tour.service';
 import '../../styles/add-tour.css';

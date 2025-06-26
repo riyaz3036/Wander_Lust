@@ -1,15 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import profile_title from '../../assets/images/profile_title.jpg';
-import '../../styles/profile.css';
-import UserDetails from '../../components/UserProfile/UserDetails/UserDetails';
-import UserBookings from '../../components/UserProfile/UserBookings/UserBookings';
-import TopUp from '../../components/UserProfile/TopUp/TopUp';
+import TopUp from '../../Components/UserProfile/TopUp/TopUp';
+import UserBookings from '../../Components/UserProfile/UserBookings/UserBookings';
+import UserDetails from '../../Components/UserProfile/UserDetails/UserDetails';
 import RouteConstants from '../../constants/RouteConstants';
-import { Booking } from '../../types/booking.types';
-import { useAuth } from '../../auth/AuthProvider';
-import BookingService from '../../service/booking.service';
-import { message } from 'antd';
+import '../../styles/profile.css';
 
 
 

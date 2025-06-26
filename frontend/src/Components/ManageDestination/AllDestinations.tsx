@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import { Destination } from "../../types/destination.types";
-import { message, Pagination } from "antd";
-import DestinationService from "../../service/destination.service";
-import LoadingOverlay from "../common/LoadingOverlay/LoadingOverlay";
+import { Pagination } from "antd";
 import ColorConstants from "../../constants/ColorConstants";
+import { Destination } from "../../types/destination.types";
+import PageLoader from "../common/FullPageLoader/PageLoader";
 import ManageDestCard from "./ManageDestCard/ManageDestCard";
 
 interface AllDestinationsProps {
@@ -34,7 +32,7 @@ const AllDestinations: React.FC<AllDestinationsProps> = ({setToEditDestination, 
             </div>
 
             <div className="add_tour_cards">
-                {loading && (<LoadingOverlay />)}
+                {loading && (<PageLoader />)}
                 {!loading && destinations.length === 0 && (
                     <p className="text-center p-5 add_tour_error">No Destinations</p>
                 )}

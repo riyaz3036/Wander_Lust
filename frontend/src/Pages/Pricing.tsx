@@ -5,9 +5,9 @@ import '../styles/pricing.css';
 import { generateRoute } from '../utils/generateRoute';
 import { UserMembership } from '../enums/user-membership.enum';
 import { useAuth } from '../auth/AuthProvider';
-import PricingCard from '../components/Pricing/PricingCard';
-import PlanDescription from '../components/Pricing/PlanDescription';
-import Assurance from '../components/common/Assurance/Assurance';
+import PricingCard from '../Components/Pricing/PricingCard';
+import PlanDescription from '../Components/Pricing/PlanDescription';
+import Assurance from '../Components/common/Assurance/Assurance';
 
 const Pricing = () => {
     const navigate = useNavigate();

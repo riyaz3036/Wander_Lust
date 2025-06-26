@@ -1,8 +1,8 @@
 import { message } from 'antd';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import LoadingOverlay from '../components/common/LoadingOverlay/LoadingOverlay';
-import LoginImages from '../components/Login/LoginImages/LoginImages';
+import PageLoader from '../Components/common/FullPageLoader/PageLoader';
+import LoginImages from '../Components/Login/LoginImages/LoginImages';
 import RouteConstants from '../constants/RouteConstants';
 import { RolesEnum } from '../enums/roles.enum';
 import AuthService from '../service/auth.service';
@@ -117,7 +117,7 @@ const Register = () => {
             <LoginImages />
 
             {/* Loader */}
-            {loading && <LoadingOverlay />}
+            {loading && <PageLoader />}
         </div>
     );
 };

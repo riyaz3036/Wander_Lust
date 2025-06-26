@@ -1,14 +1,14 @@
 import { message } from "antd";
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../styles/login.css';
-import { LoginRequest } from "../types/auth.types";
+import LoginImages from "../Components/Login/LoginImages/LoginImages";
+import PageLoader from "../Components/common/FullPageLoader/PageLoader";
+import RouteConstants from "../constants/RouteConstants";
 import AuthService from "../service/auth.service";
 import { authStore } from "../store/auth.store";
+import '../styles/login.css';
+import { LoginRequest } from "../types/auth.types";
 import { setAccessTokenInCookie } from "../utils/cookie.utils";
-import RouteConstants from "../constants/RouteConstants";
-import LoginImages from "../components/Login/LoginImages/LoginImages";
-import LoadingOverlay from "../components/common/LoadingOverlay/LoadingOverlay";
 
 
 
@@ -97,7 +97,7 @@ const Login = () => {
        
 
         {/* Loader */}
-        {loading && <LoadingOverlay />}
+        {loading && <PageLoader />}
     </div>
   );
 };

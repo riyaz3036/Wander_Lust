@@ -1,12 +1,12 @@
 import { message, Modal, Tabs, Typography } from 'antd';
 import { useEffect, useState } from 'react';
-import AddEditDestination from '../../components/ManageDestination/AddEditDestination';
-import Loading from '../../components/common/Loading/Loading';
+import AddEditDestination from '../../Components/ManageDestination/AddEditDestination';
+import Loading from '../../Components/common/Loading/Loading';
 import ColorConstants from '../../constants/ColorConstants';
 import DestinationService from '../../service/destination.service';
 import '../../styles/add-tour.css';
 import { Destination } from '../../types/destination.types';
-import AllDestinations from '../../components/ManageDestination/AllDestinations';
+import AllDestinations from '../../Components/ManageDestination/AllDestinations';
 
 
 
