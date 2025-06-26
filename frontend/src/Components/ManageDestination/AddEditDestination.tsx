@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { AddDestinationRequest, Destination } from "../../types/destination.types";
 import { message, Typography } from "antd";
-import DestinationService from "../../service/destination.service";
+import { useEffect, useState } from "react";
+import DestinationBackground from '../../assets/images/dest-background.jpg';
 import ColorConstants from "../../constants/ColorConstants";
-import ManageFormInput from "../common/ManageFormInput/ManageFormInput";
-import DestinationBackground from '../../assets/images/dest-background.jpg'
+import DestinationService from "../../service/destination.service";
+import { AddDestinationRequest, Destination } from "../../types/destination.types";
+import PageLoader from "../common/FullPageLoader/PageLoader";
 import ManageFormImage from "../common/ManageFormImage/ManageFormImage";
-import LoadingOverlay from "../common/LoadingOverlay/LoadingOverlay";
+import ManageFormInput from "../common/ManageFormInput/ManageFormInput";
 
 interface AddEditDestinationProps {
     isAdd: boolean;
@@ -103,7 +103,7 @@ const AddEditDestination: React.FC<AddEditDestinationProps> = ({isAdd, setToEdit
                 <img src={DestinationBackground} className="w-full h-full object-cover overflow-hidden" />
             </div>
 
-            {addDestinationLoading && (<LoadingOverlay />)}
+            {addDestinationLoading && (<PageLoader />)}
         </div>
     )
 }

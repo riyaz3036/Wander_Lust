@@ -1,13 +1,13 @@
 import { message, Pagination } from "antd";
 import { useEffect, useState } from "react";
-import LoadingOverlay from "../../components/common/LoadingOverlay/LoadingOverlay";
-import TourList from "../../components/Home/TourList/TourList";
+import { useLocation, useNavigate } from "react-router-dom";
+import Filter, { FilterOptionProps } from "../../Components/common/Filter/Filter";
+import PageLoader from "../../Components/common/FullPageLoader/PageLoader";
+import TourList from "../../Components/Home/TourList/TourList";
+import RouteConstants from "../../constants/RouteConstants";
+import DestinationService from "../../service/destination.service";
 import TourService from "../../service/tour.service";
 import { Tour } from "../../types/tour.types";
-import Filter, { FilterOptionProps } from "../../components/common/Filter/Filter";
-import DestinationService from "../../service/destination.service";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import RouteConstants from "../../constants/RouteConstants";
 
 const Tours = () => {
     const [tours, setTours] = useState<Tour[]>([]);
@@ -124,7 +124,7 @@ const Tours = () => {
                 </div>
             )}
 
-            {loading && (<LoadingOverlay />)}
+            {loading && (<PageLoader />)}
         </div>
     )
 }

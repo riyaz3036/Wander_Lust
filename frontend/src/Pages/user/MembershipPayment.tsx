@@ -1,13 +1,13 @@
 import { message } from 'antd';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useAuth } from '../../auth/AuthProvider';
+import Payment from '../../Components/common/Payment/Payment';
+import RouteConstants from '../../constants/RouteConstants';
 import { UserMembership } from '../../enums/user-membership.enum';
 import UserService from '../../service/user.service';
 import { authStore } from '../../store/auth.store';
-import { useAuth } from '../../auth/AuthProvider';
-import Payment from '../../components/common/Payment/Payment';
-import LoadingOverlay from '../../components/common/LoadingOverlay/LoadingOverlay';
-import RouteConstants from '../../constants/RouteConstants';
+import PageLoader from '../../Components/common/FullPageLoader/PageLoader';
 
 
 const MembershipPayment = () => {
@@ -64,7 +64,7 @@ const MembershipPayment = () => {
           backTo={RouteConstants.pricing}
       />}
 
-      {loading && <LoadingOverlay />}
+      {loading && <PageLoader />}
       </>
   );
 };

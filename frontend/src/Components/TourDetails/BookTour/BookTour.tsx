@@ -2,15 +2,15 @@ import { message } from 'antd';
 import React, { memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Form, FormGroup, ListGroup, ListGroupItem } from 'reactstrap';
-import './book-tour.css';
-import { Tour } from '../../../types/tour.types';
-import { Activity } from '../../../types/activity.types';
 import { useAuth } from '../../../auth/AuthProvider';
-import { CreateBooking } from '../../../types/booking.types';
-import { UserMembership } from '../../../enums/user-membership.enum';
 import RouteConstants from '../../../constants/RouteConstants';
+import { UserMembership } from '../../../enums/user-membership.enum';
 import BookingService from '../../../service/booking.service';
-import LoadingOverlay from '../../common/LoadingOverlay/LoadingOverlay';
+import { Activity } from '../../../types/activity.types';
+import { CreateBooking } from '../../../types/booking.types';
+import { Tour } from '../../../types/tour.types';
+import PageLoader from '../../common/FullPageLoader/PageLoader';
+import './book-tour.css';
 
 interface BookTourProps {
     tour: Tour;
@@ -167,7 +167,7 @@ const BookTour: React.FC<BookTourProps> = ({ tour, additionalActivities }) => {
                 </Button>
             </div>
 
-            {loading && <LoadingOverlay />}
+            {loading && <PageLoader />}
         </div>
     )
 };

@@ -1,12 +1,12 @@
 import { message, Typography } from "antd";
-import TourService from "../../../service/tour.service";
 import { useEffect, useState } from "react";
-import { AddTourRequest, Tour } from "../../../types/tour.types";
-import AdminBackground from '../../../assets/images/tour-background.jpg'
+import AdminBackground from '../../../assets/images/tour-background.jpg';
 import ColorConstants from "../../../constants/ColorConstants";
-import ManageFormInput from "../../common/ManageFormInput/ManageFormInput";
+import TourService from "../../../service/tour.service";
+import { AddTourRequest, Tour } from "../../../types/tour.types";
+import PageLoader from "../../common/FullPageLoader/PageLoader";
 import ManageFormImage from "../../common/ManageFormImage/ManageFormImage";
-import LoadingOverlay from "../../common/LoadingOverlay/LoadingOverlay";
+import ManageFormInput from "../../common/ManageFormInput/ManageFormInput";
 
 interface AddEditTourProps {
     isAdd: boolean;
@@ -130,7 +130,7 @@ const AddEditTour: React.FC<AddEditTourProps> = ({isAdd, tour, setActiveTabKey, 
                 <img src={AdminBackground} className="w-full h-full object-cover overflow-hidden" />
             </div>
 
-            {addTourLoading && (<LoadingOverlay />)}
+            {addTourLoading && (<PageLoader />)}
         </div>
     )
 }

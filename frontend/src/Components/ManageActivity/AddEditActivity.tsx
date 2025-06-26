@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { Activity, AddActivityRequest } from "../../types/activity.types";
-import ActivityService from "../../service/activity.service";
 import { message, Typography } from "antd";
+import { useEffect, useState } from "react";
+import ActivityBackground from '../../assets/images/activity-background.jpg';
 import ColorConstants from "../../constants/ColorConstants";
+import ActivityService from "../../service/activity.service";
+import { Activity, AddActivityRequest } from "../../types/activity.types";
+import PageLoader from "../common/FullPageLoader/PageLoader";
 import ManageFormInput from "../common/ManageFormInput/ManageFormInput";
-import ActivityBackground from '../../assets/images/activity-background.jpg'
-import LoadingOverlay from "../common/LoadingOverlay/LoadingOverlay";
 
 interface AddEditActivityProps {
     isAdd: boolean;
@@ -103,7 +103,7 @@ const AddEditActivity: React.FC<AddEditActivityProps> = ({isAdd, setToEditActivi
                 <img src={ActivityBackground} className="w-full h-full object-cover overflow-hidden" />
             </div>
 
-            {addActivityLoading && (<LoadingOverlay />)}
+            {addActivityLoading && (<PageLoader />)}
         </div>
     )
 }

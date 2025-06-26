@@ -5,8 +5,8 @@ import RouteConstants from "../constants/RouteConstants";
 import { RolesEnum } from "../enums/roles.enum";
 import { authStore } from "../store/auth.store";
 import { isSecureRoute } from "../utils/route.utils";
-import AdminHeader from "../components/common/AdminHeader/AdminHeader";
-import AdminSidebar from "../components/common/AdminSIdebar/AdminSidebar";
+import AdminHeader from "../Components/common/AdminHeader/AdminHeader";
+import AdminSidebar from "../Components/common/AdminSIdebar/AdminSidebar";
 
 const AdminLayout = ({children}: {children: React.ReactNode}) => {
     const user  = authStore.getUser();

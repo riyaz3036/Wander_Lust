@@ -1,11 +1,11 @@
 import { message } from 'antd';
 import { useEffect, useState } from 'react';
-import LoadingOverlay from '../../components/common/LoadingOverlay/LoadingOverlay';
+import AnalyticsCard from '../../Components/DashboardAnalytics/AnalyticsCard';
+import PageLoader from '../../Components/common/FullPageLoader/PageLoader';
 import ColorConstants from '../../constants/ColorConstants';
 import AnalyticsService from '../../service/analytics.service';
 import '../../styles/dashboard-analytics.css';
 import { AnalyticsCount } from '../../types/analytics.types';
-import AnalyticsCard from '../../components/DashboardAnalytics/AnalyticsCard';
 
 
 const DashboardAnalytics = () => {
@@ -47,7 +47,7 @@ const DashboardAnalytics = () => {
                 <AnalyticsCard title={"Bookings"} value={count.bookings} color={ColorConstants.analyticsCard5} icon={<i className="ri-booklet-line" style={{margin: 0, color: ColorConstants.analyticsCard5, fontSize: '30px'}}></i>}/>
             </div>                    
             )}
-            {countLoading && (<LoadingOverlay />)}
+            {countLoading && (<PageLoader />)}
         </div>
     );
 }

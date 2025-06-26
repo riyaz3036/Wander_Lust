@@ -1,7 +1,7 @@
 import { message, Modal, Tabs, Typography } from 'antd';
 import { useEffect, useState } from 'react';
-import Loading from '../../components/common/Loading/Loading';
-import AllBookings from '../../components/ManageBooking/AllBookings';
+import Loading from '../../Components/common/Loading/Loading';
+import AllBookings from '../../Components/ManageBooking/AllBookings';
 import ColorConstants from '../../constants/ColorConstants';
 import BookingService from '../../service/booking.service';
 import '../../styles/my-bookings.css';

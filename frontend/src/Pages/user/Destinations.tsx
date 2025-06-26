@@ -1,11 +1,9 @@
-import { message, Pagination, Row } from "antd";
-import { Col, Container } from "reactstrap";
+import { message, Pagination } from "antd";
 import { useEffect, useState } from "react";
-import { Destination } from "../../types/destination.types";
+import PageLoader from "../../Components/common/FullPageLoader/PageLoader";
+import DestinationList from "../../Components/Home/DestinationList/DestinationList";
 import DestinationService from "../../service/destination.service";
-import Loading from "../../components/common/Loading/Loading";
-import DestinationList from "../../components/Home/DestinationList/DestinationList";
-import LoadingOverlay from "../../components/common/LoadingOverlay/LoadingOverlay";
+import { Destination } from "../../types/destination.types";
 
 
 const Destinations = () => {
@@ -74,7 +72,7 @@ const Destinations = () => {
                 </div>
             )}
             
-            {loading && (<LoadingOverlay />)}
+            {loading && (<PageLoader />)}
         </div>
     )
 }

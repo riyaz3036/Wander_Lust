@@ -3,14 +3,14 @@ import { format } from 'date-fns';
 import { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
+import BookTour from '../../Components/TourDetails/BookTour/BookTour';
+import PageLoader from '../../Components/common/FullPageLoader/PageLoader';
+import ColorConstants from '../../constants/ColorConstants';
 import TourService from '../../service/tour.service';
 import '../../styles/tour-details.css';
-import { Tour } from '../../types/tour.types';
 import { Activity } from '../../types/activity.types';
 import { Destination } from '../../types/destination.types';
-import BookTour from '../../components/TourDetails/BookTour/BookTour';
-import LoadingOverlay from '../../components/common/LoadingOverlay/LoadingOverlay';
-import ColorConstants from '../../constants/ColorConstants';
+import { Tour } from '../../types/tour.types';
 
 
 const TourDetails = () => {
@@ -167,7 +167,7 @@ const TourDetails = () => {
                     </Col>
                 </Row>
             </Container>
-            {tourLoading && <LoadingOverlay />}
+            {tourLoading && <PageLoader />}
         </section>
     );
 };
