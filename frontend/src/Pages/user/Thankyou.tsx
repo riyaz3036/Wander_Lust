@@ -17,7 +17,7 @@ const Thankyou = ()=>{
       
     return (
         <section>
-            <div className="my-[45px] text-center bg-red-300">
+            <div className="my-[45px] text-center">
                 <div className="thank__you">
                     <span><i className="ri-checkbox-circle-line"></i></span>
                     <Typography.Title className="mb-3 fw-semibold" style={{fontSize: '36px'}}>Your trip is booked!</Typography.Title>

@@ -1,30 +1,55 @@
 <p align="center"><img src="readmeassets/logo.png" ></p>
 
-### Wanderlust is a one stop place to make your trip more than just a journey
+<h1 style="border-bottom: none; margin-bottom: 0;">
+  WanderLust - Full Stack Travel Booking Web Application
+</h1>
 
-- Select and book your trip from a range of Packages
-- We offer additional activities at each destination to make your trip more memorable
-- Create an account to book yor trip and view them anytime!
+<hr/>
+
+Hosted at: https://wander-lust-nu-three.vercel.app/
 
 ### Features
+Implemented two distinct modules: a user-facing module for consuming the services, and an admin management module for overseeing data ensuring clear separation of concerns and streamlined workflows.
 
-- You can view all tha available destinations and packages in the home page
-- By clicking on book now on the tour package you can view all the details of the tour
-- A tour has a fixed Iternary of destinations.
-- Additional to the normal Iternary you can add addition activities at that destination 
-- Each tour package has a vacancy, you cannot book if it is less that the guest size you are booking for
-- It also applies for the activities
-- The discount is applied according to you membership (premium user: 50%, gold user 10% , normal user 0%). You can choose a membership from pricings section
-- Once you have booked your tour you can view your booking details by clicking on profile in the headers section
-- You can also top-up your balance from the profile section
+User Module:
+- Select and book your trip from a range of Packages accross different destinations
+- Each package involves different destinations and has limited vacancies
+- Each destination is coupled with a set of additional activities which can be opted for
+- The final price is calculated based on a membership module (premium user: 50%, gold user 10% , normal user 0%)
+
+Admin Module
+- The Admin can view and manage (add/edit/delete) all the tours, destination, activities, bookings, users and orders
+
+P.S. Signing/Logging in as an admin requires a secret admin key
+
 
 ### Highlights
 - Readable and Maintainable code
+- Followed best coding practices to maintain high code quality and adhere to industry standards.
 - Responsive design principles are applied to every page throughout the website
 
-## A sneak peek into what we have here!
+## Version history
 
-Visit my website at: https://wander-lust-drab.vercel.app/
+### v2 (current)
+Whats new?
+- Migrated the backend code from express.js to Nest.js
+- secure token based authentcation
+- Introduction of MobX for storage and AntD for toast messages all over the application
+- use of memoization techniques in the frontend
+- implemented loader states (both full page and component level)
+- Modular backend code strucutre 
+- Global exception handling
+- Swagger Documentation of the endpoints
+- standard reposiory folder and component structure
+- Minor UI modifications
+
+### v1 
+- Implemented a basic backend using Express.js by connecting to MongoDB database
+- In application storage and management of images (using multer)
+- Built the frontend using React, Tailwind, CSS, Redux and Material-UI
+
+
+## A sneak peek into what we have here!
 
 ### Home Page
 
@@ -50,52 +75,21 @@ Visit my website at: https://wander-lust-drab.vercel.app/
 
 ## Technology Stack
 
-- **Coding Languages**: <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
+**Tools & Frameworks**: 
+<br>
+<img alt="TypeScript" src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/> <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
 
-- **Tools & Frameworks**: <img alt="ReactJS" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss"/><img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/> <img alt="Express.js" src="https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=for-the-badge"/> <img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB-%234ea94b.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img alt="Mongoose" src ="https://img.shields.io/badge/Mongoose-%234ea94b.svg?&style=for-the-badge&logo=Mongoose&logoColor=white"/>
+**Tools & Frameworks**: 
+<br>
+<img alt="ReactJS" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="Ant Design" src="https://img.shields.io/badge/Ant%20Design-%230170FF.svg?&style=for-the-badge&logo=ant-design&logoColor=white"/> <img alt="Material UI" src="https://img.shields.io/badge/Material%20UI-0081CB.svg?&style=for-the-badge&logo=mui&logoColor=white"/> <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwindcss-0F172A?&style=for-the-badge&logo=tailwindcss&logoColor=white"/> <img alt="MobX" src="https://img.shields.io/badge/MobX-FF9955.svg?&style=for-the-badge&logo=mobx&logoColor=white"/> <img alt="NestJS" src="https://img.shields.io/badge/nestjs-%23E0234E.svg?&style=for-the-badge&logo=nestjs&logoColor=white"/> <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/>
 
-- **Project Management Tools**: <img alt="GitHub" src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/> <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
-
-<hr>
-
-## Environment Setup for local use-
-
-- Drop a :star: on the GitHub repository.
-  <br/>
-
-- Download and install a code/ text editor. - Recommended- - [Download VS Code](https://code.visualstudio.com/download) 
-  <br/>
-
-- Download [Node Js and npm(Node package manager)](https://nodejs.org/en/) (when you install Node, npm also gets installed by default)
-  <br/>
+**Project Management Tools**: 
+<br>
+<img alt="GitHub" src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/> <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
 
 
-- Download and extract the github repositor
-<br/>
-
-- Open the project (wander_Lust-main) using VS Code
-  <br/>
-
-- Open a new terminal and enter `cd frontend` to navigate to the front end of the project
-<br/>
-
-- Run this command to install all dependencies for the frontend of this project.
-
-```
-npm install
-```
-
-<br/>
-
-- Now run this command to start the project.
-
-```
-npm start
-```
-<br/>
-
-- Now you are all set to use this project.
 
 ## Developer
 
 - Md Riyaz Ahmed
+

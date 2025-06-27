@@ -9,6 +9,7 @@ import { authStore } from "../store/auth.store";
 import '../styles/login.css';
 import { LoginRequest } from "../types/auth.types";
 import { setAccessTokenInCookie } from "../utils/cookie.utils";
+import { RolesEnum } from "../enums/roles.enum";
 
 
 
@@ -55,7 +56,12 @@ const Login = () => {
               authStore.setIsAuthenticated(true);
               setAccessTokenInCookie(accessToken);
               message.success('Login Successful!')
-              navigate(RouteConstants.home);
+              if(response.data.role === RolesEnum.USER) {
+                navigate(RouteConstants.home);
+              }
+              else if(response.data.role === RolesEnum.ADMIN) {
+                navigate(RouteConstants.analytics);
+              }
           })
           .catch((error) => {
               console.error('Error while login.', error);

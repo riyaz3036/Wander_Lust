@@ -36,7 +36,7 @@ const DashboardAnalytics = () => {
 
 
     return (
-        <div className="p-[10px]" style={{backgroundColor: ColorConstants.white }}>
+        <div className="p-[10px] h-full" style={{backgroundColor: ColorConstants.white }}>
             {countError && (<p className="p-5 add_tour_error">{countError}</p>)}
             {count && !countError && !countLoading && (
             <div className="analytics_display_cards">

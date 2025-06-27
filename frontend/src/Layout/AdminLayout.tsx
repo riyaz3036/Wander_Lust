@@ -15,12 +15,13 @@ const AdminLayout = ({children}: {children: React.ReactNode}) => {
     const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
     
     useEffect(() => {
-        if(user === null && isSecureRoute(location.pathname)){
-            navigate(RouteConstants.root);
+
+        if (!user || user === null || user.role === RolesEnum.USER) {
+            navigate(RouteConstants.pageNotFound);
         }
 
-        if (!user || user.role === RolesEnum.USER) {
-            navigate(RouteConstants.pageNotFound);
+        if(user === null && isSecureRoute(location.pathname)){
+            navigate(RouteConstants.login);
         }
     }, [user, navigate]);
 
