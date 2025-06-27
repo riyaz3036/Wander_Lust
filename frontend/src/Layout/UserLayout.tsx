@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthProvider";
-import Footer from "../components/common/Footer/Footer";
-import Header from "../components/common/Header/Header";
+import Footer from "../Components/common/Footer/Footer";
+import Header from "../Components/common/Header/Header";
 import RouteConstants from "../constants/RouteConstants";
 import { RolesEnum } from "../enums/roles.enum";
 import { isSecureRoute } from "../utils/route.utils";
@@ -14,7 +14,7 @@ const UserLayout = ({children} : {children: React.ReactNode})=> {
 
     useEffect(() => {
         if(user === null && isSecureRoute(location.pathname)){
-            navigate(RouteConstants.root);
+            navigate(RouteConstants.login);
         }
 
         if (user?.role === RolesEnum.ADMIN) {

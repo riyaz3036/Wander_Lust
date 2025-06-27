@@ -1,4 +1,4 @@
-import AllDestinations from "../components/ManageDestination/AllDestinations";
+import AllDestinations from "../Components/ManageDestination/AllDestinations";
 
 const RouteConstants = {
     root: '/',

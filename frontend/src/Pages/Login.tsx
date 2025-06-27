@@ -1,14 +1,15 @@
 import { message } from "antd";
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../styles/login.css';
-import { LoginRequest } from "../types/auth.types";
+import LoginImages from "../Components/Login/LoginImages/LoginImages";
+import PageLoader from "../Components/common/FullPageLoader/PageLoader";
+import RouteConstants from "../constants/RouteConstants";
 import AuthService from "../service/auth.service";
 import { authStore } from "../store/auth.store";
+import '../styles/login.css';
+import { LoginRequest } from "../types/auth.types";
 import { setAccessTokenInCookie } from "../utils/cookie.utils";
-import RouteConstants from "../constants/RouteConstants";
-import LoginImages from "../components/Login/LoginImages/LoginImages";
-import LoadingOverlay from "../components/common/LoadingOverlay/LoadingOverlay";
+import { RolesEnum } from "../enums/roles.enum";
 
 
 
@@ -55,7 +56,12 @@ const Login = () => {
               authStore.setIsAuthenticated(true);
               setAccessTokenInCookie(accessToken);
               message.success('Login Successful!')
-              navigate(RouteConstants.home);
+              if(response.data.role === RolesEnum.USER) {
+                navigate(RouteConstants.home);
+              }
+              else if(response.data.role === RolesEnum.ADMIN) {
+                navigate(RouteConstants.analytics);
+              }
           })
           .catch((error) => {
               console.error('Error while login.', error);
@@ -97,7 +103,7 @@ const Login = () => {
        
 
         {/* Loader */}
-        {loading && <LoadingOverlay />}
+        {loading && <PageLoader />}
     </div>
   );
 };

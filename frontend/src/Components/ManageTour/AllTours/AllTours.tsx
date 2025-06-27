@@ -1,7 +1,7 @@
 import { Pagination } from "antd";
 import ColorConstants from "../../../constants/ColorConstants";
 import { Tour } from "../../../types/tour.types";
-import LoadingOverlay from "../../common/LoadingOverlay/LoadingOverlay";
+import PageLoader from "../../common/FullPageLoader/PageLoader";
 import ManageTourCard from "../ManageTourCard/ManageTourCard";
 
 interface AllToursProps {
@@ -30,7 +30,7 @@ const AllTours: React.FC<AllToursProps> = ({setToEditTour, setToDeleteTour, pagi
             </div>
 
             <div className="add_tour_cards">
-                {loading && (<LoadingOverlay />)}
+                {loading && (<PageLoader />)}
                 {!loading && tours.length === 0 && (
                     <p className="text-center p-5 add_tour_error">No Tours added</p>
                 )}

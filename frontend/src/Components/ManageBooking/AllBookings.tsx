@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
-import { Booking } from "../../types/booking.types";
-import { message, Pagination } from "antd";
-import BookingService from "../../service/booking.service";
-import LoadingOverlay from "../common/LoadingOverlay/LoadingOverlay";
-import BookingCard from "../common/BookingCard/BookingCard";
+import { Pagination } from "antd";
 import ColorConstants from "../../constants/ColorConstants";
+import { Booking } from "../../types/booking.types";
+import BookingCard from "../common/BookingCard/BookingCard";
+import PageLoader from "../common/FullPageLoader/PageLoader";
 
 interface AllBookingsProps {
     setToDeleteBooking: React.Dispatch<React.SetStateAction<string>>;
@@ -31,7 +29,7 @@ const AllBookings: React.FC<AllBookingsProps> = ({setToDeleteBooking, pagination
             </div>
 
             <div className="flex flex-col gap-[20px]">
-                {loading && (<LoadingOverlay />)}
+                {loading && (<PageLoader />)}
                 {!loading && bookings.length === 0 && (
                     <p className="text-center p-5 add_tour_error">No Bookings</p>
                 )}

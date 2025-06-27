@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import { Activity } from "../../types/activity.types";
-import ActivityService from "../../service/activity.service";
-import { message, Pagination } from "antd";
+import { Pagination } from "antd";
 import ColorConstants from "../../constants/ColorConstants";
-import LoadingOverlay from "../common/LoadingOverlay/LoadingOverlay";
+import { Activity } from "../../types/activity.types";
+import PageLoader from "../common/FullPageLoader/PageLoader";
 import ManageActivityCard from "./ManageActCard/ManageActivityCard";
 
 interface AllActivitiesProps {
@@ -32,7 +30,7 @@ const AllActivities: React.FC<AllActivitiesProps> = ({setToEditActivity, setToDe
             </div>
 
             <div className="add_tour_cards">
-                {loading && (<LoadingOverlay />)}
+                {loading && (<PageLoader />)}
                 {!loading && activities.length === 0 && (
                     <p className="text-center p-5 add_tour_error">No Activities</p>
                 )}

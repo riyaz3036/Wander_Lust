@@ -1,12 +1,12 @@
 import { message, Modal, Tabs, Typography } from 'antd';
 import { useEffect, useState } from 'react';
-import Loading from '../../components/common/Loading/Loading';
+import Loading from '../../Components/common/Loading/Loading';
 import ColorConstants from '../../constants/ColorConstants';
 import ActivityService from '../../service/activity.service';
 import '../../styles/add-tour.css';
 import { Activity } from '../../types/activity.types';
-import AllActivities from '../../components/ManageActivity/AllActivities';
-import AddEditActivity from '../../components/ManageActivity/AddEditActivity';
+import AllActivities from '../../Components/ManageActivity/AllActivities';
+import AddEditActivity from '../../Components/ManageActivity/AddEditActivity';
 
 
 const ManageActivity = () => {

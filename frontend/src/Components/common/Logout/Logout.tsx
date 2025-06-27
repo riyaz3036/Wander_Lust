@@ -4,6 +4,8 @@ import { authStore } from '../../../store/auth.store';
 import { Modal, Typography } from 'antd';
 import Loading from '../Loading/Loading';
 import ColorConstants from '../../../constants/ColorConstants';
+import RouteConstants from '../../../constants/RouteConstants';
+import { useNavigate } from 'react-router-dom';
 
 interface LogoutProps {
   showLogout: boolean;
@@ -12,10 +14,12 @@ interface LogoutProps {
 
 
 const Logout: React.FC<LogoutProps> = ({showLogout, setShowLogout}) => {
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const handleLogout=()=>{
         authStore.logout(setIsLoading);
         setShowLogout(false);
+        navigate(RouteConstants.login)
     }
     
     return (

@@ -47,7 +47,7 @@ const Payment: React.FC<PaymentProps> = ({ amount, handlePay, success, backTo })
                     <button
                         className="text-white text-[16px] font-medium py-[5px] px-[24px] rounded-[5px] flex gap-[5px]"
                         style={{ backgroundColor: ColorConstants.darkGrey2 }}
-                        onClick={handlePay}
+                        onClick={() => navigate(backTo)}
                     >
                         <i className="ri-arrow-left-line"></i>
                         <p className="m-0">back</p>

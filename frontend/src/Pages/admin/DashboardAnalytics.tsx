@@ -1,11 +1,11 @@
 import { message } from 'antd';
 import { useEffect, useState } from 'react';
-import LoadingOverlay from '../../components/common/LoadingOverlay/LoadingOverlay';
+import AnalyticsCard from '../../Components/DashboardAnalytics/AnalyticsCard';
+import PageLoader from '../../Components/common/FullPageLoader/PageLoader';
 import ColorConstants from '../../constants/ColorConstants';
 import AnalyticsService from '../../service/analytics.service';
 import '../../styles/dashboard-analytics.css';
 import { AnalyticsCount } from '../../types/analytics.types';
-import AnalyticsCard from '../../components/DashboardAnalytics/AnalyticsCard';
 
 
 const DashboardAnalytics = () => {
@@ -36,7 +36,7 @@ const DashboardAnalytics = () => {
 
 
     return (
-        <div className="p-[10px]" style={{backgroundColor: ColorConstants.white }}>
+        <div className="p-[10px] h-full" style={{backgroundColor: ColorConstants.white }}>
             {countError && (<p className="p-5 add_tour_error">{countError}</p>)}
             {count && !countError && !countLoading && (
             <div className="analytics_display_cards">
@@ -47,7 +47,7 @@ const DashboardAnalytics = () => {
                 <AnalyticsCard title={"Bookings"} value={count.bookings} color={ColorConstants.analyticsCard5} icon={<i className="ri-booklet-line" style={{margin: 0, color: ColorConstants.analyticsCard5, fontSize: '30px'}}></i>}/>
             </div>                    
             )}
-            {countLoading && (<LoadingOverlay />)}
+            {countLoading && (<PageLoader />)}
         </div>
     );
 }

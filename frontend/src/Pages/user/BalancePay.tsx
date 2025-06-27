@@ -1,12 +1,12 @@
 import { message } from 'antd';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useAuth } from '../../auth/AuthProvider';
+import PageLoader from '../../Components/common/FullPageLoader/PageLoader';
+import Payment from '../../Components/common/Payment/Payment';
+import RouteConstants from '../../constants/RouteConstants';
 import UserService from '../../service/user.service';
 import { authStore } from '../../store/auth.store';
-import { useAuth } from '../../auth/AuthProvider';
-import LoadingOverlay from '../../components/common/LoadingOverlay/LoadingOverlay';
-import Payment from '../../components/common/Payment/Payment';
-import RouteConstants from '../../constants/RouteConstants';
 
 
 const BalancePay = () => {
@@ -52,7 +52,7 @@ const BalancePay = () => {
           backTo={RouteConstants.profile}
       />}
 
-      {loading && <LoadingOverlay />}
+      {loading && <PageLoader />}
     </>
   );
 };
