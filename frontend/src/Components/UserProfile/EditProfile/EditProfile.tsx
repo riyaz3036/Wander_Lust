@@ -26,8 +26,6 @@ const EditProfile: React.FC<EditProfileProps> = ({ setEdit, fetchUser, user }) =
      });
     const [userImg, setUserImg] = useState<string | null>(user?.image ?? null);
 
-
-    console.log('ff', user?.image)
     // To handle changes in the form
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -64,20 +62,20 @@ const EditProfile: React.FC<EditProfileProps> = ({ setEdit, fetchUser, user }) =
     
 
     return (
-        <div className="">
-            {
-            loading? (
-                <Loading />
-            ): (
-            <div className="p-[5px] rounded-[5px] bg-white">
-                <Modal 
-                    open={true} 
-                    onCancel={() => setEdit(false)} 
-                    footer={
-                   <div className="flex justify-center mt-[40px]">
-                        <button style={{backgroundColor: ColorConstants.secondaryColor, width: '100px', height: '30px',borderRadius: '5px', opacity: isFormValid ? 1 : 0.5}} onClick={handleSubmit}>Edit</button>
+        <div className="p-[5px] rounded-[5px] bg-white">
+            <Modal 
+                open={true} 
+                onCancel={() => setEdit(false)} 
+                footer={
+                <div className="flex justify-center mt-[40px]">
+                    <button style={{backgroundColor: ColorConstants.secondaryColor, width: '100px', height: '30px',borderRadius: '5px', opacity: isFormValid ? 1 : 0.5}} disabled={loading} onClick={handleSubmit}>Edit</button>
+                </div>
+            }>
+                {loading ? (
+                    <div className="w-full flex items-center justify-center h-[80px] mt-[20px]">
+                        <Loading />
                     </div>
-                }>
+                ) : (
                     <div>
                         <p className="text-center add_tour_add_title">Edit your Details</p>
                         <div className="flex flex-col gap-[10px] mt-[20px]">
@@ -86,9 +84,8 @@ const EditProfile: React.FC<EditProfileProps> = ({ setEdit, fetchUser, user }) =
                             <ManageFormImage setNewImageFile={setNewImageFile} newImageFile={newImageFile} value={userImg} label={"Picture"} isMandatory={false} id={"image"} type={"file"} />
                         </div>
                     </div>
-                </Modal>
-            </div>
-            )}
+                )}
+            </Modal>
         </div>
     );
 }

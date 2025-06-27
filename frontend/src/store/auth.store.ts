@@ -2,6 +2,8 @@ import { makeAutoObservable, action } from 'mobx';
 import { User } from '../types/user.types';
 import { clearAccessTokenInCookie } from '../utils/cookie.utils';
 import { encryptData, decryptData } from '../utils/encryption.utils';
+import { useNavigate } from 'react-router-dom';
+import RouteConstants from '../constants/RouteConstants';
 
 const USER_STORAGE_KEY = 'encrypted_user_data';
 
@@ -115,15 +117,13 @@ class AuthStore {
     // Enhanced logout method
     logout = (setIsLoading?: (loading: boolean) => void): void => {
         console.log('Logging out...');
+        
+        this.setIsAuthenticated(false);
+        this.setAccessToken(null);
+        this.setUser(null);
+        clearAccessTokenInCookie();
+        this.clearUserDataFromStorage();
         if(setIsLoading) setIsLoading(false);
-        setTimeout(() => {
-            this.setIsAuthenticated(false);
-            this.setAccessToken(null);
-            this.setUser(null);
-            clearAccessTokenInCookie();
-            this.clearUserDataFromStorage();
-            if(setIsLoading) setIsLoading(false);
-        }, 500);
     };
 }
 

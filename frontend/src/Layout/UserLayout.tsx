@@ -14,7 +14,7 @@ const UserLayout = ({children} : {children: React.ReactNode})=> {
 
     useEffect(() => {
         if(user === null && isSecureRoute(location.pathname)){
-            navigate(RouteConstants.root);
+            navigate(RouteConstants.login);
         }
 
         if (user?.role === RolesEnum.ADMIN) {

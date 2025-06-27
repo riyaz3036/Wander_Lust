@@ -14,7 +14,7 @@ const MembershipPayment = () => {
   const { user } = useAuth();
   const { id } = useParams(); 
 
-  const [success, setSuccess] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
 
   // Determine amount based on plan 
@@ -29,7 +29,6 @@ const MembershipPayment = () => {
   // update membership
   const updateMembership = () => {
     if(user === null) return;
-    console.log('USEEEE->', user.id);
       setLoading(true);
       UserService.editUser(user?.id, {membership: id})
           .then((response) => {

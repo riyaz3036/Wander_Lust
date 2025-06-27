@@ -7,6 +7,7 @@ import { authStore } from '../store/auth.store';
 import { observer } from 'mobx-react-lite';
 import { isTokenExpired } from '../utils/jwt.utils';
 import { User } from '../types/user.types';
+import { useLocation } from 'react-router-dom';
 
 interface AuthContextType {
     logout: () => void;
@@ -118,3 +119,4 @@ export const useAuth = (): AuthContextType => {
 };
 
 export default AuthProvider;
+
